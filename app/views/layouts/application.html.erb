@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Betty</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <script src="https://js.stripe.com/v3/"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash[:success].present? %>
+    <div class="success">
+      <%= flash[:success] %>
+      <% end %>
+      </div>
+
+      <% if flash[:error].present? %>
+      <div class="error">
+        <%= flash[:error] %>
+        <% end %>
+        </div>
+
+    <%= yield %>
+  </body>
+</html>

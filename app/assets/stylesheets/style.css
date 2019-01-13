@@ -1,0 +1,853 @@
+:root{
+  --cream:#eeddcc;
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.5;
+	color: #000;
+  background-color: #eeddcc;
+ transition: background-color 1s ease;
+}
+
+body a{
+  color: #c16290;
+}
+
+section{
+  min-height: 100vh;
+}
+
+fadein{
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+visible.fadein{
+  opacity: 1;
+}
+
+footer{
+  position: fixed;
+  bottom: 5vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  text-align: center;
+  cursor: pointer;
+}
+
+header p,
+footer p{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+header a,
+footer a{
+  color: #000;
+  text-decoration: none;
+}
+
+header{
+  position: fixed;
+  top: 5vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  text-align: center;
+  cursor: pointer;
+}
+
+.instagram{
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+  transform: rotate(-180deg);
+  text-align: center;
+  padding: 12px;
+  line-height: 1;
+  font-size: 24px;
+  position: fixed;
+  top: 44vh;
+  left: 0vw;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.playlist{
+   writing-mode: vertical-rl;
+    text-orientation: sideways;
+  transform: rotate(-180deg);
+  text-align: center;
+  padding: 12px;
+  line-height: 1;
+  font-size: 24px;
+  position: fixed;
+  top: 50vh;
+  right: 2vw;
+  transform: translateY(-50%);
+  text-align: center;
+  cursor: pointer;
+}
+
+.instagram a,
+.playlist a{
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.instagram a:hover,
+.playlist a:hover{
+  color: #FFF;
+}
+
+.container{
+max-width: 60vw;
+max-height: 80vh;
+margin-top: 10vh;
+margin-left: auto;
+margin-right: auto;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+
+nav a{
+  color: #000;
+  text-decoration: none;
+}
+
+.about{
+  position: fixed;
+  top: 3vh;
+  cursor: pointer;
+  left: 3vw;
+}
+
+.signup{
+  position: fixed;
+  top: 3vh;
+  cursor: pointer;
+  right: 3vw;
+}
+
+.partners{
+  position: fixed;
+  bottom: 3vh;
+  cursor: pointer;
+  left: 3vw;
+}
+
+.quiz{
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  cursor: pointer;
+}
+
+div.clouds{
+  position: relative;
+  left: -3vw;
+  top: 5vh;
+  max-width: 350px;
+}
+
+div.bettyvideo{
+  position: relative;
+  top: -5vh;
+  left: 12vw;
+  max-width: 500px;
+  z-index: 4;
+}
+
+div.alarm{
+  position: relative;
+  bottom: 20vh;
+  left: 0vw;
+  max-width: 200px;
+  z-index: 5;
+}
+
+div.bettywindows{
+  position: absolute;
+  top: 10vh;
+  left: 45vw;
+  max-width: 370px;
+  z-index: 6;
+}
+
+div.bettyIG{
+  position: absolute;
+  top: 11vh;
+  left: 29vw;
+  max-width: 260px;
+  z-index: 2;
+}
+
+div.riverdale{
+  position: absolute;
+  top: 15vh;
+  right: 10vw;
+  z-index: 2;
+}
+
+div.alert{
+  position: absolute;
+  left: 71vw;
+  top: 12vh;
+  max-width: 50px;
+  z-index: 10;
+}
+
+div.mug{
+  position: absolute;
+  top: 68vh;
+  left: 15vw;
+  max-width: 120px;
+  z-index: 22;
+  transform: rotate(-20deg);
+}
+
+div.braintabs{
+  position: absolute;
+  bottom: 12vh;
+  right: 14vw;
+  max-width: 350px;
+}
+
+div.cher{
+  position: absolute;
+  left: 8vw;
+  bottom: 30vh;
+  max-width: 250px;
+  z-index: 3;
+}
+
+
+.arrow{
+  padding-top: 40px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.FAQ-title {
+  margin-bottom: 10vh;
+}
+
+
+
+.faq{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.faqboxes{
+    position: relative;
+}
+
+.faq img{
+  max-width: 180px;
+  margin-bottom: 2vh;
+  transition: opacity 0.5s;
+}
+
+
+ .faqboxes:hover .overlay{
+  opacity: 0.95;
+}
+
+
+.faqboxes .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  background-color: #c16290;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  overflow: auto;
+}
+
+.faqboxes .overlay p{
+  color: #FFF;
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.faqboxes .overlay a{
+  font-weight: 700;
+  color: #FFF;
+}
+
+.aboutinfo p{
+  padding-bottom: 2vh;
+}
+
+.howitworks li{
+  margin-bottom: 0px;
+}
+
+
+h4{
+line-height: 1.1;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.whobettyinside{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.whobettycopy a{
+  color: #FFF;
+}
+
+.whobettycopy p{
+  padding-bottom: 20px;
+}
+
+.bettyme img{
+  max-width: 400px;
+  padding-left: 8vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.who-betty{
+  padding-top: 350px;
+}
+
+.pop-quiz{
+  padding-top: 250px;
+}
+
+.contact{
+  min-height: 90vh;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.quizbutton{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 40px;
+}
+
+div.quizresult{
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+
+div.welcomecontainer{
+  max-width: 800px;
+  margin-left: auto;
+  margin-top: 10vh;
+  margin-right: auto;
+}
+
+div.welcomecontainer li{
+  margin-bottom: 8px;
+}
+
+div.welcome-image{
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+
+
+
+/**MEDIA MEASUREMENTS BELOW**/
+
+/**hide mobile social icons**/
+@media (min-width:570px){
+  .mobilesocial{
+    display: none;
+  }
+}
+
+/**large screens**/
+@media (min-width:1500px) {
+
+.clouds{
+  position: relative;
+  left: -3vw;
+  top: 5vh;
+  max-width: 350px;
+}
+
+.bettyvideo{
+  position: relative;
+  top: 10vh;
+  left: 12vw;
+  max-width: 800px;
+  z-index: 4;
+}
+
+.alarm{
+  position: relative;
+  bottom: 8vh;
+  left: 0vw;
+  max-width: 300px;
+  z-index: 5;
+}
+
+.bettywindows{
+  position: absolute;
+  top: 15vh;
+  left: 50vw;
+  max-width: 600px;
+  z-index: 6;
+}
+
+.bettyIG{
+  position: absolute;
+  top: 11vh;
+  left: 29vw;
+  max-width: 370px;
+  z-index: 2;
+}
+
+.riverdale{
+  position: absolute;
+  top: 25vh;
+  right: 15vw;
+  z-index: 2;
+}
+
+.alert{
+  position: absolute;
+  right: 13vw;
+  top: 22vh;
+  max-width: 80px;
+  z-index: 5;
+}
+
+.mug{
+  position: absolute;
+  top: 72vh;
+  left: 16vw;
+  max-width: 150px;
+  z-index: 22;
+  transform: rotate(-20deg);
+}
+
+.braintabs{
+  position: absolute;
+  bottom: 18vh;
+  right: 10vw;
+  max-width: 500px;
+}
+
+.cher{
+  position: absolute;
+  left: 18vw;
+  bottom: 30vh;
+  z-index: 3;
+}
+}
+
+
+/**ipad pro landscape**/
+@media (max-width:1350px){
+  .alert{
+    right: 15vw;
+  }
+
+  .cher{
+    left: 15vw;
+  }
+
+  .mug{
+top: 69vh;
+    left: 15vw;
+  }
+}
+
+/**ipad pro portrait and ipad landscape**/
+@media (max-width:1030px){
+
+
+  .faqboxes img{
+max-width: 150px;
+  }
+
+  .faqboxes .overlay p{
+    font-size: 10px;
+  }
+
+  .clouds{
+    max-width: 250px;
+    left: -8vw;
+  }
+
+  .bettyIG{
+    max-width: 200px;
+    left: 20vw;
+  }
+
+  .bettywindows{
+    left: 37vw;
+    top: 20vh;
+    max-width: 280px;
+  }
+
+  .riverdale{
+    right: 8vw;
+    top: 18vh;
+  }
+
+  .alert{
+    right: 5vw;
+    top: 40vh;
+    z-index: 0;
+  }
+
+  .alarm{
+    max-width: 200px;
+    bottom: 40vh;
+    left: 80vw;
+    z-index: 100;
+  }
+
+  .cher{
+    bottom: 18vh;
+    left: 15vw;
+    z-index: 99;
+  }
+
+  .braintabs{
+display: none;
+  }
+
+  .bettyvideo{
+    top: 5vh;
+    left: 20vw;
+z-index: 0;
+  }
+
+  .mug{
+    top: 30vh;
+    left: 12vw ;
+    z-index: 100;
+  }
+
+  .bettyme img{
+    max-width: 300px;
+  }
+}
+
+
+/**ipad portrait**/
+@media (max-width:800px){
+
+  .alarm{
+    bottom: 18vh;
+    left: 45vw;
+  }
+
+  .cher{
+    max-width: 250px;
+    bottom: 15vh;
+    left: 12vw;
+  }
+
+  .mug{
+    top: 45vh;
+    left: 10vw;
+  }
+
+  .bettywindows{
+    left: 25vw;
+    top: 25vh;
+  }
+
+  .riverdale{
+    top: 12vh;
+  }
+
+  .bettyvideo{
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .alert{
+    top: 50vh;
+    left: 84vw;
+    max-width: 60px;
+    z-index: 100;
+  }
+
+  .bettyme img{
+    padding-top: 250px;
+    max-width: 200px;
+  }
+
+  .who-betty{
+    padding-top: 0px;
+  }
+  }
+
+.contact a{
+  color: #FFF;
+}
+
+/**iphone 6s**/
+@media (max-width:570px){
+  h1{
+    font-size: 24px;
+  }
+
+  .playlist{
+    right: 5vw;
+    top: 47vh;
+  }
+
+
+  .FAQ{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .faq img{
+    max-width: 80px;
+  }
+
+  .faqboxes .overlay{
+    overflow: visible;
+  }
+    .faqboxes .overlay p{
+    font-size: 4px;
+  }
+
+
+  .FAQ-title {
+  margin-bottom: 14px;
+}
+
+
+  .arrow{
+  padding-top: 20px;
+  max-width: 80px;
+}
+
+
+  .instagram{
+    left: -5vw;
+    top: 44.5vh;
+    transform: none;
+  }
+
+  header p,
+  footer p{
+    font-size: 18px;
+  }
+
+  .instagramcopy,
+  .spotifycopy{
+    display: none;
+  }
+
+  .mobilesocial{
+    max-width: 25px;
+  }
+
+  .clouds{
+    max-width: 200px;
+  }
+
+  .bettyIG{
+    max-width: 150px;
+    left: 35vw;
+  }
+
+  .riverdale{
+    max-width: 150px;
+    top: 25vh;
+  }
+
+  .alarm{
+    max-width: 120px;
+    left: -15vw;
+    top: -18vh;
+    z-index: 89;
+  }
+
+  .bettywindows{
+    max-width: 300px;
+    left: 15vw;
+    top: 35vh;
+  }
+
+  .bettyvideo{
+    top: 45vh;
+  }
+
+  .cher{
+    max-width: 180px;
+    bottom: 28vh;
+  }
+
+  .alert{
+    top: 70vh;
+    max-width: 50px;
+  }
+
+  .mug{
+    top: 70vh;
+  }
+
+  .container{
+    font-size: 12px;
+  }
+
+  .whobettyinside{
+    display: block;
+  }
+
+
+.howitworks li{
+  margin-bottom: 0px;
+}
+
+
+h4{
+line-height: 1.3;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+
+.whobettycopy p{
+  padding-bottom: 10px;
+}
+
+.bettyme img{
+  max-width: 200px;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .partnershipscopy{
+  display: block;
+    transform: translateY(-30%);
+  }
+
+  .partnershipscopy img{
+    padding-top: 20px;
+  }
+
+}
+
+/**google pixel**/
+@media (max-width:415px){
+  .cher{
+    max-width: 120px;
+    left: 8vw;
+  }
+
+  .bettyvideo{
+    top: 38vh;
+  }
+
+  .mug{
+    left: 8vw;
+    top: 69vh;
+    max-width: 100px;
+  }
+
+  .alert{
+    top: 67vh;
+    right: -8vw ;
+    z-index: 0;
+  }
+}
+
+/**iphone X**/
+@media (max-width:387px){
+      .instagram{
+    left: -9vw;
+  }
+
+  .bettywindows{
+    max-width: 200px;
+    left: 35vw;
+    top: 32vh;
+  }
+
+  .alarm{
+    top: -25vh;
+  }
+
+  .bettyIG{
+    top: 15vh;
+  }
+
+  .riverdale{
+    max-width: 80px;
+    top: 13vh;
+  }
+
+  .bettyvideo{
+    top: 20vh;
+  }
+
+  .alert{
+    top: 42vh;
+    left: 39vw;
+    max-width: 30px;
+    z-index: 100;
+  }
+
+  .cher{
+    left: 10vw;
+  }
+
+  .mug{
+    top: 50vh;
+  }
+
+}
+
+/**iphone 5**/
+@media (max-width:340px){
+  .bettywindows{
+    left: 28vw;
+  }
+
+  .bettyvideo{
+    top: 24vh;
+  }
+
+  .mug{
+    display: none;
+  }
+}
