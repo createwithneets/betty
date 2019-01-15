@@ -151,14 +151,14 @@ div.signupform input[class=dropdown]{
   text-decoration: none;
 }
 
-.partnerships a:hover {
-  color: #fff;
+.closebtn a:hover {
+  color: #000;
 }
 
 .partnerships .closebtn {
   position: absolute;
   top: 2vh;
-  right: 2vw;
+  right: 8vw;
   margin-left: 50px;
 }
 
