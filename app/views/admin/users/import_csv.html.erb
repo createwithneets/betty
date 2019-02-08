@@ -1,0 +1,4 @@
+<%= simple_form_for :csv, url: { action: "importing_csv" }, html: { multipart: true } do |f| %>
+  <%= f.input :csv, as: :file, label: false %>
+  <%= f.button :submit, "Import CSV" %>
+<% end %>
