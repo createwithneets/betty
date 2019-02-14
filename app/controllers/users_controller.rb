@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 def form_params
   params.require(:user).permit(:ig_username, :first_name, :last_name,
     :email, :password, :password_confirmation, :address_1, :address_2,
-  :city, :country, :postal_code, :subscription_plan, :stripe_token)
+  :city, :country, :postal_code, :subscription_plan, :stripe_token, :coupon, :tune_in)
 end
 
 end

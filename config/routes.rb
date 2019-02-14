@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
 resources :users
 
+resource :session
+
+resource :account
+
 get "welcome", to: "pages#welcome"
 get "longexhale", to: "pages#longexhale"
 get "lightbelly", to: "pages#balloflightbelly"
@@ -19,6 +23,7 @@ get "gratitudemantra", to: "pages#gratitudemantra"
 get "lovingkindness", to: "pages#lovingkindness"
 get "ocean", to: "pages#oceanvisualization"
 get "sound", to: "pages#sound"
+get "bettyland", to:"pages#bettyland"
 
 root "users#new"
 

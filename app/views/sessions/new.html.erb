@@ -1,0 +1,12 @@
+<div class="login">
+<h1>Login to Bettyland 🍑</h1>
+<p>Have a Betty account? Login below.<br>
+Forgot your password? Email us at hello@inbedwithbetty.com</p>
+<div class="loginform">
+<%= simple_form_for :session, url: session_path do |f| %>
+<%= f.input :username %>
+<%= f.input :password %>
+<%= f.button :submit, "Log in" %>
+<% end %>
+</div>
+</div>

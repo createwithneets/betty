@@ -1,0 +1,58 @@
+div.login{
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10vh;
+}
+
+div.loginform{
+  max-width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  top: 150vh;
+  left: 50vw;
+  padding-bottom:20vh;
+
+}
+
+div.loginform label{
+  font-size: 24px;
+  color: #c16290;
+  padding-right: 10px;
+}
+
+
+  div.loginform input{
+    background-color: #c49aa6;
+    color: #FFF;
+    border: none;
+    width: 30vw;
+    padding: 0.5em 0.75em 0.5em 0.75em;
+    margin-bottom: 7px;
+  }
+
+  div.loginform input:focus{
+  background-color: #c16290;
+  outline: none;
+  border: none;
+  color: #FFF;
+  font-size: 16px;
+  font-family: 'Inconsolata', sans-serif;
+  }
+
+
+
+  div.loginform input[type=submit] {
+      background: #fed16f;
+      color: #000;
+      font-family: Cortez;
+      font-size: 24px;
+      appearance: none;
+      border: none;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 15px;
+      margin-bottom: 50px
+    padding: 0.5em 1.5em 0.5em 1.5em;
+    }

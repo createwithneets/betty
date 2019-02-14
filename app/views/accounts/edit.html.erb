@@ -1,0 +1,14 @@
+<div class="login"><h1> Edit Account</h1></div>
+<div class="loginform">
+  <%= simple_form_for @user, url: account_path do |f| %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :photo %>
+  <%= f.input :about %>
+  <%= f.button :submit, "Update account" %>
+  <% end %>
+
+<p>
+  <%= link_to "Delete Account", account_path, method: :delete,
+  data: {confirm: "Are you sure you want to delete your account?"} %></p>
+</div>

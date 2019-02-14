@@ -1,4 +1,4 @@
-<div class="announcement"> <p>JOIN IS IRL FOR OUR FIRST EVER BETTY SLUMBER PARTY IN VANCOUVER ON FEB 7. DETAILS <a href="https://www.eventbrite.ca/e/betty-slumber-party-tickets-54881415792" target="_blank">HERE.</a></p> </div>
+<div class="announcement"> <p>HAVE AN ACCOUNT? <%= link_to "Login", new_session_path %></p> </div>
 <nav class="about">
   <a href="#about"><h1>About </h1></a></nav>
 
@@ -35,14 +35,15 @@
   <%= f.input :ig_username, label: 'Your Instagram Username' %>
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
+  <%= f.input :tune_in, label: 'How many times a week are you hoping to tune in? (1-5)' %>
   <%= f.input :address_1 %>
   <%= f.input :address_2 %>
   <%= f.input :city %>
 <%= f.input :country, :html => { class: 'dropdown' } %>
   <%= f.input :postal_code%>
   <%= f.input :subscription_plan, :html => { class: 'dropdown' }, as: :select, collection:
-  [['Betty Subscription- $8.99USD/ month', 'plan_EKfDNwaRo6falI']], include_blank: false %>
-
+  [['Betty Subscription- $8.99USD/ month', 'plan_EKfYtvn7AbVx3H']], include_blank: false %>
+<%= f.input :coupon %>
 <div id="card-errors">
 <% @user.errors[:stripe_token].each do |e| %>
 <%= e  %>
