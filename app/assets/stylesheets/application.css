@@ -12,6 +12,7 @@
  *
  *= require style
  *= require sidenav
+  *= require loginform
  *= require fonts
  *= require_self
  */

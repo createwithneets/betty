@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_13_033746) do
+ActiveRecord::Schema.define(version: 2019_02_06_182523) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -69,6 +69,39 @@ ActiveRecord::Schema.define(version: 2019_01_13_033746) do
     t.string "stripe_customer"
     t.string "stripe_token"
     t.string "stripe_subscription"
+    t.string "coupon"
+    t.string "photo"
+    t.string "photogif"
+    t.string "about"
+    t.string "check_in_q_1"
+    t.string "check_in_q_2"
+    t.string "check_in_q_3"
+    t.integer "tune_in"
+    t.string "MHSquote_1"
+    t.string "MHSquote_2"
+    t.string "MHSquote_3"
+    t.string "MHSbook_1"
+    t.string "MHSbook_2"
+    t.string "MHSbook_3"
+    t.string "MHSbook_4"
+    t.string "MHSbook_5"
+    t.string "MHSIG_1"
+    t.string "MHSIG_2"
+    t.string "MHSIG_3"
+    t.string "MHSIG_4"
+    t.string "MHSIG_5"
+    t.string "MHSproduct_1"
+    t.string "MHSroduct_2"
+    t.string "MHSproduct_3"
+    t.string "MHSproduct_4"
+    t.string "MHSproduct_5"
+    t.string "MHSroutine_1"
+    t.string "MHSroutine_2"
+    t.string "MHSroutine_3"
+    t.string "MHSgeneral_1"
+    t.string "MHSgeneral_3"
+    t.string "MHSgeneral_4"
+    t.string "MHSgeneral_5"
   end
 
 end
