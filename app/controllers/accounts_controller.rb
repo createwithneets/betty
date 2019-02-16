@@ -11,13 +11,9 @@ before_action :force_login
   def update
 
       @user= @current_user
-
       if @user.update_with_stripe(form_params)
         flash[:success] = "Your account has been updated"
-        redirect_to user_path(@user.ig_username)
-      else
-        render "edit"
-    end
+      end
 
     if @user.update_card(@user, params[:stripe_card_token])
       flash[:success] = 'Saved. Your card information has been updated.'

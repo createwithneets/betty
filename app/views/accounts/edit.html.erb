@@ -51,7 +51,7 @@
 
   <h3>Update your CC Details</h3>
 
-    <%= form_for @user, html: { class: 'update_account' } do |f| %>
+    <%= form_for @user, url: account_path do |f| %>
       <div class='form-group'>
         <%= label_tag        :number, 'Card Number', class: 'col-sm-3 control-label' %>
         <div class='col-sm-9'>

@@ -48,7 +48,6 @@ self.save
   end
 
 
-
   def update_with_stripe(form_params)
     #update the model with the form params
     #check if it's valid
@@ -79,7 +78,7 @@ self.save
 
     end
 
-    def update_card(form_params)
+    def update_card(subscriber, stripe_card_token)
       customer = Stripe::Customer.retrieve(self.stripe_customer)
       card = customer.sources.create(card: stripe_card_token)
       card.save
