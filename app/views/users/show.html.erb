@@ -1,4 +1,77 @@
-<h1><%= User.ig_username %></h1>
+<section class="staticbackground">
+  <% if is_logged_in? %>
+  <% if @user == @current_user %>
+  <%= link_to "Edit your Profile", edit_account_path %>
+  <% end %>
+<h1><%= @user.ig_username %></h1>
+<%= image_tag @user.photo.medium.url %>
+<p>
+  <%= @user.first_name %> <%=@user.last_name %> lives in   <%= @user.city %>, <%= @user.country%> <br><br>
+  Can be reached at:  <%= @user.email %><br>
+  Points: <%= @user.points %><br>
+  Who would play me in a movie about my life: <%= @user.check_in_q_1 %><br>
+  What reminds me of home: <%= @user.check_in_q_2 %><br>
+  My current favourite song: <%= @user.check_in_q_3 %><br><br>
+  About Me: <br> <%= @user.about %>
+  </p>
+  <h2>My Mental Health Shelf</h2>
+  <h3>Quotes</h3>
+  <p>
+  <%= @user.MHSquote_1 %><br>
+  <%= @user.MHSquote_2 %><br>
+  <%= @user.MHSquote_3 %>
+    </p>
+
+    <h3>Read This</h3>
+    <p>
+    <%= @user.MHSbook_1 %><br>
+    <%= @user.MHSbook_2 %><br>
+    <%= @user.MHSbook_3 %><br>
+    <%= @user.MHSbook_4 %><br>
+    <%= @user.MHSbook_5 %>
+      </p>
+
+    <h3>Follow this</h3>
+    <p>
+    <%= @user.MHSIG_1 %><br>
+    <%= @user.MHSIG_2 %><br>
+    <%= @user.MHSIG_3 %><br>
+    <%= @user.MHSIG_4 %><br>
+    <%= @user.MHSIG_5 %>
+    </p>
+
+
+  <h3>Must have items:</h3>
+  <p>
+  <%= @user.MHSproduct_1 %><br>
+  <%= @user.MHSroduct_2 %><br>
+  <%= @user.MHSproduct_3 %><br>
+  <%= @user.MHSproduct_4 %><br>
+  <%= @user.MHSproduct_5 %>
+  </p>
+
+
+<h3>My Routine</h3>
+<p>
+<%= @user.MHSroutine_1 %><br>
+<%= @user.MHSroutine_2 %><br>
+<%= @user.MHSroutine_3 %>
+</p>
+
+
+<h3>Other Tips</h3>
+<p>
+<%= @user.MHSgeneral_1 %><br>
+<%= @user.MHSgeneral_3 %><br>
+<%= @user.MHSgeneral_4 %><br>
+<%= @user.MHSgeneral_5 %>
+</p><br><br>
 <p><%= link_to "Back to all Bettys", users_path %></p>
-<%= image_tag User.photo.url %>
-<p><%= User.about %></p>
+
+<% else %>
+<div class="peeking">
+  <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
+  <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
+  </div>
+  <% end %>
+  </section>

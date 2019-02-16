@@ -40,6 +40,10 @@ div.loginform label{
   font-family: 'Inconsolata', sans-serif;
   }
 
+  div.loginform input::placeholder{
+    color: #FFF;
+  }
+
 
 
   div.loginform input[type=submit] {

@@ -4,7 +4,7 @@ ActiveAdmin.register User do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :first_name, :last_name, :email, :password, :password_confirmation, :ig_username, :address_1, :address_2, :city, :country, :postal_code
+permit_params :first_name, :last_name, :email, :password, :password_confirmation, :ig_username, :address_1, :address_2, :city, :country, :points, :postal_code
 #
 # or
 #
@@ -37,10 +37,10 @@ permit_params :first_name, :last_name, :email, :password, :password_confirmation
         points = row[4]
         discount = row[5]
 
-        # @user = User.find_by(email: email)
-        # if @user.present?
-        #   @user.update_attributes(points: points)
-        # end
+        @user = User.find_by(email: email)
+        if @user.present?
+        @user.update_attributes(points: points)
+        end 
       end
     end
 

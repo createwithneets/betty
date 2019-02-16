@@ -1,14 +1,93 @@
+<section class="staticbackground">
 <div class="login"><h1> Edit Account</h1></div>
 <div class="loginform">
   <%= simple_form_for @user, url: account_path do |f| %>
-  <%= f.input :password %>
+  <%= f.input :ig_username %>
+  <%= f.input :password, label: 'Change your Password' %>
   <%= f.input :password_confirmation %>
-  <%= f.input :photo %>
-  <%= f.input :about %>
-  <%= f.button :submit, "Update account" %>
+  <%= f.input :photo, label: 'Upload a Bio Photo' %>
+  <%= f.input :photogif, label: 'Upload a gif of you' %>
+  <%= f.input :about, label: 'Tell us about you!', placeholder: 'What do you do? What are you into? Share anything you like here, but like, no pressure.' %>
+  <%= f.input :check_in_q_1, label: 'Who would play you in a movie about your life?' %>
+  <%= f.input :check_in_q_2, label: 'What reminds you of home?' %>
+  <%= f.input :check_in_q_3, label: 'Current favourite song?'  %>
+  <h2>Mental Health Shelf</h2>
+  <p>This is where you can share what helps you take care of yourself with the Betty community.
+  <br>Your Mental Health Shelfie is a snapshot of you- somewhere to remind you of the tools you already have, and a way for others to connect with you.
+  Fill in as much or as little as you like. <br><br>Who knows,
+  you may just find your next bestie, or at the very least, be inspiring, and inspired.</p>
+  <h3>Got any favourite quotes?</h3>
+  <%= f.input :MHSquote_1,  label: '1.' %>
+  <%= f.input :MHSquote_2,  label: '2.' %>
+  <%= f.input :MHSquote_3,  label: '3.' %>
+  <h3>What books or reads would you recommend?</h3>
+  <%= f.input :MHSbook_1,  label: '1.' %>
+  <%= f.input :MHSbook_2,  label: '2.' %>
+  <%= f.input :MHSbook_3,  label: '3.' %>
+  <%= f.input :MHSbook_4,  label: '4.' %>
+  <%= f.input :MHSbook_5,  label: '5.' %>
+  <h3>What are some of your favourite IG accounts?</h3>
+  <%= f.input :MHSIG_1,  label: '1.' %>
+  <%= f.input :MHSIG_2,  label: '2.' %>
+  <%= f.input :MHSIG_3,  label: '3.' %>
+  <%= f.input :MHSIG_4,  label: '4.' %>
+  <%= f.input :MHSIG_5,  label: '5.' %>
+  <h3>Any products crucial to your self care?</h3>
+  <%= f.input :MHSproduct_1,  label: '1.' %>
+  <%= f.input :MHSroduct_2,  label: '2.' %>
+  <%= f.input :MHSproduct_3,  label: '3.' %>
+  <%= f.input :MHSproduct_4,  label: '4.' %>
+  <%= f.input :MHSproduct_5,  label: '5.' %>
+  <h3>What is part of your self care routine?</h3>
+  <%= f.input :MHSroutine_1,  label: '1.' %>
+  <%= f.input :MHSroutine_2,  label: '2.' %>
+  <%= f.input :MHSroutine_3,  label: '3.' %>
+  <h3>Finally, any other tips? Videos? Songs? Whatever you like!</h3>
+  <%= f.input :MHSgeneral_1,  label: '1.' %>
+  <%= f.input :MHSgeneral_3,  label: '2.' %>
+  <%= f.input :MHSgeneral_4,  label: '3.' %>
+  <%= f.input :MHSgeneral_5,  label: '4.' %>
   <% end %>
+
+  <h3>Update your CC Details</h3>
+
+    <%= form_for @user, html: { class: 'update_account' } do |f| %>
+      <div class='form-group'>
+        <%= label_tag        :number, 'Card Number', class: 'col-sm-3 control-label' %>
+        <div class='col-sm-9'>
+          <%= text_field_tag :number, nil, class: 'form-control', placeholder: 'We accept Visa, MasterCard, AMEX and Discover' %>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <%= label_tag        :cvc, 'Security Code', class: 'col-sm-3 control-label' %>
+        <div class='col-sm-9'>
+          <%= text_field_tag :cvc, nil, class: 'form-control', placeholder: 'The code on the back of your card (CVC)' %>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <%= label_tag        :exp_month, 'Expiration Date', class: 'col-sm-3 control-label' %>
+        <div class='col-sm-5'>
+          <%= select_month   nil, { add_month_numbers: true }, { id: 'exp_month', class: 'form-control btm-space' } %>
+        </div>
+        <div class='col-sm-4'>
+          <%= select_year    nil, { start_year: Date.today.year, end_year: Date.today.year+15 }, { id: 'exp_year', class: 'form-control btm-space' } %>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-sm-4 col-sm-offset-8'>
+          <%= submit_tag 'Update', class: 'btn btn-success btn-block' %>
+        </div>
+      </div>
+
+      <%= f.hidden_field :stripe_card_token %>
+    <% end %>
+
 
 <p>
   <%= link_to "Delete Account", account_path, method: :delete,
-  data: {confirm: "Are you sure you want to delete your account?"} %></p>
+  data: {confirm: "Are you sure you want to delete your account?"} %> | <%= link_to "Back to Your Profile", user_path(@user.ig_username) %> |  <%= link_to "See All Bettys", users_path %></p>
 </div>
+</section>

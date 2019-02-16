@@ -1,8 +1,21 @@
-  <% if is_logged_in? %>
-<h1><%= link_to "Logout", session_path, method: :delete %>  | <%= link_to "Edit Account", edit_account_path %> | <%= link_to "All Bettys", users_path %> </h1>
+<section class="staticbackground">
+<% if is_logged_in? %>
+<h2>All Users</h2>
+
+<% @users. each do |user| %>
+<p>
+  <%= link_to  user_path(user.ig_username) do %>
+  <%= image_tag user.photo.thumb.url %>
+  <%= user.ig_username %>
+  </p>
+<% end %>
+<% end %>
 <% else %>
 <div class="peeking">
   <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
   <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
   </div>
   <% end %>
+
+  <h3><%= link_to 'Back to Bettyland Home', bettyland_path %></h3>
+</section>

@@ -1,4 +1,8 @@
-<div class="announcement"> <p>HAVE AN ACCOUNT? <%= link_to "Login", new_session_path %></p> </div>
+<div class="announcement">
+    <% if is_logged_in? %>
+    <p>HEY BETTY! <%= link_to "ENTER BETTYLAND HERE.", bettyland_path %></p>
+    <% else %>
+  <p>ARE YOU A BETTY? <%= link_to "LOGIN TO BETTYLAND HERE", new_session_path %>.<% end %> </div>
 <nav class="about">
   <a href="#about"><h1>About </h1></a></nav>
 

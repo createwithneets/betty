@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+
+  def index
+    @users = User.all
+    #find ALL the users in this index
+  end
+
+
   def new
     @user= User.new
   end
@@ -16,12 +23,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user= User.find_by(ig_username: params[:id])
+  end
 
 
 def form_params
   params.require(:user).permit(:ig_username, :first_name, :last_name,
     :email, :password, :password_confirmation, :address_1, :address_2,
-  :city, :country, :postal_code, :subscription_plan, :stripe_token, :coupon, :tune_in)
+  :city, :country, :postal_code, :subscription_plan, :stripe_token, :coupon, :tune_in, :stripe_customer)
 end
 
 end

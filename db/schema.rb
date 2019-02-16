@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_182523) do
+ActiveRecord::Schema.define(version: 2019_02_16_224313) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -102,6 +102,8 @@ ActiveRecord::Schema.define(version: 2019_02_06_182523) do
     t.string "MHSgeneral_3"
     t.string "MHSgeneral_4"
     t.string "MHSgeneral_5"
+    t.integer "points"
+    t.string "stripe_card_token"
   end
 
 end

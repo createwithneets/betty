@@ -14,7 +14,6 @@ validates :stripe_token, presence: true
 
 has_secure_password
 
-
 def save_and_subscribe
   if self.valid?
 #create a stripe customer
@@ -51,37 +50,46 @@ self.save
 
 
   def update_with_stripe(form_params)
-  #update the model with the form params
-  #check if it's valid
-  # if it's valid, update stripe
-  #then update the database
+    #update the model with the form params
+    #check if it's valid
+    # if it's valid, update stripe
+    #then update the database
 
-  self.assign_attributes(form_params)
-  if self.valid?
-  #get the subscription from stripe
+    self.assign_attributes(form_params)
+    if self.valid?
+    #get the subscription from stripe
 
-  subscription = Stripe::Subscription.retrieve(self.stripe_subscription)
-  #get the first item from the subscription
-  #we don't want BOTH plans, we want to update one with the other
-  item_id= subscription.items.data[0].id
-  #make our new items
-  items = [
-    {id: item_id, plan:self.subscription_plan}
-  ]
-  #update our subscription with the new items
-  subscription.items = items
-  #save the subscription to stripe
-  subscription.save
+    subscription = Stripe::Subscription.retrieve(self.stripe_subscription)
+    #get the first item from the subscription
+    #we don't want BOTH plans, we want to update one with the other
+    item_id= subscription.items.data[0].id
+    #make our new items
+    items = [
+      {id: item_id, plan:self.subscription_plan}
+    ]
+    #update our subscription with the new items
+    subscription.items = items
+    #save the subscription to stripe
+    subscription.save
+    #save our data to the database
+    self.save
+    else
+      false
+    end
 
-  #save our data to the database
-  self.save
+    end
 
-  else
-    false
+    def update_card(form_params)
+      customer = Stripe::Customer.retrieve(self.stripe_customer)
+      card = customer.sources.create(card: stripe_card_token)
+      card.save
+      customer.default_source = card.id
+      customer.save
+    rescue Stripe::InvalidRequestError => e
+    logger.error "Stripe error while updating card info: #{e.message}"
+      errors.add :base, "#{e.message}"
+      false
   end
-
-  end
-
 
 
   def destroy_and_unsubscribe
@@ -92,5 +100,10 @@ self.save
     #remove the user completely
     self.destroy
   end
+
+
+
+  #add the photo uploader
+  mount_uploader :photo, PhotoUploader
 
 end
