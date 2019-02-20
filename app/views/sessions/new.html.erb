@@ -1,4 +1,6 @@
-
+<% if is_logged_in? %>
+<h2><%= link_to 'Proceed to Bettyland here', bettyland_path %></h2>
+<% else %>
 <div class="login">
 <h1>Login to Bettyland 🍑</h1>
 <p>Have a Betty account? Login below.<br>
@@ -11,3 +13,4 @@ Forgot your password? Email us at hello@inbedwithbetty.com</p>
 <% end %>
 </div>
 </div>
+<% end %>

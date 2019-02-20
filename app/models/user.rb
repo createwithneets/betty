@@ -23,12 +23,18 @@ customer = Stripe::Customer.create(source: self.stripe_token, description: self.
 subscription = Stripe::Subscription.
 create(customer: customer.id, items: [{plan: self.subscription_plan}])
 
-
 #save the customer ID to database
 self.stripe_customer = customer.id
 
 #save the subscription id to the database
 self.stripe_subscription = subscription.id
+
+#to assist with retrieving subscriptions in future ##
+@customer_id = customer.id
+
+self.update_attributes!(:stripe_customer, @customer_id)
+@subscription_id = subscription.id
+self.update_attributes!(:stripe_subscription, @subscription_id)
 
 #save everything
 self.save
@@ -70,6 +76,10 @@ self.save
     subscription.items = items
     #save the subscription to stripe
     subscription.save
+    #update card Details
+    customer = Stripe::Customer.retrieve(self.stripe_customer)
+    customer.source = self.stripe_token
+    customer.save
     #save our data to the database
     self.save
     else
@@ -77,18 +87,6 @@ self.save
     end
 
     end
-
-    def update_card(subscriber, stripe_card_token)
-      customer = Stripe::Customer.retrieve(self.stripe_customer)
-      card = customer.sources.create(card: stripe_card_token)
-      card.save
-      customer.default_source = card.id
-      customer.save
-    rescue Stripe::InvalidRequestError => e
-    logger.error "Stripe error while updating card info: #{e.message}"
-      errors.add :base, "#{e.message}"
-      false
-  end
 
 
   def destroy_and_unsubscribe

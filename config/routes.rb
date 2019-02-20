@@ -24,6 +24,7 @@ get "lovingkindness", to: "pages#lovingkindness"
 get "ocean", to: "pages#oceanvisualization"
 get "sound", to: "pages#sound"
 get "bettyland", to:"pages#bettyland"
+get "rewards", to: "users#rewards"
 root "users#new"
 
 end
