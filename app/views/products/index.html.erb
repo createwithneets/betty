@@ -1,0 +1,4 @@
+<h1> <%= link_to "All Bettys", users_path %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %></h1>
+<h1>Shop Betty</h1>
+
+<%= render partial: "product", collection: @products %>

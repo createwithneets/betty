@@ -1,0 +1,58 @@
+<h1> <%= link_to "All Bettys", users_path %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %></h1>
+
+<h2>Cart</h2>
+
+<%if @current_cart.order_items.any? %>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @current_cart.order_items.each do |item| %>
+
+  <tr>
+    <td>
+      <%= image_tag item.product.images.thumb.url, width: "50" %>
+      <%= item.product.title %>
+    </td>
+    <td><%= number_to_currency item.product.price_in_dollars %></td>
+    <td>
+      <%= simple_form_for [item.product, item] do |f| %>
+        <%= f.input :quantity, label: false %>
+
+        <%= f.button :submit, "Update quantity" %>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %>
+    </td>
+  </tr>
+        <% end %>
+        </tbody>
+        </table>
+
+
+
+        <p>
+          Sub Total: <%= number_to_currency @current_cart.total_price_in_dollars %>
+          <br>Shipping: $15.00
+          <br>Tax: <%=number_to_currency @current_cart.total_tax %>
+          <br>Total:<%=number_to_currency @current_cart.total_price_with_tax + 15 %>
+          </p>
+<p>
+  <%= link_to "Continue to Checkout", new_order_path %>
+  </p>
+
+
+
+
+
+
+        <% else %>
+        <p> There are no items in your cart</p>
+        <% end %>

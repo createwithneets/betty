@@ -1,0 +1,40 @@
+<h1> Thanks for your order</h1>
+
+
+<p><%= link_to "Back to home", root_path %>
+</p>
+
+<p>
+  <label class="subtotal">
+    <span>Subtotal: <%= number_to_currency(@amount * 0.01) %></span>
+  </label>
+</p>
+<% if @discount.present? %>
+  <p>
+    <label class="coupon">
+      <span>Coupon: <%= @code %></span>
+    </label>
+  </p>
+  <p>
+    <label class="savings">
+      <span>Savings: <%= number_to_currency(@discount_amount * 0.01) %></span>
+    </label>
+  </p>
+  <p>
+    <label class="discount">
+      <span>Discount: <%= (@discount * 100).to_s + '%' %></span>
+    </label>
+  </p>
+<% end %>
+<p>
+  <label class="total">
+    <span>Total: <%= number_to_currency(@final_amount * 0.01) %></span>
+  </label>
+</p>
+
+
+<%= @order.first_name %>
+<%= @order.city %>
+<% @order.order_items.each do |item| %>
+<%= item.product.title %>
+<% end %>

@@ -32,9 +32,9 @@ self.stripe_subscription = subscription.id
 #to assist with retrieving subscriptions in future ##
 @customer_id = customer.id
 
-self.update_attributes!(:stripe_customer, @customer_id)
+self.update_attributes!(stripe_customer: @customer_id)
 @subscription_id = subscription.id
-self.update_attributes!(:stripe_subscription, @subscription_id)
+self.update_attributes!(stripe_subscription: @subscription_id)
 
 #save everything
 self.save
@@ -54,40 +54,6 @@ self.save
   end
 
 
-  def update_with_stripe(form_params)
-    #update the model with the form params
-    #check if it's valid
-    # if it's valid, update stripe
-    #then update the database
-
-    self.assign_attributes(form_params)
-    if self.valid?
-    #get the subscription from stripe
-
-    subscription = Stripe::Subscription.retrieve(self.stripe_subscription)
-    #get the first item from the subscription
-    #we don't want BOTH plans, we want to update one with the other
-    item_id= subscription.items.data[0].id
-    #make our new items
-    items = [
-      {id: item_id, plan:self.subscription_plan}
-    ]
-    #update our subscription with the new items
-    subscription.items = items
-    #save the subscription to stripe
-    subscription.save
-    #update card Details
-    customer = Stripe::Customer.retrieve(self.stripe_customer)
-    customer.source = self.stripe_token
-    customer.save
-    #save our data to the database
-    self.save
-    else
-      false
-    end
-
-    end
-
 
   def destroy_and_unsubscribe
     #get the subscription from stripe
@@ -102,5 +68,6 @@ self.save
 
   #add the photo uploader
   mount_uploader :photo, PhotoUploader
+  mount_uploader :photogif, PhotoUploader
 
 end

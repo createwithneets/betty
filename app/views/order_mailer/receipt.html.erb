@@ -1,0 +1,15 @@
+<h1>Thank you for your order</h1>
+<p>
+Order ID: <%= @order.id %>
+</p>
+<p>Your name: <%= @order.first_name %> <%= @order.last_name %></p>
+<p>You've ordered: <% @order.order_items.each do |item| %>
+<li><%= item.product.title %></li></p>
+<% end %>
+<p>Subtotal: <%= number_to_currency @order.total_price_in_dollars %></p>
+<p>With Tax: <%= number_to_currency @order.total_price_in_dollars * 1.12 %></p>
+<p>+ Shipping: $15.00</p>
+<p>Total Price: <%= number_to_currency @order.total_price_in_dollars * 1.12 + 15 %></p>
+<% if @order.couponCode.present? %>
+<p>You used the Coupon: <%= @order.couponCode %> so your total is: <%= number_to_currency @final_amount %></p>
+<% end %>

@@ -1,0 +1,151 @@
+.loginbutton{
+background-color: #c16290;
+border: none;
+color: #FFF;
+padding: 10px 28px;
+text-align: center;
+text-decoration: none;
+margin-left: auto;
+margin-right: auto;
+display: inline-block;
+font-size: 16px;
+width: 40vw;
+}
+
+.loginbutton a{
+  color: #FFF;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.loginbutton:hover {
+background-color: #8697aa;
+}
+
+
+div.invidualuser .usergif {
+  display: none;
+}
+
+div.individualuser:hover .userphoto {
+  display: none;
+}
+
+div.individualuser:hover .usergif {
+  display: block;
+}
+
+#navbar{
+position: fixed;
+top: -90vh;
+left: 50vw;
+width: 100%;
+overflow: hidden;
+z-index: 100;
+padding: 0px;
+background-color: #c16290;
+color: #FFF;
+transition: top 0.5s ease;
+}
+
+#navbar a{
+  color: #FFF;
+  text-decoration: none;
+  border-bottom: 2px #c16290 solid;
+  transition: all 0.3s ease;
+}
+
+#navbar a:hover{
+border-bottom: 2px #FFF solid;
+margin-bottom: 2vh;
+}
+
+.navigation{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.navlinks{
+  text-align: right;
+  font-size: 14px;
+}
+
+.logo img{
+  max-width: 10vw;
+}
+
+#footernav{
+position: fixed;
+bottom: -120vh;
+left: 50vw;
+width: 100%;
+overflow: hidden;
+z-index: 100;
+padding: 5px;
+background-color: #fed16f;
+color: #000;
+transition: bottom 0.5s ease;
+}
+
+#footernav a{
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px #fed16f solid;
+  transition: all 0.3s ease;
+}
+
+#footernav a:hover{
+border-bottom: 2px #000 solid;
+margin-bottom: 2vh;
+}
+
+.navigationfooter{
+  text-align: center;
+}
+
+.navigationfooter p{
+    font-size: 14px;
+}
+
+div.maincontentbettyland {
+  margin-top: 5vh;
+}
+
+
+.allusers{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly
+}
+
+.individualuser a{
+  text-decoration: none;
+}
+
+div.userssearch{
+  text-align: center;
+}
+
+
+div.peeking{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+  max-width: 350px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+@media(max-width:1000px){
+  div.peeking{
+    margin-top:5vh;
+  }
+}
+
+
+.staticbackground{
+  background-color: #eeddcc;
+  border: 5px solid #eeddcc;
+}

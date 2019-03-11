@@ -1,6 +1,7 @@
 //here we want to detect when our .section enters the viewport
 //when it does, we want to add a class of "in-viewport", and
 //when it exits, we want to remove it again
+
 inView('.fadein')
 .on('enter', section => {
   //classList.add is the same as Jquery's .addClass() method

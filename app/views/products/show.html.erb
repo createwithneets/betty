@@ -1,0 +1,11 @@
+<h1> <%= link_to "All Bettys", users_path %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %></h1>
+<h2><%= @product.title %></h2>
+<p><%= simple_format @product.description %></p>
+
+<%= simple_form_for [@product, @order_item] do |f| %>
+<%= f.input :quantity %>
+<%= f.button :submit, "Add to Cart" %>
+<% end %>
+
+
+<p><%= link_to "Back to all products", products_path %></p>

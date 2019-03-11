@@ -1,6 +1,9 @@
 class AccountsController < ApplicationController
 
 before_action :force_login
+before_action :current_cart
+helper_method :current_cart
+
   def edit
     #this is from the application_controller rb and how its' done before every action
     @user= @current_user
@@ -9,10 +12,17 @@ before_action :force_login
 
 
   def update
-      @user= @current_user
-      if @user.update_with_stripe(form_params)
-        flash[:success] = "Your account has been updated"
-      redirect_to user_path(@user.ig_username)
+    @user= @current_user
+      @customer_id = @user.stripe_customer
+      if @user.update(form_params)
+
+        #update stripe Details
+    customer = Stripe::Customer.retrieve(@customer_id)
+    customer.source = @user.stripe_token
+    customer.save
+
+    flash[:success] = "Payment details updated"
+    redirect_to users_path
     else
       flash[:warning] = 'Error detected. Please double-triple check everything below!'
       render "edit"
@@ -20,6 +30,21 @@ before_action :force_login
   end
 
 
+  def current_cart
+      #if the customer has just landed on the site, give them a brand new cart_id
+      #if they already have one, keep it
+      #check sesion[:cart_id]
+
+      if session[:cart_id].present?
+        #they already have a cart-great!
+        @current_cart= Cart.find(session[:cart_id])
+      else
+        @current_cart= Cart.create
+        #create means new and save together
+        session[:cart_id]= @current_cart.id
+      end
+
+    end
 
 
 
@@ -32,9 +57,7 @@ end
 
 
 def form_params
-  params.permit(:password, :password_confirmation, :photo, :about, :photogif, :check_in_q_1, :check_in_q_2, :check_in_q_3, :MHSquote_1, :MHSquote_2,
-  :MHSquote_3, :MHSIG_1, :MHSIG_3, :MHSIG_2, :MHSIG_4, :MHSIG_5, :MHSbook_1, :MHSbook_2, :MHSbook_3, :MHSbook_4, :MHSbook_5, :MHSproduct_1, :MHSroduct_2, :MHSproduct_3,
-:MHSproduct_4, :MHSproduct_5, :MHSroutine_1, :MHSroutine_2, :MHSroutine_3, :MHSgeneral_1, :MHSgeneral_3, :MHSgeneral_4, :MHSgeneral_5, :stripe_token)
+  params.require(:user).permit(:stripe_token)
 end
 
 end

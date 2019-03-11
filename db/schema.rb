@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_16_224313) do
+ActiveRecord::Schema.define(version: 2019_02_23_070103) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,6 +38,11 @@ ActiveRecord::Schema.define(version: 2019_02_16_224313) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "installs", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,6 +53,51 @@ ActiveRecord::Schema.define(version: 2019_02_16_224313) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_installs_on_email", unique: true
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cart_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "country"
+    t.string "postal_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "stripe_token"
+    t.string "couponCode"
+    t.integer "couponAmount"
+    t.integer "coupon_id"
+    t.integer "stripe_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.string "images"
+    t.text "description"
+    t.integer "price"
+    t.string "collection_date"
+    t.boolean "is_sold_out"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "images_2"
+    t.string "images_3"
+    t.integer "inventory"
+    t.integer "price_with_tax"
+    t.string "size"
   end
 
   create_table "users", force: :cascade do |t|
