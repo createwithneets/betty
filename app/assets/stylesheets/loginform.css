@@ -6,7 +6,7 @@ div.login{
 }
 
 div.loginform{
-  max-width: 60vw;
+  max-width: 40vw;
   margin-left: auto;
   margin-right: auto;
   top: 150vh;
@@ -29,6 +29,7 @@ div.loginform label{
     width: 30vw;
     padding: 0.5em 0.75em 0.5em 0.75em;
     margin-bottom: 7px;
+    font-family: 'Inconsolata', sans-serif;
   }
 
   div.loginform input:focus{
@@ -37,6 +38,7 @@ div.loginform label{
   border: none;
   color: #FFF;
   font-size: 16px;
+  line-height: 1.3em;
   font-family: 'Inconsolata', sans-serif;
   }
 
@@ -47,15 +49,14 @@ div.loginform label{
 
 
   div.loginform input[type=submit] {
-      background: #fed16f;
-      color: #000;
+      background: #8697aa;
+      color: #FFF;
       font-family: Cortez;
       font-size: 24px;
       appearance: none;
       border: none;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
+      width: 40%;
+      margin-left: 20vw;
       margin-top: 15px;
       margin-bottom: 50px
     padding: 0.5em 1.5em 0.5em 1.5em;

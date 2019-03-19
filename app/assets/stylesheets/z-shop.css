@@ -1,0 +1,406 @@
+.orderbg{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_11.jpg');
+  background-attachment: fixed;
+  top: -50vh;
+  left: 0;
+  background-size: cover;
+}
+
+.shopbg{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_12.jpg');
+  background-attachment: fixed;
+  top: 0;
+  right: 0;
+  background-size: cover;
+}
+
+.emojispurchase{
+  text-align: center;
+}
+
+.shopindexcontent{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 8vh;
+  margin-bottom: 15vh;
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.shopindextitle{
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 15vh;
+}
+
+
+.product a{
+  text-decoration: none;
+  transition: all 0.5s ease;
+  border-bottom: 1px solid #FFF;
+}
+
+
+.product a:hover{
+  border-bottom: 1px solid #c16290;
+}
+
+
+.producthover {
+  display: none;
+}
+
+.product:hover .productimage {
+  display: none;
+}
+
+.product:hover .producthover {
+  display: block;
+}
+
+.productimage,
+.producthover{
+  position: relative;
+  z-index: 110;
+}
+
+.product{
+  position: relative;
+}
+
+.product h3{
+  margin-top: 5vh;
+}
+
+.rectangle{
+  position: absolute;
+  height: 400px;
+  width: 300px;
+  border-radius: 0%;
+  background-color: #be8f9c;
+  top: 3vh;
+  left: 1.5vw;
+  z-index: 1;
+}
+
+.rectangle2{
+  position: absolute;
+  height: 400px;
+  width: 300px;
+  border-radius: 0%;
+  border: 2px #000 solid;
+  top: -1vh;
+  left: .5vw;
+  z-index: 1;
+}
+
+
+/**show page **/
+
+
+.shopshowpage{
+  margin-top: 0vh;
+  max-width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.productinfoshowpage{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.productinfo1 input,
+.cartpage input,
+.neworderform input{
+  background-color: #c49aa6;
+  color: #FFF;
+  border: none;
+  width: 40%;
+  padding: 0.5em 0.75em 0.5em 0.75em;
+  margin-bottom: 7px;
+  margin-left: 1vw;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+.productinfo1 input:focus,
+.cartpage input:focus,
+.neworderform input: focus{
+background-color: #c16290;
+outline: none;
+border: none;
+color: #FFF;
+font-size: 16px;
+line-height: 1.3em;
+font-family: 'Inconsolata', sans-serif;
+}
+
+.productinfo1 input::placeholder{
+  color: #FFF;
+}
+
+
+
+.productinfo1 input[type=submit],
+.cartpage input[type=submit],
+.neworderform input[type=submit] {
+    background: #8697aa;
+    color: #FFF;
+    font-family: 'Inconsolata';
+    font-size: 16px;
+    appearance: none;
+    border: none;
+    width: 100%;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+transition: all 0.4s ease;
+  }
+
+  .productinfo1 input[type=submit]:hover,
+  .cartpage input[type=submit]:hover,
+  .neworderform input[type=submit]:hover{
+  background-color: #eeddcc;
+  color: #000;
+  }
+
+  .cartpage{
+    max-width: 50vw;
+    margin-top: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+.cartpage h1{
+color: #000;
+}
+
+th, td{
+padding: 2vw;
+border-bottom: 1px solid #000;
+}
+
+
+.cartsubtotal{
+max-width: 50vw;
+text-align: left;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+.checkoutbutton a{
+  text-decoration: none;
+  color: #000;
+  font-size: 48px
+}
+
+.checkoutbutton a:hover{
+  color: #c16290;
+}
+
+/**order form**/
+
+.neworderform{
+  margin-top: 20vh;
+  max-width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+}
+
+.neworderform input,
+.neworderform select{
+  background-color: #eeddcc;
+  color: #000;
+  border: none;
+  width: 80%;
+  padding: 0.5em 0.75em 0.5em 0.75em;
+  margin-left: 2vw;
+  margin-top: 2vh;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+.neworderform input:focus{
+background-color: #c49aa6;
+outline: none;
+border: none;
+color: #FFF;
+font-size: 16px;
+line-height: 1.3em;
+font-family: 'Inconsolata', sans-serif;
+}
+
+.neworderform input[type=submit] {
+    background: #8697aa;
+    color: #FFF;
+    font-family: 'Inconsolata';
+    font-size: 16px;
+    appearance: none;
+    border: none;
+    margin-top: 3vh;
+    width: 40%;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+transition: all 0.4s ease;
+  }
+
+  .productinfo1 input[type=submit]:hover,
+  .cartpage input[type=submit]:hover,
+  .neworderform input[type=submit]:hover{
+  background-color: #c49aa6;
+  color: #000;
+  }
+
+  /**rewards page**/
+
+
+  .rewardsbgimage{
+    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_5.jpg');
+    background-attachment: fixed;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+  }
+
+  .rewardspagecontent{
+    margin-top: 15vh;
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nopoints{
+    text-align: center;
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+.rewards{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 70vw;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-bottom: 15vh;
+}
+
+.reward,
+.rewardhoverable{
+  max-width: 25vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 4vh;
+  margin-bottom: 5vh;
+}
+
+.reward a,
+.rewardhoverable a{
+  text-decoration: none;
+  border-bottom: 2px solid #FFF;
+  transition: all 0.5s ease
+}
+
+.reward a:hover,
+.rewardhoverable a:hover{
+  border-bottom: 2px solid #c16290;
+}
+
+.rewardshover {
+  display: none;
+}
+
+.rewardhoverable:hover .rewardsimage {
+  display: none;
+}
+
+.rewardhoverable:hover .rewardshover {
+  display: block;
+}
+
+
+.rewardsimage,
+.rewardshover{
+  position: relative;
+  z-index: 50;
+}
+
+.reward,
+.rewardhoverable{
+  position: relative;
+}
+
+
+.rewardsrectangle{
+  position: absolute;
+  height: 250px;
+  width: 450px;
+  border-radius: 0%;
+  background-color: #be8f9c;
+  top: 1vh;
+  left: 3vw;
+  z-index: 1;
+}
+
+.rewardsrectangle2{
+  position: absolute;
+  height: 250px;
+  width: 450px;
+  border-radius: 0%;
+  border: 2px #000 solid;
+  top: -1vh;
+  left: .5vw;
+  z-index: 1;
+}
+
+@media(max-width: 1500px){
+  .rewardsrectangle{
+    height: 250px;
+    width: 350px;
+
+  }
+
+  .rewardsrectangle2{
+    height: 250px;
+    width: 350px;
+  }
+}
+
+@media(max-width: 1200px){
+  .rewardsrectangle{
+    height: 150px;
+    width: 250px;
+
+  }
+
+  .rewardsrectangle2{
+    height: 150px;
+    width: 250px;
+  }
+}
+
+@media(max-width: 720px){
+  .rewardsrectangle{
+    height: 100px;
+    width: 150px;
+
+  }
+
+  .rewardsrectangle2{
+    height: 100px;
+    width: 150px;
+  }
+}
+
+@media(max-width: 450px){
+  .rewards{
+    display: block;
+  }
+}

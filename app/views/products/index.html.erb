@@ -1,4 +1,29 @@
-<h1> <%= link_to "All Bettys", users_path %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %></h1>
-<h1>Shop Betty</h1>
+<body class="shopbg">
+<header id="navbar">
+  <section class="navigation">
+        <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
 
+    <div class="links"><p class="navlinks"><% if @user.nil? %>
+      <%=link_to "Shop All Products", products_path %> | <%= link_to "Cart", cart_path %>
+      <% else %>
+      <%= link_to "All Bettys", users_path %>
+    | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+    | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% end %>
+</div>
+</section></header>
+<div class="shopindextitle">
+  <h1>Shop Betty</h1>
+</div>
+<section class="shopindexcontent">
 <%= render partial: "product", collection: @products %>
+</section>
+
+<footer id="footernav">
+  <section class="navigationfooter">
+  <p><% if @user.nil? %>
+    <%=link_to "Shop All Products", products_path %> | <%= link_to "Cart", cart_path %>
+    <% else %> <%= link_to "All Bettys", users_path %>
+  | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+  | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %> <% end %>
+ </section></footer>

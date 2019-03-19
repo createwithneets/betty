@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products= Product.all
+    @user= current_user
   end
 
   def show
@@ -14,6 +15,8 @@ class ProductsController < ApplicationController
       if @order_item.nil?
       # if it doesn't exist in the cart
       @order_item = @current_cart.order_items.new(product: @product, quantity: 1)
+
+        @user= current_user
     end
 
 end

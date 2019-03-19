@@ -1,14 +1,237 @@
-<section class="staticbackground">
+<body class="rewardsbgimage">
 <% if is_logged_in? %>
-<% if @user.points >= 60 %>
-Hi!
+
+<header id="navbar">
+  <section class="navigation">
+        <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
+
+    <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %>
+  | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+  | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br>You currently have 0 Points. Time to get beditating!
 <% else %>
-Bye!
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!</p>
 <% end %>
- <% else %>
+</div>
+</section></header>
+
+
+
+<section id="primary-content">
+<section class="rewardspagecontent">
+  <h1>Your Rewards</h1>
+  <p>We're proud of you and your commitment to self care & mental health!
+    Check back here every so often to see what you've unlocked with your points.<br>
+    <br><br>Note: After redeeming your points for discount codes, you will be deducted the # of points so you can start collecting again!</p>
+
+  <section class="rewards">
+    <% if @user.points.nil? %>
+    <div class="nopoints"><br><br>Looks like you don't have any points. No worries- better get beditating!<br><br><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/gettowork.gif">
+</div><% else %>
+
+
+  <div class="reward">
+<% if @user.points >= 5 %>
+  <div class="rewardsrectangle"></div>
+  <div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_5points.jpg"></div><br>Click <a href="https://soundcloud.com/inbedwithbetty/bedhead-party/s-uNizX">Here</a> for
+an exclusive Betty Mix</div>
+
+  <div class="reward">
+<% if @user.points >= 10 %>
+  <div class="rewardsrectangle"></div>
+  <div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_10points.jpg"></div><br>Click <a href="https://soundcloud.com/inbedwithbetty/all-my-friends-meditate/s-B44Sa">Here</a> for
+an exclusive Betty Mix</div>
+
+  <div class="reward">
+<% if @user.points >= 15 %>
+  <div class="rewardsrectangle"></div>
+  <div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_15points.jpg"></div><br>Click <a href="https://www.dropbox.com/s/1fuhkag29ed4bva/I%20Am%20Whole-%20Lyrical%20Video.mp4?dl=0">
+  Here</a> for
+a special visual meditation</div>
+
+  <div class="reward">
+<% if @user.points >= 20 %>
+  <div class="rewardsrectangle"></div>
+  <div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_20points.jpg"></div><br>Congratulationson this milestone!<br><br> <strong>Email hello@inbedwithbetty.com</strong> with your address and we'll send
+you something nice in the mail. </div>
+
+<div class="reward">
+<% if @user.points >= 30 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 30 points:</strong> <br>Welcome to the big league! You can start unlocking discount codes for Betty shops & our partner vendors.
+<br><br>To start, first discount code is <strong>BETTY10</strong> for $5 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+<div class="rewardhoverable">
+<% if @user.points >= 30 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_Blume.jpg"></div>
+<div class="rewardshover"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_Blume2.jpg"></div>
+<br><strong> 40 points:</strong><br><strong>10% off</strong> of <a href="https://www.meetblume.com/">Blume Period Products</a> (excluding their subscription box). One Time Use.
+<br><br>Email hello@inbedwithbetty.com for the code. </div>
+<% end %>
+
+<div class="reward">
+<% if @user.points >= 40 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 40 points:</strong><br>Your updated discount code is <strong>BETTYTWENTY</strong> for $10 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+<div class="rewardhoverable">
+<% if @user.points >= 40 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_Nala.jpg"></div>
+<div class="rewardshover"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_Nala2.jpg"></div>
+<br><strong> 40 points:</strong><br><strong>20% off</strong> of <a href="https://www.nalacare.com/">Nala Care</a>. One Time Use.
+<br><br>Email hello@inbedwithbetty.com for the code. </div>
+<% end %>
+
+<div class="rewardhoverable">
+<% if @user.points >= 40 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_Freshprep.jpg"></div>
+<div class="rewardshover"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_freshprep2.jpg"></div>
+<br><strong> 40 points (Vancouver Only)</strong><br><strong>4 free meals</strong> from <a href="https://www.freshprep.ca/">Freshprep</a>. First Time Users Only.
+<br><br>For returning customers, receive a <strong>$10</strong> credit to your account.
+<br><br>Email hello@inbedwithbetty.com for the code. </div>
+<% end %>
+
+<div class="rewardhoverable">
+<% if @user.points >= 40 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_CO.jpg"></div>
+<div class="rewardshover"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_CareOf2.jpg"></div>
+<br><strong> 40 points (USA Only):</strong><br><strong>25% Off</strong> your <a href="https://takecareof.com/">Care/Of</a> Order. First Time Users Only.
+<br><br>Email hello@inbedwithbetty.com for the code. </div>
+<% end %>
+
+<div class="reward">
+<% if @user.points >= 50 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 50 points:</strong><br>Your updated discount code is <strong>B30</strong> for $15 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+
+<div class="reward">
+<% if @user.points >= 60 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 60 points:</strong><br>Your updated discount code is <strong>BETTYFORTY</strong> for $20 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+
+<div class="reward">
+<% if @user.points >= 70 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 70 points:</strong><br>Your updated discount code is <strong>B50</strong> for $25 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+
+<div class="reward">
+<% if @user.points >= 80 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 80 points:</strong><br>Your updated discount code is <strong>BETTY60</strong> for $30 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+<div class="reward">
+<% if @user.points >= 90 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 90 points:</strong><br>Your updated discount code is <strong>B70</strong> for $35 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+<div class="reward">
+<% if @user.points >= 100 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 100 points:</strong><br>Your updated discount code is <strong>BETTY80</strong> for $40 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+<div class="reward">
+<% if @user.points >= 110 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 110 points:</strong><br>Your updated discount code is <strong>B85</strong> for $45 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+<div class="reward">
+<% if @user.points >= 120 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 120 points:</strong><br>Your updated discount code is <strong>BETTY90</strong> for $50 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+<div class="reward">
+<% if @user.points >= 130 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 130 points:</strong><br>Your updated discount code is <strong>B95</strong> for $50 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+
+<div class="reward">
+<% if @user.points >= 140 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Rewards+Shop/BettyRewards_DiscountCode.jpg"></div>
+<br><strong> 140 points:</strong><br>Your updated discount code is <strong>BETTY100</strong> for $55 off in <%=link_to 'Shop', products_path %>. </div>
+<% end %>
+
+
+<% end %>
+<% end %>
+<% end %>
+<% end %>
+<% end %>
+
+</section>
+</section>
+</section>
+
+
+
+<footer id="footernav">
+  <section class="navigationfooter">
+  <p><%= link_to "All Bettys", users_path %>
+| <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+| <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %>
+ </section></footer>
+
+
+<% else %>
 <div class="peeking">
   <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
   <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
   </div>
   <% end %>
-  </section>
+</body>

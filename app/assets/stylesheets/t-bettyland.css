@@ -9,8 +9,9 @@ margin-left: auto;
 margin-right: auto;
 display: inline-block;
 font-size: 16px;
-width: 40vw;
+width: 20vw;
 }
+
 
 .loginbutton a{
   color: #FFF;
@@ -22,17 +23,114 @@ width: 40vw;
 background-color: #8697aa;
 }
 
+div.searcharea{
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: flex-end;
+  margin-top: 5vh;
+}
 
-div.invidualuser .usergif {
+.titleBettys h1{
+  color: #000 !important;
+  font-size: 60px !important;
+  border-bottom: 5px solid #000;
+  margin-bottom: 1vh;
+}
+
+div.userssearchform{
+width: 35%;
+}
+
+div.userssearchform input{
+  background-color: #eeddcc;
+  color: #FFF;
+  border: none;
+  width: 15vw;
+  padding: 0.75em;
+}
+
+div.userssearchform input:focus{
+background-color: #eeddcc;
+outline: none;
+border: none;
+color: #000;
+font-family: 'Inconsolata', sans-serif;
+}
+
+div.userssearchform input[type=submit]{
+    background: #c16290;
+    color: #FFF;
+    font-family: Inconsolata;
+    font-size: 14px;
+    appearance: none;
+    border: none;
+    width: 25%;
+  padding: 0.5em;
+  }
+
+.allusers{
+  margin-top: 5vh;
+}
+
+.individualuser .usergif {
   display: none;
 }
 
-div.individualuser:hover .userphoto {
+.individualuser:hover .userphoto {
   display: none;
 }
 
-div.individualuser:hover .usergif {
+.individualuser:hover .usergif {
   display: block;
+}
+
+
+.individualuser{
+  position: relative;
+}
+
+.square{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 0%;
+  background-color: #be8f9c;
+  top: 3vh;
+  left: 1.5vw;
+  z-index: 1;
+}
+
+.square2{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 0%;
+  border: 2px #000 solid;
+  top: -.5vh;
+  left: .5vw;
+  z-index: 1;
+}
+
+.username{
+  position: absolute;
+  top: 16vh;
+  left: -2vw;
+  z-index: 50;
+  color: #000;
+}
+
+.username h3{
+  font-size: 25pt;
+  color: #000;
+  text-transform: uppercase;
+}
+
+
+.individualuser .userphoto, .usergif{
+  position: absolute;
+  z-index: 30;
 }
 
 #navbar{
@@ -43,7 +141,7 @@ width: 100%;
 overflow: hidden;
 z-index: 100;
 padding: 0px;
-background-color: #c16290;
+background-color: #8697a9;
 color: #FFF;
 transition: top 0.5s ease;
 }
@@ -51,7 +149,7 @@ transition: top 0.5s ease;
 #navbar a{
   color: #FFF;
   text-decoration: none;
-  border-bottom: 2px #c16290 solid;
+  border-bottom: 2px #8697a9 solid;
   transition: all 0.3s ease;
 }
 
@@ -83,7 +181,7 @@ width: 100%;
 overflow: hidden;
 z-index: 100;
 padding: 5px;
-background-color: #fed16f;
+background-color: #f4eae0;
 color: #000;
 transition: bottom 0.5s ease;
 }
@@ -91,7 +189,7 @@ transition: bottom 0.5s ease;
 #footernav a{
   color: #000;
   text-decoration: none;
-  border-bottom: 2px #fed16f solid;
+  border-bottom: 2px #f4eae0 solid;
   transition: all 0.3s ease;
 }
 
@@ -108,10 +206,47 @@ margin-bottom: 2vh;
     font-size: 14px;
 }
 
+.bgimage{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Betty_background_image.jpg');
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  background-size: cover;
+}
+
+.welcomebg{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_2.jpg');
+  background-attachment: fixed;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+}
+
+.edituserbg{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Cloud_Bg_Gif.gif');
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  background-size: auto;
+  background-blend-mode: lighten;
+}
+
+.showbg{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_4.jpg');
+  background-attachment: fixed;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+}
+
+.maincontentbettyland h1, h2, h3{
+  color: #c16290;
+}
+
+
 div.maincontentbettyland {
   margin-top: 5vh;
 }
-
 
 .allusers{
 display: flex;
@@ -142,10 +277,4 @@ div.peeking{
   div.peeking{
     margin-top:5vh;
   }
-}
-
-
-.staticbackground{
-  background-color: #eeddcc;
-  border: 5px solid #eeddcc;
 }

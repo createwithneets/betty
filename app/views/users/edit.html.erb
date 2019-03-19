@@ -1,69 +1,95 @@
-<section class="staticbackground">
+<body class="edituserbg">
 <% if is_logged_in? %>
 <header id="navbar">
   <section class="navigation">
         <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
 
-    <div class="links"><p class="navlinks"><%= link_to "Logout", session_path, method: :delete %>  | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "All Bettys", users_path %>
-| <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %>
+    <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %>
+  | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+  | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
 <br>You currently have 0 Points. Time to get beditating!
 <% else %>
-<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!</p>
 <% end %>
 </div>
 </section></header>
 
 
   <div class="maincontentbettyland"><br><br>
-<div class="login"><h1> Edit Account</h1></div>
-<div class="loginform">
+<div class="editaccounttitle"><h1> Edit Account</h1><p>We know, there's a lot going on here.<br>This is your private, and public home here in Bettyland so grab some tea and take your time in filling out your profile.<br>And if you change your mind? You can always come back to redecorate.</p></div>
+<section class="editaccountpage">
+  <div class="maininfo loginform">
   <%= simple_form_for @user do |f| %>
+  <section class="images">
+    <div class="imagesphoto">
+  <%= image_tag @user.photo.medium.url %><br><p>Upload a Bio Photo</p><br><%= f.input :photo, label: '📷', :input_html => { :class => 'photoinput' } %></div>
+  <div class="imagesphoto">
+    <%= image_tag @user.photogif.medium.url %><br><p>Upload a Boomerang of You</p><br><%= f.input :photogif, label: '📹', :input_html => { :class => 'photoinput' } %></div>
+</section>
+<div class="basicinfo">
   <%= f.input :ig_username %>
   <%= f.input :password, label: 'Change your Password' %>
   <%= f.input :password_confirmation %>
-  <%= f.input :photo, label: 'Upload a Bio Photo' %>
-  <%= f.input :photogif, label: 'Upload a gif of you' %>
-  <%= f.input :about, label: 'Tell us about you!', placeholder: 'What do you do? What are you into? Share anything you like here, but like, no pressure.' %>
-  <%= f.input :check_in_q_1, label: 'Who would play you in a movie about your life?' %>
-  <%= f.input :check_in_q_2, label: 'What reminds you of home?' %>
-  <%= f.input :check_in_q_3, label: 'Current favourite song?'  %>
+  <%= f.input :personalIG_link, label: 'Full Link to your IG profile' %>
+  <%= f.input :spotify_profile, label: 'Are you on Spotify? Link your profile here.' %>
+
+<h2> Tell us about you!</h2>
+<p>What do you do? What are you into? Share anything you like here, but like, no pressure. Feel free to write as much or as little as you would like.</p>
+  <%= f.input :about, label: '📝', :input_html => { :class => 'paragraph' } %>
+</div>
+
+<div class="comfortcorner userprofilesection">
+  <h3>(JUST FOR YOU) Leave some gentle reminders for yourself here.</h3>
+  <%= f.input :MHSroutine_1,  label: '1.' %>
+  <%= f.input :MHSroutine_2,  label: '2.' %>
+  <%= f.input :MHSroutine_3,  label: '3.' %>
+</div>
+
+
+</div>
+
+<div class="maininfo loginform">
   <h2>Mental Health Shelf</h2>
   <p>This is where you can share what helps you take care of yourself with the Betty community.
   <br>Your Mental Health Shelfie is a snapshot of you- somewhere to remind you of the tools you already have, and a way for others to connect with you.
   Fill in as much or as little as you like. <br><br>Who knows,
   you may just find your next bestie, or at the very least, be inspiring, and inspired.</p>
-  <h3>Got any favourite quotes?</h3>
-  <%= f.input :MHSquote_1,  label: '1.' %>
-  <%= f.input :MHSquote_2,  label: '2.' %>
-  <%= f.input :MHSquote_3,  label: '3.' %>
-  <h3>What books or reads would you recommend?</h3>
-  <%= f.input :MHSbook_1,  label: '1.' %>
-  <%= f.input :MHSbook_2,  label: '2.' %>
-  <%= f.input :MHSbook_3,  label: '3.' %>
-  <%= f.input :MHSbook_4,  label: '4.' %>
-  <%= f.input :MHSbook_5,  label: '5.' %>
-  <h3>What are some of your favourite IG accounts?</h3>
-  <%= f.input :MHSIG_1,  label: '1.' %>
-  <%= f.input :MHSIG_2,  label: '2.' %>
-  <%= f.input :MHSIG_3,  label: '3.' %>
-  <%= f.input :MHSIG_4,  label: '4.' %>
-  <%= f.input :MHSIG_5,  label: '5.' %>
-  <h3>Any products crucial to your self care?</h3>
-  <%= f.input :MHSproduct_1,  label: '1.' %>
-  <%= f.input :MHSroduct_2,  label: '2.' %>
-  <%= f.input :MHSproduct_3,  label: '3.' %>
-  <%= f.input :MHSproduct_4,  label: '4.' %>
-  <%= f.input :MHSproduct_5,  label: '5.' %>
-  <h3>What is part of your self care routine?</h3>
-  <%= f.input :MHSroutine_1,  label: '1.' %>
-  <%= f.input :MHSroutine_2,  label: '2.' %>
-  <%= f.input :MHSroutine_3,  label: '3.' %>
-  <h3>Finally, any other tips? Videos? Songs? Whatever you like!</h3>
-  <%= f.input :MHSgeneral_1,  label: '1.' %>
-  <%= f.input :MHSgeneral_3,  label: '2.' %>
-  <%= f.input :MHSgeneral_4,  label: '3.' %>
-  <%= f.input :MHSgeneral_5,  label: '4.' %>
+
+  <div class="userprofilesection"><h3>Got any favourite quotes?</h3>
+  <%= f.input :MHSquote_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSquote_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSquote_3,  label: '3.', :input_html => { :class => 'MHSinput' } %></div>
+
+    <div class="userprofilesection"><h3>What books or reads would you recommend?</h3>
+  <%= f.input :MHSbook_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSbook_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSbook_3,  label: '3.', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSbook_4,  label: '4.', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSbook_5,  label: '5.', :input_html => { :class => 'MHSinput' } %></div>
+
+    <div class="userprofilesection"><h3>Any videos, resources, other links you would recommend?</h3>
+  <%= f.input :MHSgeneral_1,  label: '1', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :video_links1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+  <%= f.input :MHSgeneral_3,  label: '2', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links2,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+  <%= f.input :MHSgeneral_4,  label: '3', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links3,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+  <%= f.input :MHSgeneral_5,  label: '4', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links4,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+  </div>
+
+    <div class="userprofilesection"><h3>What are some of your favourite IG accounts?</h3>
+  <%= f.input :MHSIG_1,  label: '1', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+  <%= f.input :MHSIG_2,  label: '2', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link2,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+  <%= f.input :MHSIG_3,  label: '3', placeholder: "Username", :input_html => { :class => 'smallerinput' } %><%= f.input :IG_link3,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+  <%= f.input :MHSIG_4,  label: '4', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link4,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+  <%= f.input :MHSIG_5,  label: '5', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link5,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %>
+  </div>
+
+    <div class="userprofilesection"><h3>Sure, you can't buy self-care, but what are some products that help?</h3>
+  <%= f.input :MHSproduct_1,  label: '1', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSroduct_2,  label: '2', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSproduct_3,  label: '3', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSproduct_4,  label: '4', :input_html => { :class => 'MHSinput' } %>
+  <%= f.input :MHSproduct_5,  label: '5', :input_html => { :class => 'MHSinput' } %>
+  </div>
 
     <%= f.button :submit, "Update User Details" %>
   <% end %>
@@ -73,12 +99,14 @@
   data: {confirm: "Are you sure you want to delete your account?"} %>
   </div>
   </div>
-</section>
+  </section>
+
 
 <footer id="footernav">
   <section class="navigationfooter">
-  <p><%= link_to "Logout", session_path, method: :delete %>  | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "All Bettys", users_path %>
-| <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %>
+  <p><%= link_to "All Bettys", users_path %>
+| <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+| <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
 <br>You currently have 0 Points. Time to get beditating!
 <% else %>
@@ -96,4 +124,4 @@
   <% end %>
 
   <h3><%= link_to 'Back to Bettyland Home', bettyland_path %></h3>
-</section>
+</body>

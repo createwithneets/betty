@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+geocoded_by :city
+after_validation :geocode
+
 
 validates :first_name, presence: true
 validates :last_name, presence: true
@@ -65,9 +68,28 @@ self.save
   end
 
 
+  def self.search(ig_username)
+      if ig_username
+          ig_username.downcase!
+          where('LOWER(ig_username) LIKE ?', "%#{ig_username}%")
+      else
+          all
+      end
+  end
+
+
 
   #add the photo uploader
   mount_uploader :photo, PhotoUploader
   mount_uploader :photogif, PhotoUploader
+  mount_uploader :meme_1, PhotoUploader
+  mount_uploader :meme_2, PhotoUploader
+  mount_uploader :meme_3, PhotoUploader
+  mount_uploader :meme_4, PhotoUploader
+  mount_uploader :meme_5, PhotoUploader
+  mount_uploader :meme_6, PhotoUploader
+  mount_uploader :meme_7, PhotoUploader
+  mount_uploader :meme_8, PhotoUploader
+
 
 end

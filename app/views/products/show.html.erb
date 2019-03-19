@@ -1,11 +1,34 @@
-<h1> <%= link_to "All Bettys", users_path %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %></h1>
-<h2><%= @product.title %></h2>
-<p><%= simple_format @product.description %></p>
+<body class="shopbg">
+<header id="navbar">
+  <section class="navigation">
+        <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
 
+    <div class="links"><p class="navlinks"><% if @user.nil? %>
+      <%=link_to "Shop All Products", products_path %> | <%= link_to "Cart", cart_path %>
+      <% else %>
+      <%= link_to "All Bettys", users_path %>
+    | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+    | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% end %>
+</div>
+</section></header>
+
+<section class="shopshowpage">
+<section class="productinfoshowpage">
+<div class="productinfo1"><%=image_tag @product.images.medium.url %></div>
+<div class="productinfo1"><h2><%= @product.title %></h2><p><%= simple_format @product.description %></p>
 <%= simple_form_for [@product, @order_item] do |f| %>
 <%= f.input :quantity %>
-<%= f.button :submit, "Add to Cart" %>
+<%= f.button :submit, "Add to Cart" %></div>
 <% end %>
+</section>
+</section>
 
-
-<p><%= link_to "Back to all products", products_path %></p>
+<footer id="footernav">
+  <section class="navigationfooter">
+  <p><% if @user.nil? %>
+    <%=link_to "Shop All Products", products_path %> | <%= link_to "Cart", cart_path %>
+    <% else %> <%= link_to "All Bettys", users_path %>
+  | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+  | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %> <% end %>
+ </section></footer>

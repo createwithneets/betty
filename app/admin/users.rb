@@ -4,7 +4,8 @@ ActiveAdmin.register User do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :password_confirmation, :ig_username, :address_1, :address_2, :city, :country, :points, :postal_code
+permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :password_confirmation, :ig_username, :address_1, :address_2, :city, :country, :points, :postal_code, :meme_1,
+ :meme_2, :meme_3, :meme_4, :meme_5, :meme_6, :meme_7, :meme_8
 #
 # or
 #
@@ -98,12 +99,14 @@ permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :pa
   f.inputs "Photos" do
   f.input :photo
   f.input :photogif, label: "Gif"
-  end
-
-  f.inputs "Check in Qs" do
-  f.input :check_in_q_1, label: "Who Would play you in a movie about your life?"
-  f.input :check_in_q_2, label: "What reminds you of home?"
-  f.input :check_in_q_3, label: "Current favourite song?"
+  f.input :meme_1, label: "Meme 1"
+  f.input :meme_2, label: "Meme 2"
+  f.input :meme_3, label: "Meme 3"
+  f.input :meme_4, label: "Meme 4"
+  f.input :meme_5, label: "Meme 5"
+  f.input :meme_6, label: "Meme 6"
+  f.input :meme_7, label: "Meme 7"
+  f.input :meme_8, label: "Meme 8"
   end
 
   f.inputs "Mental Health Shelf Quotes" do

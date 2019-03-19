@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_070103) do
+ActiveRecord::Schema.define(version: 2019_03_16_201938) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -122,10 +122,6 @@ ActiveRecord::Schema.define(version: 2019_02_23_070103) do
     t.string "coupon"
     t.string "photo"
     t.string "photogif"
-    t.string "about"
-    t.string "check_in_q_1"
-    t.string "check_in_q_2"
-    t.string "check_in_q_3"
     t.integer "tune_in"
     t.string "MHSquote_1"
     t.string "MHSquote_2"
@@ -154,6 +150,33 @@ ActiveRecord::Schema.define(version: 2019_02_23_070103) do
     t.string "MHSgeneral_5"
     t.integer "points"
     t.string "stripe_card_token"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "meme_1"
+    t.string "meme_2"
+    t.string "meme_3"
+    t.string "meme_4"
+    t.string "meme_5"
+    t.string "meme_6"
+    t.string "meme_7"
+    t.string "meme_8"
+    t.string "personalIG_link"
+    t.string "IG_link1"
+    t.string "IG_link2"
+    t.string "IG_link3"
+    t.string "IG_link4"
+    t.string "IG_link5"
+    t.string "video_links1"
+    t.string "vide_links2"
+    t.string "vide_links3"
+    t.string "vide_links4"
+    t.string "product_1"
+    t.string "product_2"
+    t.string "product_3"
+    t.string "product_4"
+    t.string "product_5"
+    t.string "spotify_profile"
+    t.text "about"
   end
 
 end

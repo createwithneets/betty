@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
   #this is the page that we see
     def new
-
+@user= @current_user
       @order= Order.new
       @order.add_from_cart(@current_cart)
     end
