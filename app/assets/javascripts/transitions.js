@@ -1,18 +1,19 @@
-$("navigation a").on("click", function(event){
+$("#navbar a").on("click", function(event){
 
 event.preventDefault()
+
 const href = $(this).attr("href")
 
 window.history.pushState(null, null, href)
 
-$("navigation a").removeClass("active")
+$("#navbar a").removeClass("active")
 $(this).addClass("active")
 
 $.ajax({
   url: href,
   success: function (data) {
     $("section").fadeOut(250, function () {
-      const newPage = $(data).filter("section").html()
+      const newPage = $(data).filter(".loadin").html()
 
       $("section").html(newPage)
 
@@ -20,5 +21,6 @@ $.ajax({
     }
   }
 })
+
 
 })

@@ -217,7 +217,7 @@ font-family: 'Inconsolata', sans-serif;
 
 
 .usershowprofile{
-  max-width: 60vw;
+  max-width: 80vw;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20vh;
@@ -232,7 +232,7 @@ font-family: 'Inconsolata', sans-serif;
 }
 
 .showuserbasics{
-max-width: 35vw;
+max-width: 20vw;
 margin-right: 5vw;
 }
 
