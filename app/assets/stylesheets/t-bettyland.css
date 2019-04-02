@@ -70,6 +70,41 @@ div.userssearchform input[type=submit]{
   padding: 0.5em;
   }
 
+
+
+  .paginateusers{
+    position: absolute;
+    left: 10vw;
+  }
+
+  .paginationusers {
+    background: white;
+    cursor: default;
+    /* self-clearing method: */ }
+    .pagination a, .pagination span, .pagination em {
+      padding: 0.2em 0.5em;
+      display: block;
+      float: left;
+    margin-left: 25vw;
+  transform: translateX(-50%)}
+    .pagination .disabled {
+      color: #999999;
+      border: 1px solid #dddddd; }
+    .pagination .current {
+      font-style: normal;
+      font-weight: bold;
+      background: #c16290;
+      color: white;
+      border: 1px solid #c16290; }
+    .pagination a {
+      text-decoration: none;
+      color: #c16290;
+      border: 1px solid #c16290; }
+      .pagination a:hover, .pagination a:focus {
+        color: #000033;
+        border-color: #000033; }
+
+
 .allusers{
   margin-top: 5vh;
 }
@@ -89,6 +124,8 @@ div.userssearchform input[type=submit]{
 
 .individualuser{
   position: relative;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
 }
 
 .square{
@@ -139,7 +176,7 @@ top: -90vh;
 left: 50vw;
 width: 100%;
 overflow: hidden;
-z-index: 100;
+z-index: 500;
 padding: 0px;
 background-color: #8697a9;
 color: #FFF;

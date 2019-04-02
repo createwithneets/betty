@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @users = User.search(params[:search]).paginate(page: params[:page], per_page: 30)
     @user= @current_user
-    @users = User.search(params[:search])
     #find ALL the users in this index
   end
 

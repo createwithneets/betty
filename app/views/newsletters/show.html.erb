@@ -1,0 +1,221 @@
+<body class="newsletterbg">
+<% if is_logged_in? %>
+<header id="navbar">
+  <section class="navigation">
+        <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
+
+    <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %>
+  | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+  | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %>
+</div>
+</section></header>
+
+<section class="viewallnewsletters">
+  <h2>View Past Newsletters</h2>
+  <% @newsletters. each do |newsletter| %>
+  <div class="individualnewsletter">
+    <%= link_to  newsletter_path(newsletter) do %>
+          <div class="newsletterdateshow"><p><%= newsletter.date %></p></div>
+    </div>
+  <% end %>
+  <% end %>
+  <div class="paginateshownewsletter"><div class="paginationshow"><%= will_paginate @newsletters, :page_links => false %></div></div>
+  </section>
+
+<section class="shownewsletter">
+<h1><%= @newsletter.title %></h1>
+<h3><%= @newsletter.introduction %></h3>
+
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_1 do %>
+  <div class="newsletteroverlay">
+  <h1><%= @newsletter.article_1 %></h1>
+<h3><%= @newsletter.writeup_1 %></h3></div>
+  <div class="shownewsimage"><%= image_tag @newsletter.image_1.medium.url %></div>
+<% end %>
+</section>
+
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_2 do %>
+  <div class="newsletteroverlayvariation">
+  <h1><%= @newsletter.article_2 %></h1>
+<h3><%= @newsletter.writeup_2 %></h3></div>
+  <div class="shownewsimagevariation"><%= image_tag @newsletter.image_2.medium.url %></div>
+<% end %>
+</section>
+
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_3 do %>
+  <div class="newsletteroverlay">
+  <h1><%= @newsletter.article_3 %></h1>
+<h3><%= @newsletter.writeup_3 %></h3></div>
+  <div class="shownewsimage"><%= image_tag @newsletter.image_3.medium.url %></div>
+<% end %>
+</section>
+
+<% if @newsletter.article_4.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_4 do %>
+  <div class="newsletteroverlayvariation">
+  <h1><%= @newsletter.article_4 %></h1>
+<h3><%= @newsletter.writeup_4 %></h3></div>
+  <div class="shownewsimagevariation"><%= image_tag @newsletter.image_4.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.article_5.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_5 do %>
+  <div class="newsletteroverlay">
+  <h1><%= @newsletter.article_5 %></h1>
+<h3><%= @newsletter.writeup_5 %></h3></div>
+  <div class="shownewsimage"><%= image_tag @newsletter.image_5.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.article_6.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_6 do %>
+  <div class="newsletteroverlayvariation">
+  <h1><%= @newsletter.article_6 %></h1>
+<h3><%= @newsletter.writeup_6 %></h3></div>
+  <div class="shownewsimagevariation"><%= image_tag @newsletter.image_6.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.article_7.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_7 do %>
+  <div class="newsletteroverlay">
+  <h1><%= @newsletter.article_7 %></h1>
+<h3><%= @newsletter.writeup_7 %></h3></div>
+  <div class="shownewsimage"><%= image_tag @newsletter.image_7.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.article_8.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_8 do %>
+  <div class="newsletteroverlayvariation">
+  <h1><%= @newsletter.article_8 %></h1>
+<h3><%= @newsletter.writeup_8 %></h3></div>
+  <div class="shownewsimagevariation"><%= image_tag @newsletter.image_8.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.article_9.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_9 do %>
+  <div class="newsletteroverlay">
+  <h1><%= @newsletter.article_9 %></h1>
+<h3><%= @newsletter.writeup_9 %></h3></div>
+  <div class="shownewsimage"><%= image_tag @newsletter.image_9.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.article_10.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.link_10 do %>
+  <div class="newsletteroverlayvariation">
+  <h1><%= @newsletter.article_10 %></h1>
+<h3><%= @newsletter.writeup_10 %></h3></div>
+  <div class="shownewsimagevariation"><%= image_tag @newsletter.image_10.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.bonus_article_1.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.bonus_link_1 do %>
+  <div class="newsletteroverlay">
+  <h1><%= @newsletter.bonus_article_1 %></h1>
+<h3><%= @newsletter.bonus_writeup_1 %></h3></div>
+  <div class="shownewsimage"><%= image_tag @newsletter.bonus_image_1.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.bonus_article_2.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.bonus_link_2 do %>
+  <div class="newsletteroverlayvariation">
+  <h1><%= @newsletter.bonus_article_2 %></h1>
+<h3><%= @newsletter.bonus_writeup_2 %></h3></div>
+  <div class="shownewsimagevariation"><%= image_tag @newsletter.bonus_image_2.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.bonus_article_3.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.bonus_link_3 do %>
+  <div class="newsletteroverlay">
+  <h1><%= @newsletter.bonus_article_3 %></h1>
+<h3><%= @newsletter.bonus_writeup_3 %></h3></div>
+  <div class="shownewsimage"><%= image_tag @newsletter.bonus_image_3.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<% if @newsletter.bonus_article_4.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.bonus_link_4 do %>
+  <div class="newsletteroverlayvariation">
+  <h1><%= @newsletter.bonus_article_4 %></h1>
+<h3><%= @newsletter.bonus_writeup_4 %></h3></div>
+  <div class="shownewsimagevariation"><%= image_tag @newsletter.bonus_image_4.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+
+<% if @newsletter.bonus_article_5.present? %>
+<section class="newsletterstill">
+  <%= link_to  @newsletter.bonus_link_5 do %>
+  <div class="newsletteroverlay">
+  <h1><%= @newsletter.bonus_article_5 %></h1>
+<h3><%= @newsletter.bonus_writeup_5 %></h3></div>
+  <div class="shownewsimage"><%= image_tag @newsletter.bonus_image_5.medium.url %></div>
+<% end %>
+</section>
+<% end %>
+
+<section class="newslettergiffooter">
+<%= image_tag @newsletter.newslettergif.medium.url %>
+  <br><br><p><%= @newsletter.gifwriteup %>
+  </section>
+
+</section>
+
+
+<footer id="footernav">
+  <section class="navigationfooter">
+  <p><%= link_to "All Bettys", users_path %>
+| <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+| <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %>
+ </section></footer>
+
+
+<% else %>
+<div class="peeking">
+  <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
+  <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
+  </div>
+  <% end %>
+</body>

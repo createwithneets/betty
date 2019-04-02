@@ -1,3 +1,6 @@
+
+
+
 $(function(){  // $(document).ready shorthand
   $('.rewards').fadeIn('slow');
 });

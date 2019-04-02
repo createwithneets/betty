@@ -1,5 +1,7 @@
 <body class="bgimage">
 <% if is_logged_in? %>
+
+
 <header id="navbar">
   <section class="navigation">
         <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
@@ -27,8 +29,6 @@
                     <%= submit_tag "Find a Betty", :name => nil %>
                           <%= link_to "Clear Search", users_path %></p>
   <% end %></div></div>
-
-
 <section class="allusers">
 <% @users. each do |user| %>
 <div class="individualuser"><p>
@@ -43,6 +43,9 @@
 <% end %>
 </section>
 </div>
+<section class="paginateusers"><div class="paginationusers"><%= will_paginate @users, :page_links => false %></div></section>
+
+
 
 <footer id="footernav">
   <section class="navigationfooter">

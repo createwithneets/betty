@@ -20,5 +20,7 @@
 *= require a-tachyons
 *= require basscss-grid
 *= require z-shop
+*= require z-newsletter
+*= require z-zmeditations.css
  *= require_self
  */

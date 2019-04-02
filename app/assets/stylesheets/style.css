@@ -10,7 +10,6 @@ body {
  transition: background-color 1s ease;
 }
 
-
 body a{
   color: #c16290;
 }
@@ -21,6 +20,7 @@ div.success, div.error {
   color: #FFF;
   font-size: 13px;
 }
+
 
 
 section{
