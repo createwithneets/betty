@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+mount Thredded::Engine => '/forum'
+
 resources :users
 
 resources :products do
@@ -24,6 +26,7 @@ resource :cart
 resource :session
 
 resource :account
+
 
 get "welcome", to: "pages#welcome"
 get "longexhale", to: "pages#longexhale"

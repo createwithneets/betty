@@ -55,6 +55,10 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'will_paginate', '~> 3.1.7'
 
+gem 'thredded', '~> 0.16.10'
+
+gem 'gemoji'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

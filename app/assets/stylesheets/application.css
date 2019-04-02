@@ -23,4 +23,6 @@
 *= require z-newsletter
 *= require z-zmeditations.css
  *= require_self
+
+ @import "thredded";
  */
