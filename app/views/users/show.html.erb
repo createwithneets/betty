@@ -33,7 +33,13 @@
   Points: <%= @user.points %><br></div></div>
 <div class="editprofile"> <% if @user == @current_user %>
 <%= link_to "(Edit your Profile)", edit_user_path(@user) %>
-<% end %></div></div>
+<% end %></div>
+<div class="showuserbasics3">
+  Discussion Post Count: <%= @user.thredded_user_detail.posts_count %><br>
+  <%= link_to "View Discussion ", forum_path %>
+</div>
+</div>
+
 
 <div class="showuserabout">
   <h2>About Me: </h2><p> <%= @user.about %></p>

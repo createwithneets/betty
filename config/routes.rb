@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
 mount Thredded::Engine => '/forum'
 
+get "destroy_user_session", to: "session#delete"
+
 resources :users
 
 resources :products do

@@ -82,14 +82,4 @@ self.save
   #add the photo uploader
   mount_uploader :photo, PhotoUploader
   mount_uploader :photogif, PhotoUploader
-  mount_uploader :meme_1, PhotoUploader
-  mount_uploader :meme_2, PhotoUploader
-  mount_uploader :meme_3, PhotoUploader
-  mount_uploader :meme_4, PhotoUploader
-  mount_uploader :meme_5, PhotoUploader
-  mount_uploader :meme_6, PhotoUploader
-  mount_uploader :meme_7, PhotoUploader
-  mount_uploader :meme_8, PhotoUploader
-
-
-end
+end 

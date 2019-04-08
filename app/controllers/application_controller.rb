@@ -3,7 +3,12 @@ class ApplicationController < ActionController::Base
 
 helper_method :current_user, :is_logged_in?, :force_login, :current_cart
 before_action :current_user, :current_cart
+helper_method :forum_path
 #create a helper method so that we can use it in our views
+
+def forum_path
+  "/forum"
+end
 
 
 def current_user
