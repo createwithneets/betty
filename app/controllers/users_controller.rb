@@ -7,9 +7,10 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @users = User.search(params[:search]).paginate(page: params[:page], per_page: 30)
-    @user= @current_user
+    @user = @current_user
+    end
+
     #find ALL the users in this index
-  end
 
 
   def new
@@ -80,6 +81,7 @@ def current_cart
   end
 
 
+
 def form_params
   params.require(:user).permit(:ig_username, :first_name, :last_name,
     :email, :password, :password_confirmation, :address_1, :address_2,
@@ -89,7 +91,4 @@ def form_params
  :meme_1, :meme_2, :meme_3, :meme_4, :meme_5, :meme_6, :meme_7, :meme_8, :personalIG_link, :spotify_profile, :IG_link1, :IG_link2, :IG_link3, :IG_link4, :IG_link5, :video_links1,
  :vide_links2, :vide_links3, :vide_links4)
 end
-
-
-
 end

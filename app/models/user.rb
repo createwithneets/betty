@@ -3,7 +3,6 @@ class User < ApplicationRecord
 geocoded_by :city
 after_validation :geocode
 
-
 validates :first_name, presence: true
 validates :last_name, presence: true
 validates :email, presence: true, uniqueness: true
@@ -79,7 +78,8 @@ self.save
 
 
 
+
   #add the photo uploader
   mount_uploader :photo, PhotoUploader
   mount_uploader :photogif, PhotoUploader
-end 
+end

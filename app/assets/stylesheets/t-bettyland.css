@@ -172,12 +172,11 @@ div.userssearchform input[type=submit]{
 
 #navbar{
 position: fixed;
-top: -90vh;
+top: -85vh;
 left: 50vw;
 width: 100%;
 overflow: hidden;
 z-index: 500;
-padding: 0px;
 background-color: #8697a9;
 color: #FFF;
 transition: top 0.5s ease;
@@ -218,6 +217,7 @@ width: 100%;
 overflow: hidden;
 z-index: 100;
 padding: 5px;
+padding-bottom: 5vh;
 background-color: #f4eae0;
 color: #000;
 transition: bottom 0.5s ease;
@@ -310,8 +310,277 @@ div.peeking{
 }
 
 
+
+/**bettyland main page **/
+
+.content{
+  max-width: 70vw;
+  margin-top: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bettylandbgimage{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bettysite_backgroundwhite.jpg');
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  background-size: cover;
+}
+
+.bettylandwelcome{
+    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_4.jpg');
+  background-size: cover;
+  height: 80vh;
+}
+
+.bettylanddiscussion{
+    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bettysite_backgroundpink.jpg');
+  background-size: cover;
+  height: 60vh;
+}
+
+.bettylandnewsletters{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_12.jpg');
+  background-size: cover;
+  height: 80vh;
+}
+
+.bettylandmeditations{
+    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bettysite_backgroundblue.jpg');
+  background-size: cover;
+  height: 40vh;
+  margin-top: -20vh;
+}
+
+.bettylandbettys{
+    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_5.jpg');
+  background-size: cover;
+  height: 80vh;
+}
+
+.bettylandrewards{
+    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bettysite_backgroundpink.jpg');
+  background-size: cover;
+  max-height: 60vh;
+}
+
+.bettylandwelcomecontent{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 0vh;
+}
+
+.words{
+  max-width: 30vw;
+  margin-top: -5vh;
+}
+
+.words h1{
+  font-size: 48px;
+}
+
+.words p{
+  font-size: 16px;
+}
+
+.missywave{
+  position: relative;
+  max-width: 30vw;
+  z-index: 50;
+}
+
+.emojihand{
+position: relative;
+  z-index: 50;
+}
+
+.welcomesquare1{
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  border-radius: 0%;
+  background-color: #be8f9c;
+  top: 0vh;
+  left: 5vw;
+  z-index: 1;
+    max-width: 30vw;
+}
+
+.welcomesquare2{
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  border-radius: 0%;
+  border: 2px #000 solid;
+  top: -3vh;
+  left: -3vw;
+  z-index: 1;
+    max-width: 30vw;
+}
+
+.welcomesquare3{
+  position: absolute;
+  height: 300px;
+  width: 400px;
+  border-radius: 0%;
+  background-color: #8697aa;
+  top: 3vh;
+  left: 3vw;
+  z-index: 1;
+    max-width: 30vw;
+}
+
+
+.note{
+  font-style: italic;
+  color: #c16290;
+}
+
+.discussionbutton a{
+  text-decoration: none;
+  color: #000;
+}
+
+.discussionbutton a:hover{
+  text-decoration: none;
+  color: #FFF !important;
+}
+
+.discussionbutton {
+  background-color: #eeddcc;
+  border: none;
+  color: #000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.discussionbutton:hover {
+  background-color: #c16290;
+  border: none;
+  color: #FFF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    cursor: pointer;
+}
+
+.bettynews{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20vh;
+}
+
+.content h1{
+  font-size: 48px;
+}
+
+.meditationimage{
+  transition: all ease-out 0.3s;
+  position: relative;
+  z-index: 6;
+}
+.meditationimage:hover{
+  transform: scale(1.1)
+}
+
+.meditationclouds{
+  position: relative;
+  z-index: 6;
+}
+
+.clouds1{
+  position: absolute;
+  top: -10vh;
+  left: 0vw;
+  z-index: 1;
+  max-width: 5vw;
+}
+.clouds2{
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  z-index: 1;
+    max-width: 5vw;
+}
+.clouds3{
+  position: absolute;
+  top: 25vh;
+  left: -15vw;
+  z-index: 1;
+    max-width: 5vw;
+}
+
+
+.clouds1 path,
+.clouds2 path,
+.clouds3 path{
+  fill: #eeddcc;
+  animation: rainbow 10s infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes rainbow {
+    0%   {fill: #eeddcc;}
+    25%  {fill: #d7b6bf;}
+    50%  {fill: #FFF;}
+    75%  {fill: #d7b6bf;}
+    100% {fill: #eeddcc;}
+}
+
+
+.bettylandwelcomecontent a{
+  display: inline-block;
+padding: 2em;
+margin: -2em;
+}
 @media(max-width:1000px){
   div.peeking{
     margin-top:5vh;
   }
+}
+
+@media(min-width: 1600px){
+  .editaccounttitle h1{
+    margin-top: 15vh;
+  }
+
+.maincontentbettyland h1, h2, h3{
+  padding-top: 10vh;
+}
+}
+
+@media(max-width: 1290px){
+  #navbar{
+  padding: 2vh;}
+
+  .editaccounttitle h1,
+  .maincontentbettyland h1, h2, h3{
+    margin-top: 15vh;
+  }
+
+  .messagebody{
+    padding-top: 50vh;
+  }
+
+  .rewardspagecontent,
+  .shopindextitle{
+    padding-top: 15vh;
+  }
+
+  .productinfoshowpage{
+    margin-top: 10vh;
+  }
+
+  .productinfo1{
+    padding-right: 2vw;
+  }
+
 }

@@ -1,16 +1,20 @@
 <body class="newsletterbg2">
 <% if is_logged_in? %>
+
 <header id="navbar">
   <section class="navigation">
         <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
 
-    <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %>
-  | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
+    <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+      | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+   | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
   | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
-<br>You currently have 0 Points. Time to get beditating!
+<br><br>You currently have 0 Points. Time to get beditating!
 <% else %>
-<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<br><br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
 <% end %>
 </div>
 </section></header>
@@ -71,17 +75,24 @@
 
 </div>
 
-    <footer id="footernav">
-      <section class="navigationfooter">
-      <p><%= link_to "All Bettys", users_path %>
-    | <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "Your Rewards", rewards_path %> | <%=link_to "Shop Betty", products_path %>
-    | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
-    <% if @user.points.nil? %>
-    <br>You currently have 0 Points. Time to get beditating!
-    <% else %>
-    <br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
-    <% end %>
-     </section></footer>
+<footer id="footernav">
+  <section class="navigationfooter">
+  <p><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+    | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+ | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+<br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+| <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %><br><br>
+<% if @user.MHSroutine_3.present? %>
+A gentle reminder from you, to you: <%= @user.MHSroutine_3 %>
+<% else %>
+<% end %>
+ </section></footer>
 
 
     <% else %>

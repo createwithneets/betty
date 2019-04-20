@@ -1,0 +1,146 @@
+.conversationsbg{
+  background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_7.jpg');
+  background-attachment: fixed;
+  top:0;
+  left: -50vw;
+  background-size: cover;
+}
+
+.inboxmain{
+max-width: 60vw;
+margin-top: 25vh;
+margin-left: auto;
+margin-right: auto;
+display: flex;
+justify-content: space-evenly;
+align-items: flex-start;
+}
+
+.inboxmain a{
+  text-decoration: none;
+    border-bottom: 2px solid #FFF;
+    transition: all 0.3s ease;
+}
+
+.inboxmain a:hover{
+  border-bottom: 2px solid #c16290;
+}
+
+
+div.convosearch{
+width: 35%;
+}
+
+div.convosearch input{
+  background-color: #eeddcc;
+  color: #FFF;
+  border: none;
+  width: 15vw;
+  padding: 0.75em;
+}
+
+div.convosearch input:focus{
+background-color: #eeddcc;
+outline: none;
+border: none;
+color: #000;
+font-family: 'Inconsolata', sans-serif;
+}
+
+div.convosearch input[type=submit]{
+    background: #c16290;
+    color: #FFF;
+    font-family: Inconsolata;
+    font-size: 14px;
+    appearance: none;
+    border: none;
+    width: 100%;
+  padding: 0.5em;
+  cursor: pointer;
+  }
+
+
+  div.convosearch input[type=submit]:hover{
+    background: #8697aa;
+  }
+
+  /**message page**/
+
+  .messagecontent{
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+  }
+
+  .messagecontent h4{
+    font-family: 'Inconsolata' !important;
+    color: #c16290;
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+
+div.messagebody{
+position: absolute;
+left: 50vw;
+margin-top: 25vh;
+transform: translateY(-50%);
+  }
+
+  div.messageform{
+position: fixed;
+top: 25vh;
+left: 5vw;
+  }
+
+  div.messageform textarea{
+    background-color: #eeddcc;
+    color: #FFF;
+    border: none;
+    width: 35vw;
+    height: 20vh;
+    padding: 0.75em;
+      font-family: 'Inconsolata', sans-serif;
+  }
+
+  div.messageform textarea:focus{
+  background-color: #eeddcc;
+  outline: none;
+  border: none;
+  color: #000;
+  font-family: 'Inconsolata', sans-serif;
+  }
+
+  div.messageform input[type=submit]{
+      background: #c16290;
+      color: #FFF;
+      font-family: Inconsolata;
+      font-size: 14px;
+      appearance: none;
+      border: none;
+      width: 20%;
+    padding: 0.5em;
+    cursor: pointer;
+    }
+
+      div.messageform input[type=submit]:hover{
+        background: #8697aa;
+      }
+
+@media (max-width: 500px) {
+.inboxmain{
+  display: none;
+}
+}
+
+@media(min-width: 1680px){
+  .messagebody{
+    padding-top: 45vh;
+  }
+}
+
+@media(min-width: 1900px){
+  .messagebody{
+    padding-top: 30vh;
+  }
+}

@@ -35,7 +35,7 @@ ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.
   process resize_to_fit: [1200, 600]
 
   version :medium do
-    process resize_to_fill: [800, 800]
+    process resize_to_fit: [600, 600]
   end
 
   version :thumb do

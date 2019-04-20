@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages/index'
+  get 'conversations/index'
   devise_for :installs
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -28,6 +30,10 @@ resource :cart
 resource :session
 
 resource :account
+
+resources :conversations, only: [:index, :create] do
+  resources :messages, only: [:index, :create]
+end
 
 
 get "welcome", to: "pages#welcome"

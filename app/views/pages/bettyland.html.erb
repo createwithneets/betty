@@ -1,110 +1,153 @@
-<section class="staticbackground">
+<body class="bettylandbgimage">
 <% if is_logged_in? %>
 <header id="navbar">
   <section class="navigation">
         <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
 
-    <div class="links"><p class="navlinks"><%= link_to "Logout", session_path, method: :delete %>  | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "All Bettys", users_path %>
-| <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %>
+    <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+      | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+   | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+  | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
-<br>You currently have 0 Points. Time to get beditating!
+<br><br>You currently have 0 Points. Time to get beditating!
 <% else %>
-<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<br><br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
 <% end %>
 </div>
 </section></header>
 
-  <div class="maincontentbettyland">
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
-<br><br>type type
+<section class="bettylandwelcome">
+  <section class="content">
+<section class="bettylandwelcomecontent">
+  <div class="words"><h1>Welcome home!</h1><p>Because that's what this is- a space on the internet to call home.<br><br>This is a
+  digital clubhouse for Bettys. You'll find room for conversation and dialogue, an opportunity to browse the profiles of other Bettys,
+  watch a library of meditations, read archived newsletters, and more.
+  <br><br>Scroll or click through to explore, connect, and enjoy!</p><p class="note">Note: If you have any ideas or encounter any glitches,
+be sure to let us know at hello@inbedwithbetty.com  </div>
+  <div class="emojihand">
+    <div class="missywave"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/MTVcribs.gif"></div>
+    <div class="welcomesquare1"></div>
+      <div class="welcomesquare2"></div></div>
+  </section>
+  </section>
+  </section>
+
+  <section class="bettylanddiscussion">
+      <div class="hidden">
+    <section class="bettylandwelcomecontent">
+      <div class="discussionimage"><%= link_to forum_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/BettyIGQ.png"><% end %></div>
+      <div class="words"><h1>Meaningful Connections</h1><p>Ask a question, share an article, or simply comment and connect. The Betty discussion page
+      is like the Hogwarts common room- a space designed for gathering. Pop by every day to see what's new.<br><br> And speaking of new, why not<br><br>
+    <div class="discussionbutton"><%=link_to "See what's new today", forum_path %></div>   </div>
+    </div>
+    </section>
+
+    <section class="bettylandnewsletters">
+
+          <section class="content">
+      <h1>The Betty Bulletin</h1>
+      <p>Your favourite Friday newsletter, archived here for your search & viewing pleasure. See the latest below:</p>
+      <section class="bettynews">
+        <% @newsletters. each do |newsletter| %>
+        <div class="individualnewsletter">
+          <div class="newsletterrectangle"></div>
+          <div class="newsletterrectangle2"></div>
+          <%= link_to  newsletter_path(newsletter) do %>
+          <div class="newsletterimage"><%= image_tag newsletter.mainimage.thumb.url %></div>
+          <div class="newslettergif"><%= image_tag newsletter.newslettergif.thumb.url %></div>
+          <div class="newslettertitle"><h3>&nbsp;<%= newsletter.title %>&nbsp;</h3></div>
+                <div class="newsletterdate"><p><%= newsletter.date %></p></div>
+                </div>
+        <% end %>
+        <% end %>
+        </section>
+        </section>
+
+  <section class="bettylandmeditations">
+    <div class="hidden">
+  <section class="bettylandwelcomecontent">
+    <div class="words"><h1>Meditations</h1><p>Missed a meditation or looking for one to do on the weekend? Look no further. Browse our library for what you need and know that we upload a new one each week.<br><br>
+  <div class="discussionbutton"><%=link_to "See Meditations", meditations_path %></div>   </div>
+  <div class="meditationclouds"><div class="meditationimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/meditatinoclouds.png"></div>
+
+<div class="clouds1 flash"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1080px" height="864px" viewBox="0 0 1080 864" enable-background="new 0 0 1080 864" xml:space="preserve">
+<path fill="#EEDDCC" d="M712.108,241.229c-0.69,0-1.382,0-2.073,0c-11.75-63.59-67.046-111.975-134.093-111.975
+	c-49.767,0-92.621,26.266-116.812,65.664c-13.824-11.75-31.796-18.663-51.149-18.663c-44.928,0-81.562,36.634-81.562,81.562
+	c0,0.691,0,0.691,0,1.383l0,0c-53.914,0-98.15,43.545-98.15,98.15c0,52.531,40.781,94.694,92.621,97.459
+	c13.133,53.914,61.517,94.003,118.887,94.003c17.279,0,33.868-3.456,48.384-9.677c18.662,15.207,42.163,24.192,67.737,24.192
+	c42.854,0,80.18-25.574,97.459-61.517c17.972,8.294,37.325,13.133,58.062,13.133c75.341,0,136.166-60.826,136.166-136.167
+	C848.275,302.054,787.449,241.229,712.108,241.229z"/>
+</svg>
 </div>
+
+<div class="clouds2 flash"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1080px" height="864px" viewBox="0 0 1080 864" enable-background="new 0 0 1080 864" xml:space="preserve">
+<g>
+	<path fill="#EEDDCC" d="M777.665,367.395c-2.076-47.74-47.741-87.178-110.011-58.119c-4.151-22.832-45.665-37.362-62.271-22.832
+		c2.075-85.103-126.616-101.708-145.297-10.378c-39.438-37.362-103.784-10.378-105.86,43.589
+		c-35.287-22.833-78.875,8.303-68.498,47.74c-16.605,4.151-56.043,6.228-56.043,35.286c0,31.136,68.497,35.287,126.616,24.908
+		c18.681,53.968,300.973,49.816,307.2,0c29.06,12.454,91.329,8.303,120.389-2.075C898.054,425.514,848.238,363.243,777.665,367.395z
+		"/>
+</g>
+</svg>
+</div>
+
+<div class="clouds3 flash"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1080px" height="864px" viewBox="0 0 1080 864" enable-background="new 0 0 1080 864" xml:space="preserve">
+<g>
+	<path fill="#EEDDCC" d="M429.424,439.038c33.459,90.583,216.256,103.64,263.587,20.401
+		c247.265,39.987,208.095-291.332-26.93-226.047c-35.907-77.525-230.944-83.238-248.897,26.93
+		c-39.171-13.873-93.031,0.816-105.271,44.067c-131.385-16.321-121.592,160.763,16.321,115.064
+		C342.922,459.439,400.046,468.417,429.424,439.038z"/>
+</g>
+</svg>
+</div>
+</div>
+  </div>
+    </section>
+
+  <section class="bettylandbettys">
+    <div class="hidden">
+  <section class="bettylandwelcomecontent">
+    <div class="discussionimage"><%= link_to users_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bettyfaces.png"><% end %></div>
+    <div class="words"><h1>Meet The Betty Class of 2019</h1><p>Know that you aren't alone. <br><br>Browse the Betty yearbook, send them a message, and get to know your fellow beditators.
+      Who knows- you might just meet your next internet (or IRL) BFF.<br><br>
+ <div class="discussionbutton"><%=link_to "See all Bettys", users_path %></div>  </div>
+  </div>
+    </section>
+
+    <section class="bettylandrewards">
+      <section class="bettylandwelcomecontent">
+      <div class="words"><h1>Beditate. Get Goods.</h1><p>(In That Order)</p><p>Everytime you tune in, you receive a point. For your first 20 points, you'll unlock
+        special surprises and bonuses. After 30 points, you'll be able to redeem your hard-earned beditation minutes. Get exclusive discounts off of Betty goods and our partner products.<br><br>
+      <div class="discussionbutton"><%=link_to "See Rewards", rewards_path %></div>   </div>
+      <div class="emojihand">
+        <%= link_to rewards_path do %><div class="missywave"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/happyfriends.gif"></div>
+        <div class="welcomesquare3"></div>
+          <div class="welcomesquare2"></div></div><% end %>
+      </section>
+
 
 <footer id="footernav">
   <section class="navigationfooter">
-  <p><%= link_to "Logout", session_path, method: :delete %>  | <%= link_to "Edit Account", edit_user_path(@user) %> | <%= link_to "All Bettys", users_path %>
-| <%= link_to "Your Profile", user_path(@user.ig_username) %> | <%=link_to "Shop Betty", products_path %> | <%= link_to "Cart", cart_path %>
+  <p><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+    | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+ | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+<br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+| <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
 <br>You currently have 0 Points. Time to get beditating!
 <% else %>
@@ -112,10 +155,11 @@
 <% end %>
  </section></footer>
 
+
 <% else %>
 <div class="peeking">
   <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
   <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
   </div>
 <% end %>
-</div>
+</body>

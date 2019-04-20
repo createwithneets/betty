@@ -23,7 +23,9 @@
 *= require basscss-grid
 *= require z-shop
 *= require z-newsletter
-*= require z-zmeditations.css
+*= require z-zmeditations
+*= require zz-conversations
+*= require zzz-mobile
 *= require_self
 $thredded-button-background: #eeddcc !default;
 @import "thredded";
