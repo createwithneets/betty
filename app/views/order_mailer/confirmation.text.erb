@@ -1,0 +1,25 @@
+Hooray! An order has come through!
+-----------------
+Order ID: <%= @order.id %>
+
+Customer Name: <%= @order.first_name %> <%= @order.last_name %>
+Customer Address:
+  <%= @order.address_1 %>
+  <%= @order.address_2 %>
+  <%= @order.city %>
+  <%= @order.country %>
+  <%= @order.postal_code %>
+
+Their email address is: <%= @order.email %>
+---------------------------
+They've ordered: <% @order.order_items.each do |item| %>
++ <%= item.product.title %></li>
+<% end %>
+------------
+Subtotal: <%= number_to_currency @order.total_price_in_dollars %>
+With Tax: <%= number_to_currency @order.total_price_in_dollars * 1.12 %>
++ Shipping: $15.00
+Total Price: <%= number_to_currency @order.total_price_in_dollars * 1.12 + 15 %>
+<% if @order.couponCode.present? %>
+You used the Coupon: <%= @order.couponCode %> so your total is: <%= number_to_currency @final_amount %>
+<% end %>

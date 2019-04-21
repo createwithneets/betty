@@ -16,10 +16,11 @@ body a{
 
 div.success, div.error {
   padding: 5px 20px;
-  background: #000;
+  background: #c16290;
   color: #FFF;
   font-size: 13px;
 }
+
 
 
 section{
@@ -548,6 +549,10 @@ top: 69vh;
 /**ipad pro portrait and ipad landscape**/
 @media (max-width:1030px){
 
+body{
+  font-size: 14px;
+}
+
 .announcement {
   max-width: 100vw;
 }
@@ -588,13 +593,13 @@ max-width: 150px;
 
   .alarm img{
     max-width: 200px;
-    bottom: 40vh;
-    left: 80vw;
+    top: -100vh;
+    left: 40vw;
     z-index: 100;
   }
 
   .cher img{
-    bottom: 18vh;
+    top: 50vh;
     left: 15vw;
     z-index: 99;
   }
@@ -616,7 +621,20 @@ z-index: 0;
   }
 
   .bettyme img{
-    max-width: 300px;
+    max-width: 200px;
+  }
+
+  h4{
+    margin-top: -5vh;
+    font-size: 20px;
+  }
+
+  header p, footer p{
+    font-size: 10px;
+  }
+
+  .announcement{
+    z-index: 10;
   }
 }
 
@@ -764,7 +782,7 @@ z-index: 0;
   }
 
   .bettyvideo{
-    top: 45vh;
+    top: 75vh;
   }
 
   .cher img{

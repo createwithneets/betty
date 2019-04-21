@@ -1,0 +1,22 @@
+<div class="product">
+
+  <div class="rectangle"></div>
+  <div class="rectangle2"></div>
+
+<%= link_to product_path (product) do %>
+  <div class="productimage"><%=image_tag product.images.medium.url %></div>
+
+  <div class="producthover">
+    <%=image_tag product.images_2.medium.url %>
+    </div>
+      <% end %>
+
+
+<h3><%= link_to product.title, product_path(product) %></h3>
+
+<p>
+
+<%= number_to_currency product.price_in_dollars %>
+
+</p>
+</div>

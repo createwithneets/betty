@@ -1,0 +1,35 @@
+<section class="staticbackground">
+<div class="login"><h1> Edit Account</h1></div>
+<div class="loginform">
+
+  <% @page="update_card" %>
+  <h3>Update your CC Details</h3>
+
+  <%= simple_form_for @user do |f| %>
+
+  <div id="card"></div>
+
+  <%= f.button:submit, "Update Account Details" %>
+  <% end %>
+
+  <script>
+    var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_key] %>")
+    var elements = stripe.elements()
+
+    var card = elements.create('card', {hidePostalCode: true})
+    card.mount('#card')
+
+    $("form#edit_user_<%= @user.id %>").on("submit", function (ev) {
+      ev.preventDefault()
+
+      stripe.createToken(card).then(function (result) {
+        if (result.error) {
+          $("#card-errors").html(result.error.message)
+        } else {
+          $("form#edit_user_<%= @user.id %>").append("<input type='hidden' name='user[stripe_token]' value='" + result.token.id + "'>")
+          $("form#edit_user_<%= @user.id %>").get(0).submit()
+        }
+      })
+
+    })
+  </script>

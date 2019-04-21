@@ -6,7 +6,7 @@ div.login{
 }
 
 div.loginform{
-  max-width: 60vw;
+  max-width: 40vw;
   margin-left: auto;
   margin-right: auto;
   top: 150vh;
@@ -26,9 +26,10 @@ div.loginform label{
     background-color: #c49aa6;
     color: #FFF;
     border: none;
-    width: 30vw;
+    width: 100%;
     padding: 0.5em 0.75em 0.5em 0.75em;
     margin-bottom: 7px;
+    font-family: 'Inconsolata', sans-serif;
   }
 
   div.loginform input:focus{
@@ -37,22 +38,32 @@ div.loginform label{
   border: none;
   color: #FFF;
   font-size: 16px;
+  line-height: 1.3em;
   font-family: 'Inconsolata', sans-serif;
+  }
+
+  div.loginform input::placeholder{
+    color: #FFF;
   }
 
 
 
   div.loginform input[type=submit] {
-      background: #fed16f;
-      color: #000;
+      background: #8697aa;
+      color: #FFF;
       font-family: Cortez;
       font-size: 24px;
       appearance: none;
       border: none;
       width: 100%;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 0vw;
       margin-top: 15px;
-      margin-bottom: 50px
+      margin-bottom: 50px;
     padding: 0.5em 1.5em 0.5em 1.5em;
+    transition: all 0.3s ease
     }
+
+      div.loginform input[type=submit]:hover{
+        background: #c49aa6;
+        color: #000;
+      }

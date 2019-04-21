@@ -1,0 +1,349 @@
+.editaccountpage{
+  max-width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.images{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  text-align: left;
+}
+
+.images2{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: -40vh;
+  margin-bottom: 5vh;
+}
+
+
+.memenumber1, .memenumber2, .memenumber3, .memenumber4, .memenumber5, .memenumber6, .memenumber7, .memenumber8 {
+  display: none;
+}
+
+.imagesmemes1:hover .imagesmeme1 {
+  display: none;
+}
+
+.imagesmemes1:hover .memenumber1 {
+  display: block;
+}
+
+.imagesmemes2:hover .imagesmeme2 {
+  display: none;
+}
+
+.imagesmemes2:hover .memenumber2 {
+  display: block;
+}
+
+.imagesmemes3:hover .imagesmeme3 {
+  display: none;
+}
+
+.imagesmemes3:hover .memenumber3 {
+  display: block;
+}
+
+.imagesmemes4:hover .imagesmeme4 {
+  display: none;
+}
+
+.imagesmemes4:hover .memenumber4 {
+  display: block;
+}
+
+.imagesmemes5:hover .imagesmeme5 {
+  display: none;
+}
+
+.imagesmemes5:hover .memenumber5 {
+  display: block;
+}
+
+.imagesmemes6:hover .imagesmeme6 {
+  display: none;
+}
+
+.imagesmemes6:hover .memenumber6 {
+  display: block;
+}
+
+.imagesmemes7:hover .imagesmeme7 {
+  display: none;
+}
+
+.imagesmemes7:hover .memenumber7 {
+  display: block;
+}
+
+.imagesmemes8:hover .imagesmeme8 {
+  display: none;
+}
+
+.imagesmemes8:hover .memenumber8 {
+  display: block;
+}
+
+
+
+
+
+.maininfo{
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+
+.loginform h3{
+color: #000;
+}
+
+.loginform .photoinput{
+  width: 70%;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+.loginform .MHSinput{
+background-color: #8697aa;
+width: 80%;
+font-family: 'Inconsolata', sans-serif;
+}
+
+.loginform .MHSinput:focus,
+.loginform .smallerinput:focus,
+.loginform .mediuminput:focus{
+background-color: #8697aa;
+font-family: 'Inconsolata', sans-serif;
+}
+
+.loginform .smallerinput{
+  width: 15%;
+  background-color: #8697aa;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+
+.loginform .mediuminput{
+  width: 60%;
+  background-color: #8697aa;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+.loginform .secondaryinput{
+  background-color: #eeddcc;
+  width: 70%;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+.loginform .secondaryinput::placeholder{
+  color: #000;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+.loginform .secondaryinput:focus{
+  background-color: #eeddcc;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+
+.loginform .paragraph{
+  width: 85%;
+  outline: none;
+  background-color: #c49aa6;
+  color: #FFF;
+  border: none;
+  width: 30vw;
+  padding: 0.5em 0.75em 0.5em 0.75em;
+  margin-bottom: 7px;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+div.loginform .paragraph:focus{
+background-color: #c16290;
+outline: none;
+border: none;
+color: #FFF;
+font-size: 16px;
+line-height: 1.3em;
+font-family: 'Inconsolata', sans-serif;
+}
+
+.userprofilesection{
+  padding-bottom: 3vh;
+  border-bottom: 2px solid #000;
+}
+
+
+.editaccounttitle{
+  text-align: center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 1vh;
+  margin-bottom: 3vh;
+  max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.editaccounttitle h1{
+  color: #000;
+}
+
+@media(min-width: 1500px) {
+    .basicinfo{
+    margin-top: -45vh;
+    padding-bottom: 3vh;
+    border-bottom: 2px solid #000;
+    }
+  }
+
+
+@media(max-width: 1000px){
+  .basicinfo{
+  margin-top: -20vh;
+  padding-bottom: 3vh;
+  border-bottom: 2px solid #000;
+  }
+}
+
+
+/**user show page **/
+
+
+.usershowprofile{
+  max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+  margin-bottom: 5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.editprofile{
+  margin-top: 3vh;
+}
+
+.showuserbasics{
+max-width: 20vw;
+margin-right: 5vw;
+}
+
+.showuserborder{
+background-color: #c49aa6;
+padding-left: 1vw;
+padding-right: 1vw;
+padding-top: 1vh;
+padding-bottom: 1vh;
+}
+
+.showuserbasics1 h1{
+  text-transform: lowercase;
+}
+
+.showuserbasics1{
+  margin-bottom:3vh;
+  border: 0px;
+}
+
+.showuserbasics2{
+background-color: #eeddcc;
+border: 0px;
+padding-left: 1vw;
+padding-right: 1vw;
+padding-top: 1vh;
+padding-bottom: 1vh;
+}
+
+.showuserbasics2 a{
+  text-decoration: none;
+  color: #000;
+}
+
+.showuserbasics2 a:hover{
+  color: #c16290;
+}
+
+.showuserbasics3{
+background-color: #c16290;
+color: #FFF;
+border: 0px;
+padding-left: 1vw;
+padding-right: 1vw;
+padding-top: 1vh;
+padding-bottom: 1vh;
+}
+
+.showuserbasics3 a{
+color: #FFF;
+text-decoration: none;
+}
+
+.showuserbasics3 a:hover{
+  color: #000;
+}
+
+.showuserabout{
+margin-left: 5vw;
+margin-bottom: 10vh;
+}
+
+.editprofile{
+background-color: #000;
+padding: 1vw 1vh 1vw 1vh;
+}
+
+.editprofile a{
+color: #FFF;
+text-decoration: none;
+transition: all 0.5s ease;
+}
+
+.editprofile a:hover{
+border-bottom: 1px solid #FFF;
+}
+
+
+.showuserabout h2,
+.showpagecomfortcornertitle h2{
+  font-size: 38px;
+}
+
+.showuserabout h3{
+  text-transform: uppercase;
+}
+
+
+.MHShelfie{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MHS_sections{
+  width: 40%;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.MHSborder{
+  border: 1px dashed #000;
+}
+
+.MHS_sections .videos src{
+position: relative;
+top: 50%;
+transform: translateY(-50%);
+}

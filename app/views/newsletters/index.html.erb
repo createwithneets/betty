@@ -1,0 +1,104 @@
+<body class="newsletterbg2">
+<% if is_logged_in? %>
+
+<header id="navbar">
+  <section class="navigation">
+        <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
+
+    <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+      | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+   | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+  | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br><br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br><br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %>
+</div>
+</section></header>
+
+
+<div class="maincontentbettyland"><br><br>
+
+  <div class="searcharea">
+  <div class="titleBettys"><h1>All Newsletters</h1></div>
+  <div class="userssearchform">
+    <%= form_tag newsletters_path, :method => 'get', :id => 'search-form' do %>
+        <p>
+            <%= text_field_tag :search, params[:search],  :placeholder => 'Search Bulletins' %>
+                      <%= submit_tag "Search", :name => nil%>
+                            <%= link_to "Clear Search", newsletters_path %></p>
+    <% end %></div></div>
+
+
+  <div class="rotatingcircle">
+    <div id="container">
+<div id="circle">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+    <defs>
+        <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+    </defs>
+    <circle cx="150" cy="100" r="75" fill="none"/>
+    <g>
+        <use xlink:href="#circlePath" fill="none"/>
+        <text fill="#000">
+            <textPath xlink:href="#circlePath">Extra Extra! Read all about it! Extra Extra! Read all about it! </textPath>
+        </text>
+    </g>
+</svg>
+</div>
+</div>
+
+    </div>
+
+
+<section class="newsletterindexbody">
+    <section class="allnewsletters">
+    <% @newsletters. each do |newsletter| %>
+    <div class="individualnewsletter">
+      <div class="newsletterrectangle"></div>
+      <div class="newsletterrectangle2"></div>
+      <%= link_to  newsletter_path(newsletter) do %>
+      <div class="newsletterimage"><%= image_tag newsletter.mainimage.thumb.url %></div>
+      <div class="newslettergif"><%= image_tag newsletter.newslettergif.thumb.url %></div>
+      <div class="newslettertitle"><h3>&nbsp;<%= newsletter.title %>&nbsp;</h3></div>
+            <div class="newsletterdate"><p><%= newsletter.date %></p></div>
+      </div>
+    <% end %>
+    <% end %>
+      </section>
+      <div class="paginateposts"><div class="pagination"><%= will_paginate @newsletters, :page_links => false %></div></div>
+        </section>
+
+
+</div>
+
+<footer id="footernav">
+  <section class="navigationfooter">
+  <p><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+    | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+ | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+<br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+| <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %><br><br>
+<% if @user.MHSroutine_3.present? %>
+A gentle reminder from you, to you: <%= @user.MHSroutine_3 %>
+<% else %>
+<% end %>
+ </section></footer>
+
+
+    <% else %>
+    <div class="peeking">
+      <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
+      <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
+      </div>
+      <% end %>
+    </body>

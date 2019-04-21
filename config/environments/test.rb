@@ -1,6 +1,6 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
 
+  # Settings specified here will take precedence over those in config/application.rb.
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
@@ -45,4 +45,15 @@ config.require_master_key = true
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 587,
+    domain:               'inbedwithbetty.com',
+    user_name:            Rails.application.credentials[Rails.env.to_sym][:sendgrid_username],
+    password:             Rails.application.credentials[Rails.env.to_sym][:sendgrid_password],
+    authentication:       'plain',
+    enable_starttls_auto: true }
 end

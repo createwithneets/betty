@@ -1,4 +1,130 @@
-<h1><%= User.ig_username %></h1>
-<p><%= link_to "Back to all Bettys", users_path %></p>
-<%= image_tag User.photo.url %>
-<p><%= User.about %></p>
+<body class="bgimage">
+<% if is_logged_in? %>
+
+
+<header id="navbar">
+  <section class="navigation">
+        <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
+
+    <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+      | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+   | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+  | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br><br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br><br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %>
+</div>
+</section></header>
+
+
+<section class="usershowprofile"><br><br>
+<div class="showuserbasics">
+  <div class="showuserbasics1">
+  <div class="showuserborder">
+<h1>&nbsp;&nbsp;<%= @user.ig_username %>&nbsp;&nbsp;</h1>
+<%= image_tag @user.photo.medium.url %>
+</div>
+<div class="showuserbasics3">
+<%= @user.first_name %> <%=@user.last_name %></div>
+<div class="showuserbasics2"> <%= @user.city %>, <%= @user.country%></div>
+<div class="showuserbasics3">
+  <% if @user.personalIG_link.present? %><%= link_to 'See Instagram', @user.personalIG_link %><% end %></div>
+  <div class="showuserbasics2">
+  <% if @user.spotify_profile.present? %><%= link_to 'See Spotify', @user.spotify_profile %><% end %></div>
+<div class="showuserbasics3">
+  Points: <%= @user.points %><br></div></div>
+<div class="editprofile"> <% if @user == @current_user %>
+<%= link_to "(Edit your Profile)", edit_user_path(@user) %>
+<% else %>
+<%= link_to "Send a message", conversations_path(sender_id: @current_user.id, receiver_id: User.find_by(ig_username: params[:id]).id), method: :post %>
+<% end %></div>
+<div class="showuserbasics3">
+  Discussion Post Count: <%= @user.thredded_user_detail.posts_count %><br>
+  <%= link_to "View Discussion ", forum_path %>
+</div>
+</div>
+
+
+<div class="showuserabout">
+  <h2>About Me: </h2><p> <%= @user.about %></p>
+
+  <h2>My Mental Health Shelf</h2>
+  <section class="MHShelfie">
+    <div class="MHS_sections">
+  <h3>Quotes</h3>
+  <p>
+  <% if @user.MHSquote_1.present? %>1 &nbsp;.<%= @user.MHSquote_1 %><br><br><% end %>
+  <% if @user.MHSquote_2.present? %>2. &nbsp;<%= @user.MHSquote_2 %><br><br><% end %>
+  <% if @user.MHSquote_3.present? %>3. &nbsp;<%= @user.MHSquote_3 %><% end %>
+    </p></div>
+
+        <div class="MHS_sections MHSborder"><h3>Read This</h3>
+    <p>
+    <% if @user.MHSbook_1.present? %>1. &nbsp;<%= @user.MHSbook_1 %><br><br><% end %>
+    <% if @user.MHSbook_2.present? %>2. &nbsp;<%= @user.MHSbook_2 %><br><br><% end %>
+    <% if @user.MHSbook_3.present? %>3. &nbsp;<%= @user.MHSbook_3 %><br><br><% end %>
+    <% if @user.MHSbook_4.present? %>4. &nbsp;<%= @user.MHSbook_4 %><br><br><% end %>
+    <% if @user.MHSbook_5.present? %>5. &nbsp;<%= @user.MHSbook_5 %><% end %>
+      </p></div>
+
+        <div class="MHS_sections MHSborder"><h3>Follow this</h3>
+    <p>
+      <% if @user.MHSIG_1.present? %>1. &nbsp;<%= link_to @user.MHSIG_1, @user.IG_link1 %><br><br><% end %>
+      <% if @user.MHSIG_2.present? %>2. &nbsp;<%= link_to @user.MHSIG_2, @user.IG_link2 %><br><br><% end %>
+      <% if @user.MHSIG_3.present? %>3. &nbsp;<%= link_to @user.MHSIG_3, @user.IG_link3 %><br><br><% end %>
+      <% if @user.MHSIG_4.present? %>4. &nbsp;<%= link_to @user.MHSIG_4, @user.IG_link4 %><br><br><% end %>
+      <% if @user.MHSIG_5.present? %>5. &nbsp;<%= link_to @user.MHSIG_5, @user.IG_link5 %><% end %>
+    </p></div>
+
+    <div class="MHS_sections">
+    <div class="videos"></div></div>
+
+
+      <div class="MHS_sections"><h3>Must have items:</h3>
+  <p>
+  <% if @user.MHSproduct_1.present? %>1. &nbsp;<%= @user.MHSproduct_1 %><br><br><% end %>
+  <% if @user.MHSroduct_2.present? %>2. &nbsp;<%= @user.MHSroduct_2 %><br><br><% end %>
+  <% if @user.MHSproduct_3.present? %>3. &nbsp;<%= @user.MHSproduct_3 %><br><br><% end %>
+  <% if @user.MHSproduct_4.present? %>4. &nbsp;<%= @user.MHSproduct_4 %><br><br><% end %>
+  <% if @user.MHSproduct_5.present? %>5. &nbsp;<%= @user.MHSproduct_5 %><% end %>
+  </p></div>
+
+
+<div class="MHS_sections MHSborder">
+<h3>Videos & Other Resources</h3>
+<p>
+<% if @user.MHSgeneral_1.present? %>1. &nbsp<%= link_to @user.MHSgeneral_1, @user.video_links1 %><br><br><% end %>
+<% if @user.MHSgeneral_3.present? %>2. &nbsp<%= link_to @user.MHSgeneral_3, @user.vide_links2 %><br><br><% end %>
+<% if @user.MHSgeneral_4.present? %>3. &nbsp<%= link_to @user.MHSgeneral_4, @user.vide_links3 %><br><br><% end %>
+<% if @user.MHSgeneral_5.present? %>4. &nbsp<%= link_to @user.MHSgeneral_5, @user.vide_links4 %><% end %>
+</p></div>
+</section><br><br></section>
+
+
+<footer id="footernav">
+  <section class="navigationfooter">
+  <p><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+    | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+ | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+<br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+| <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %>
+ </section></footer>
+
+
+<% else %>
+<div class="peeking">
+  <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
+  <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
+  </div>
+  <% end %>
+</body>

@@ -1,0 +1,19 @@
+<div style="text-align:center"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/arianabetty.gif"><br><br><h1>Hi <%= @order.first_name %> 👋,</h1>
+<p>
+A quick note to say thank you for ordering from Betty!
+<br>For your reference, your receipt is below:</p>
+<p>
+<span style="text-deoration: underline; font-weight: 700;">Order ID:</span><%= @order.id %>
+<br><span style="text-deoration: underline; font-weight: 700;">Your name</span> <%= @order.first_name %> <%= @order.last_name %></p>
+<br><span style="text-deoration: underline; font-weight: 700;">You've ordered:</span> <% @order.order_items.each do |item| %>
+<li>+ <%= item.product.title %></li></p>
+<% end %>
+<p><span style="text-deoration: underline; font-weight: 700;">Subtotal:</span> <%= number_to_currency @order.total_price_in_dollars %>
+<br>With Tax: <%= number_to_currency @order.total_price_in_dollars * 1.12 %>
+<br>+ Shipping: $15.00
+<br><span style="text-deoration: underline; font-weight: 700;">Total Price:</span> <%= number_to_currency @order.total_price_in_dollars * 1.12 + 15 %></p>
+<% if @order.couponCode.present? %>
+<h3>note: You used the coupon <%= @order.couponCode %> so your REAL total is: <%= number_to_currency @final_amount %><br>Hooray for saving $$$ 🤑</h3>
+------------------------
+<p>We'll be in touch soon with a shipping update. Until then- see you on the internet!</p>
+<% end %></div>

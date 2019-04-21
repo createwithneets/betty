@@ -1,0 +1,121 @@
+@media(max-width: 450px){
+  .navigation{
+  display: block;
+  }
+  }
+
+  @media(max-width: 1030px){
+
+    body{
+      font-size: 10px;
+    }
+
+  .titleBettys h1{
+    font-size: 32px !important;
+  }
+.maincontentbettyland{
+  margin-left: -5vw;
+}
+  .navlinks,
+  .navigationfooter p{
+    font-size: 10px;
+  }
+
+  .content h1{
+    font-size: 32px;
+    margin-top: 10vh;
+  }
+
+  .words p{
+    font-size: 10px;
+    padding-right: 5vw;
+  }
+
+
+  .bettylandmeditations .words{
+    padding-left: 10vw;
+  }
+
+  .discussionimage img{
+    max-width: 80%;
+  }
+
+  .words h1{
+    font-size: 32px;
+    padding-right: 5vw;
+  }
+
+  .individualnewsletter .newsletterrectangle,
+  .individualnewsletter .newsletterrectangle2{
+    width: 150px;
+    height: 150px;
+  }
+  .username h3{
+    font-size: 12px;
+  }
+
+  .meditationimage,{
+    max-width: 70%;
+  }
+
+  .meditationclouds{
+    max-width: 40%;
+    margin-bottom: 20vh;
+  }
+
+  .clouds1{
+    position: absolute;
+    top: -30vh;
+    left: 0vw;
+    z-index: 1;
+    max-width: 5vw;
+  }
+  .clouds2{
+    position: absolute;
+    top: -5vh;
+    left: 5vw;
+    z-index: 1;
+      max-width: 5vw;
+  }
+  .clouds3{
+    position: absolute;
+    top: 0vh;
+    left: -15vw;
+    z-index: 1;
+      max-width: 5vw;
+  }
+
+  .searcharea h1{
+    font-size: 32px;
+  }
+    .messagebody{
+      padding-top: 50vh;
+    }
+
+  }
+
+  @media(max-width: 770px){
+    .username{
+      position: absolute;
+      top: 0vh;
+      left: 10vw;
+      z-index: 50;
+      color: #000;
+    }
+
+div.showuserabout{
+margin-top: -15vh;
+    }
+
+.messagebody{
+  margin-top: 0vh;
+}
+
+.messagebody p{
+  margin-bottom: 2vh;
+}
+
+.messagecontent{
+  top: 5vh;
+}
+  }

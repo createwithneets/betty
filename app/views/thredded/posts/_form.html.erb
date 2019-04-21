@@ -1,0 +1,110 @@
+
+<style>
+body{ background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_2.jpg');
+background-attachment: fixed;
+top:0;
+left: -50vw;
+background-size: cover;
+font-family: Inconsolata; }
+
+nav{font-family: Inconsolata;
+font-weight: 900;
+text-transform: uppercase;}
+
+nav a:hover{ color:#8697aa !important;
+border-bottom: 2px solid #8697aa !important; }
+
+label{
+  font-size: 24px !important;
+  color: #c16290;
+  font-family: Cortez !important;
+  padding-right: 10px;
+}
+
+textarea{
+    background-color: #eeddcc !important;
+    color: #000 !important;
+    border: none !important;
+    outline: none !important;
+    font-family: 'Inconsolata', sans-serif !important;
+  }
+
+textarea:focus{
+  background-color: #eeddcc !important;
+  outline: none !important;
+  border: none !important;
+  color: #000 !important;
+  font-size: 14px !important;
+  line-height: 1.3em !important;
+  font-family: 'Inconsolata', sans-serif !important;
+  }
+
+.thredded--form--submit{
+    background: #8697aa !important;
+    color: #FFF !important;
+    font-family: Inconsolata;
+    font-size: 16px;
+    appearance: none;
+    border: none;
+    margin-left: 0vw;
+    margin-top: 15px;
+    margin-bottom: 50px;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+  transition: all 0.3s ease
+  }
+
+.thredded--form--submit:hover{
+      background: #c49aa6 !important;
+      color: #000 !important;
+    }
+
+.threddedheading{
+  background-color: #8697aa;
+  padding: 0vh;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+color: #FFF}
+
+.threddedmainnav a{ color: #FFF;
+text-decoration: none;
+border-bottom: 2px solid #8697aa;
+transition: all 0.3s ease}
+
+.threddedmainnav a:hover{ border-bottom: 2px solid #FFF; }
+
+.threddedheading img{ max-width: 12vw; }
+
+.thredded--main-section{
+  font-family: 'Inconsolata' !important;
+}
+
+.thredded--main-section a{
+  color: #8697aa;
+}
+
+.thredded--main-section a:hover{
+  color: #c16290;
+  background-color: #FFF !important;
+}
+
+@media(max-width:640px){
+  .threddedheading{ display: block; pading: 1vh;}
+  .threddedheading img {max-width: 20vw;}
+  .threddedmainnav { max-width: 80vw;}
+  label{font-size: 20px !important;}
+}
+
+</style>
+
+
+
+<div class="maincontentbettyland"><br><br>
+
+  <%= render 'thredded/posts_common/form',
+           post: post,
+           content_label: t('thredded.posts.form.content_label'),
+           button_text: button_text,
+           button_submitting_text: local_assigns.key?(:button_submitting_text) ? button_submitting_text : nil %>
+
+  </div>

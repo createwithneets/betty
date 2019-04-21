@@ -1,14 +1,88 @@
-<div class="login"><h1> Edit Account</h1></div>
+<section class="edituserbg">
+  <% if is_logged_in? %>
+  <header id="navbar">
+    <section class="navigation">
+          <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
+
+      <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+        | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+     | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+    <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+    | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+  <% if @user.points.nil? %>
+  <br><br>You currently have 0 Points. Time to get beditating!
+  <% else %>
+  <br><br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+  <% end %>
+  </div>
+  </section></header>
+
+
+  <div class="maincontentbettyland"><br><br>
+<div class="login"><h1> Update your CC Details</h1></div>
 <div class="loginform">
+
+  <% @page="update_card" %>
+  <h3>Update your CC Details</h3>
+
   <%= simple_form_for @user, url: account_path do |f| %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
-  <%= f.input :photo %>
-  <%= f.input :about %>
-  <%= f.button :submit, "Update account" %>
+
+  <div id="card"></div>
+
+  <%= f.button:submit, "Update CC" %>
   <% end %>
 
+  <script>
+    var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_key] %>")
+    var elements = stripe.elements()
+
+    var card = elements.create('card', {hidePostalCode: true})
+    card.mount('#card')
+
+    $("form#edit_user_<%= @user.id %>").on("submit", function (ev) {
+      ev.preventDefault()
+
+      stripe.createToken(card).then(function (result) {
+        if (result.error) {
+          $("#card-errors").html(result.error.message)
+        } else {
+          $("form#edit_user_<%= @user.id %>").append("<input type='hidden' name='user[stripe_token]' value='" + result.token.id + "'>")
+          $("form#edit_user_<%= @user.id %>").get(0).submit()
+        }
+      })
+
+    })
+  </script>
+
 <p>
-  <%= link_to "Delete Account", account_path, method: :delete,
-  data: {confirm: "Are you sure you want to delete your account?"} %></p>
+<%= link_to "Back to Your Profile", user_path(@user.ig_username) %>
 </div>
+</section>
+
+<footer id="footernav">
+  <section class="navigationfooter">
+  <p><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
+    | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
+ | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+
+<br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+| <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
+<% if @user.points.nil? %>
+<br>You currently have 0 Points. Time to get beditating!
+<% else %>
+<br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
+<% end %>
+ </section></footer>
+
+
+
+<% else %>
+<div class="peeking">
+  <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
+  <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
+  </div>
+  <% end %>
+
+  <h3><%= link_to 'Back to Bettyland Home', bettyland_path %></h3>
+</section>
