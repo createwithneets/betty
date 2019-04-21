@@ -4,7 +4,6 @@
   }
   }
 
-
   @media(max-width: 1030px){
 
     body{
@@ -93,5 +92,30 @@
       padding-top: 50vh;
     }
 
+  }
 
+  @media(max-width: 770px){
+    .username{
+      position: absolute;
+      top: 0vh;
+      left: 10vw;
+      z-index: 50;
+      color: #000;
+    }
+
+div.showuserabout{
+margin-top: -15vh;
+    }
+
+.messagebody{
+  margin-top: 0vh;
+}
+
+.messagebody p{
+  margin-bottom: 2vh;
+}
+
+.messagecontent{
+  top: 5vh;
+}
   }
