@@ -430,12 +430,12 @@ text-align: center;
 
 .announcement a{
   color:#FFF;
-  text-decoration:none
+  text-decoration:none;
 }
 
 .announcement a:hover{
   border-bottom: 1px solid #FFF;
-  margin-bottom: 2px
+  margin-bottom: 2px;
 }
 
 

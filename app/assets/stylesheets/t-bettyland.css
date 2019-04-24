@@ -86,7 +86,7 @@ div.userssearchform input[type=submit]{
       display: block;
       float: left;
     margin-left: 25vw;
-  transform: translateX(-50%)}
+  transform: translateX(-50%);}
     .pagination .disabled {
       color: #999999;
       border: 1px solid #dddddd; }
@@ -145,7 +145,7 @@ div.userssearchform input[type=submit]{
   width: 200px;
   border-radius: 0%;
   border: 2px #000 solid;
-  top: -.5vh;
+  top: -0.5vh;
   left: .5vw;
   z-index: 1;
 }
@@ -488,7 +488,7 @@ position: relative;
   z-index: 6;
 }
 .meditationimage:hover{
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .meditationclouds{

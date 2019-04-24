@@ -132,7 +132,7 @@
 
 .productinfo1 input:focus,
 .cartpage input:focus,
-.neworderform input: focus{
+.neworderform input:focus{
 background-color: #c16290;
 outline: none;
 border: none;
@@ -198,7 +198,7 @@ margin-right: auto;
 .checkoutbutton a{
   text-decoration: none;
   color: #000;
-  font-size: 48px
+  font-size: 48px;
 }
 
 .checkoutbutton a:hover{
@@ -306,7 +306,7 @@ transition: all 0.4s ease;
 .rewardhoverable a{
   text-decoration: none;
   border-bottom: 2px solid #FFF;
-  transition: all 0.5s ease
+  transition: all 0.5s ease;
 }
 
 .reward a:hover,
@@ -371,8 +371,7 @@ transition: all 0.4s ease;
 
 
 .hidden{
-
-  opacity: 0
+  opacity: 0;
 }
 
 @media(max-width: 1500px){
