@@ -313,7 +313,7 @@ border: 2px dotted #000;
   text-align: left;
 
   position: sticky;
-  position: ~webkit~sticky;
+  position: -webkit-sticky;
 }
 
 
@@ -332,7 +332,7 @@ border: 2px dotted #000;
   text-align: left;
 
   position: sticky;
-  position: ~webkit~sticky;
+  position: -webkit-sticky;
 }
 
 .newsletteroverlay h1,

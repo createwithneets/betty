@@ -18,7 +18,7 @@ $.ajax({
       $("section").html(newPage)
 
       $("section").fadeIn(250)
-    }
+    })
   }
 })
 
