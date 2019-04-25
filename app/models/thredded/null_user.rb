@@ -5,7 +5,7 @@ module Thredded
   # * a user that was hard-deleted
   #   (e.g. if a post was made by a user, and then that user is destroyed, the post's user ID is nullified).
   class NullUser
-    include ::Thredded::UserPermissions::Read::None
+    include ::Thredded::UserPermissions::Read::All
     include ::Thredded::UserPermissions::Write::None
     include ::Thredded::UserPermissions::Message::ReadersOfWriteableBoards
     include ::Thredded::UserPermissions::Moderate::None
