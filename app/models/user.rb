@@ -18,29 +18,28 @@ has_secure_password
 
 def save_and_subscribe
   if self.valid?
-#create a stripe customer
-customer = Stripe::Customer.create(source: self.stripe_token, description: self.email, coupon: self.coupon)
+      #create a stripe customer
+      customer = Stripe::Customer.create(source: self.stripe_token, description: self.email, coupon: self.coupon)
 
-#create a new subscription based off of customer ID and plan they signed up For
-subscription = Stripe::Subscription.
-create(customer: customer.id, items: [{plan: self.subscription_plan}])
+      #create a new subscription based off of customer ID and plan they signed up For
+      subscription = Stripe::Subscription.
+      create(customer: customer.id, items: [{plan: self.subscription_plan}])
 
-#save the customer ID to database
-self.stripe_customer = customer.id
+      #save the customer ID to database
+      self.stripe_customer = customer.id
 
-#save the subscription id to the database
-self.stripe_subscription = subscription.id
+      #save the subscription id to the database
+      self.stripe_subscription = subscription.id
 
-#to assist with retrieving subscriptions in future ##
-@customer_id = customer.id
+      #to assist with retrieving subscriptions in future ##
+      @customer_id = customer.id
 
-self.update_attributes!(stripe_customer: @customer_id)
-@subscription_id = subscription.id
-self.update_attributes!(stripe_subscription: @subscription_id)
+      self.update_attributes!(stripe_customer: @customer_id)
+      @subscription_id = subscription.id
+      self.update_attributes!(stripe_subscription: @subscription_id)
 
-#save everything
-self.save
-
+      #save everything
+      self.save
     else
 
       false
