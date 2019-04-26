@@ -77,7 +77,6 @@
         $("#card-errors").html(result.error.message)
       } else {
         $("form#new_user").append("<input type='hidden' name='user[stripe_token]' value='" + result.token.id + "'>")
-$("form#new_user").get(0).submit()
       }
     })
 
