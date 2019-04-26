@@ -1,7 +1,7 @@
 class NewslettersController < ApplicationController
   before_action :force_login
   def index
-    @newsletters = Newsletter.search(params[:search]).paginate(page: params[:page])
+    @newsletters = Newsletter.search(params[:search]).paginate(page: params[:page]).order("created_at DESC")
     @user= current_user
 
   end
