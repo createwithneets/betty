@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_09_162801) do
+ActiveRecord::Schema.define(version: 2019_04_29_221440) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -518,6 +518,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_162801) do
     t.string "spotify_profile"
     t.text "about"
     t.boolean "admin"
+    t.string "referral_code"
     t.index ["ig_username"], name: "ig_username_nocase", unique: true
   end
 
