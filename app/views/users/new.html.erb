@@ -49,7 +49,7 @@
 <%= f.input :country, :html => { class: 'dropdown' } %>
   <%= f.input :postal_code%>
   <%= f.input :subscription_plan, :html => { class: 'dropdown' }, as: :select, collection:
-  [['Betty Subscription- $8.99USD/ month', 'prod_EKfC5UjIeHReTJ']], include_blank: false %>
+  [['Betty Subscription- $9.99USD/ month', 'Rails.application.credentials[Rails.env.to_sym][:stripe_plan]']], include_blank: false %>
 <%= f.input :coupon %>
 <div id="card-errors">
 <% @user.errors[:stripe_token].each do |e| %>
@@ -184,7 +184,7 @@
       How does it work?
       </h4>
       <ul class="howitworks">
-        <li>Sign up for $8.99 (USD)*  and let us know your preferred IG account so we can invite you into the club. </li>
+        <li>Sign up for $9.99 (USD)*  and let us know your preferred IG account so we can invite you into the club. </li>
 ---------------------------
         <li>Tune in every morning (6, 7, and 8AM PST) via IG, Monday-Friday, for the 10 minute meditation.</li>
 ---------------------------
