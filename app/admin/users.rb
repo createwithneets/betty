@@ -5,7 +5,7 @@ ActiveAdmin.register User do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :password_confirmation, :ig_username, :address_1, :address_2, :city, :country, :points, :postal_code, :meme_1,
- :meme_2, :meme_3, :meme_4, :meme_5, :meme_6, :meme_7, :meme_8, :admin, :referral_code
+ :meme_2, :meme_3, :meme_4, :meme_5, :meme_6, :meme_7, :meme_8, :admin
 #
 # or
 #
@@ -41,7 +41,6 @@ permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :pa
         @user = User.find_by(email: email)
         if @user.present?
         @user.update_attributes(points: points)
-        @user.update_attributes(referral_code: discount)
 
         end
       end
@@ -67,7 +66,6 @@ permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :pa
   column :postal_code
   column :tune_in
   column :points
-  column :referral_code
   actions
   end
 
@@ -90,7 +88,6 @@ permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :pa
       f.input :password_digest
       f.input :about
       f.input :admin
-      f.input :referral_code
     end
 
   f.inputs "Stripe Info" do
