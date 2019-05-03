@@ -38,7 +38,11 @@
 <div class="showuserbasics3">
   Points: <%= @user.points %><br></div>
     <% if @user == @current_user %>
-  <div class="showuserbasics2"> Your Referral Code: <%= @user.referral_code %><% end %></div>
+  <div class="showuserbasics2"> Your Referral Code:
+    <% if @user.referral_code.nil? %>
+    Please contact hello@inbedwithbetty.com to set up your Referral Code!
+    <% else %>
+    <%= @user.referral_code %><% end %><% end %></div>
 
 <div class="editprofile"> <% if @user == @current_user %>
 <%= link_to "(Edit your Profile)", edit_user_path(@user) %>
