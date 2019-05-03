@@ -37,7 +37,9 @@
   <% if @user.spotify_profile.present? %><%= link_to 'See Spotify', @user.spotify_profile %><% end %></div>
 <div class="showuserbasics3">
   Points: <%= @user.points %><br></div>
-
+  <% if @user == @current_user %>
+  <div class="showuserbasics2">
+  Your Unique Referral Code is: <%= @user.referral_code %> </div><% end %>
 
 <div class="editprofile"> <% if @user == @current_user %>
 <%= link_to "(Edit your Profile)", edit_user_path(@user) %>
