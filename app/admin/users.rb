@@ -66,6 +66,7 @@ permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :pa
   column :postal_code
   column :tune_in
   column :points
+  column :referral_code
   actions
   end
 
