@@ -39,7 +39,6 @@
   Points: <%= @user.points %><br></div>
     <% if @user == @current_user %>
   <div class="showuserbasics2"> Your Referral Code: <%= @user.referral_code %><% end %></div>
-</div>
 
 <div class="editprofile"> <% if @user == @current_user %>
 <%= link_to "(Edit your Profile)", edit_user_path(@user) %>
@@ -49,6 +48,7 @@
 <div class="showuserbasics3">
   Discussion Post Count: <%= @user.thredded_user_detail.posts_count %><br>
   <%= link_to "View Discussion ", forum_path %>
+</div>
 </div>
 </div>
 

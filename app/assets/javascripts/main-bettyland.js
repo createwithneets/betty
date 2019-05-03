@@ -7,7 +7,7 @@ window.onscroll = function() {
     document.getElementById("navbar").style.top = "-85%";
     document.getElementById("footernav").style.bottom = "-120%";
   } else {
-    document.getElementById("navbar").style.top = "-100%";
+    document.getElementById("navbar").style.top = "-200%";
     document.getElementById("footernav").style.bottom = "-95%";
   }
   prevScrollpos = currentScrollPos;

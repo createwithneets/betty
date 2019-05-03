@@ -10,6 +10,13 @@
       font-size: 10px;
     }
 
+
+    .bettylanddiscussion{
+        background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bettysite_backgroundpink.jpg');
+      background-size: 100vw;
+      height: 60vh;
+    }
+
   .titleBettys h1{
     font-size: 32px !important;
   }
@@ -64,25 +71,29 @@
   }
 
   .clouds1{
-    position: absolute;
+    position: relative;
     top: -30vh;
     left: 0vw;
     z-index: 1;
     max-width: 5vw;
+    display: none;
   }
   .clouds2{
-    position: absolute;
+    position: relative;
     top: -5vh;
-    left: 5vw;
+    left: 0vw;
     z-index: 1;
       max-width: 5vw;
+      display: none;
   }
   .clouds3{
-    position: absolute;
+    position: relative;
     top: 0vh;
-    left: -15vw;
+    left: 0vw;
     z-index: 1;
       max-width: 5vw;
+      display: none;
+
   }
 
   .searcharea h1{
@@ -92,9 +103,48 @@
       padding-top: 50vh;
     }
 
-  }
+h3, h2, h4{
+      margin-top: 0px;
+    }
 
-  @media(max-width: 770px){
+div.messagebody{
+      padding-top: 0vh;
+      margin-top: 15vh;
+    }
+
+    div.shownewsletter{
+      margin-top: 30vh;
+    }
+
+    div.newsletterdate{
+      margin-bottom: 1vh;
+    }
+
+    #circle{
+      top: 20vh;
+      z-index: 1;
+    }
+
+    div.showuserbasics, .showuserabout{
+      margin-top: 10vh;
+    }
+
+    div.basicinfo{
+      margin-top: -70vh;
+}
+
+    .individualuser{
+      width: 33%;
+      margin-left: 15vw;
+    }
+
+div.login{
+  margin-top: 10vh;
+}
+
+}
+
+@media(max-width: 775px){
     .username{
       position: absolute;
       top: 0vh;
@@ -105,6 +155,10 @@
 
 div.showuserabout{
 margin-top: -15vh;
+    }
+
+    .shownewsletter {
+      margin-top: 28vh;
     }
 
 .messagebody{
