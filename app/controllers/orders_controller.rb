@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
 
       charge_metadata = {
         :coupon_code => @code,
-        :coupon_discount => (@discount * 100).to_s + "%"
+        :coupon_discount => (@discount).to_s
       }
     end
 
@@ -68,8 +68,18 @@ end
 private
 
 COUPONS = {
-  'TESTER1' => 50,
-  'TESTER2' => 1000,
+  'BETTY10' => 500,
+  'BETTYTWENTY' => 1000,
+  'B30' => 1500,
+  'BETTYFORTY' => 2000,
+  'B50' => 2500,
+  'BETTY60' => 3000,
+  'B70' => 3500,
+  'BETTY80' => 4000,
+  'B85' => 4500,
+  'BETTY90' => 5000,
+  'B95' => 5500,
+  'BETTY100' => 6000,
 }
 
 def get_discount(code)
