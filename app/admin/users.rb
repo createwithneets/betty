@@ -41,6 +41,7 @@ permit_params :first_name, :last_name, :email, :password, :photo, :photogif, :pa
         @user = User.find_by(email: email)
         if @user.present?
         @user.update_attributes(points: points)
+        @user.update_attributes(discount: referral_code)
 
         end
       end
