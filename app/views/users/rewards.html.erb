@@ -25,7 +25,11 @@
 <section class="rewardspagecontent">
   <h1>Your Rewards</h1>
   <p>We're proud of you and your commitment to self care & mental health!
-    Check back here every so often to see what you've unlocked with your points.<br>
+    Check back here every so often to see what you've unlocked with your points.<br><br>You get points for meditating, and for referring friends.
+    <% if @user.referral_code.present? %>
+    Your referral code is: <%= @user.referral_code %>
+    <% else %>
+    Please contact hello@inbedwithbetty.com to set up your Referral Code!<% end %>
     <br><br>Note: After redeeming your points for discount codes, you will be deducted the # of points so you can start collecting again!</p>
 
   <section class="rewards">
