@@ -39,7 +39,7 @@
   Points: <%= @user.points %><br></div>
     <% if @user == @current_user %>
   <div class="showuserbasics2"> Your Referral Code:
-    <% if @user.referral_code.nil? %>
+    <% if @user.referral_code.blank? %>
     Please contact hello@inbedwithbetty.com to set up your Referral Code!
     <% else %>
     <%= @user.referral_code %><% end %><% end %></div>
