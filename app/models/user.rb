@@ -10,10 +10,10 @@ validates :ig_username, presence: true
 validates :address_1, presence: true
 validates :city, presence: true
 validates :country, presence: true
-validates :stripe_token, presence: true
+validates :stripe_token, presence: true, on: :create 
 
 
-
+has_many :conversations, dependent: :destroy
 has_secure_password
 
 def save_and_subscribe

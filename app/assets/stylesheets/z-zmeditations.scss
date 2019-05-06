@@ -16,6 +16,11 @@
 
 }
 
+.search-suggestions{
+  color: #c16290;
+  font-style: oblique;
+}
+
 .meditationsbody{
   margin-top: 8vh;
   margin-bottom: 15vh;
@@ -50,6 +55,12 @@
 
 .individualmeditation a:hover{
   border-bottom: 2px solid #c16290;
+}
+
+.individualmeditation:hover{
+  .meditationrectangle{
+    background-color: #8697aa;
+  }
 }
 
 .meditationrectangle{

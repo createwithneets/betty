@@ -4,6 +4,8 @@ class Message < ApplicationRecord
 
   validates_presence_of :body, :conversation_id, :user_id
 
+  scope :unread, -> { where(read: false) }
+  
   private
   def message_time
     created_at.strftime("%d/%m/%y at %l:%M %p")

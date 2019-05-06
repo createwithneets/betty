@@ -17,5 +17,8 @@ def unread_message_count(current_user)
 self.messages.where("user_id != ? AND read = ?", current_user.id, false).count
 end
 
-
+def unread_messages_count(current_user)
+    @conversations = Conversation.where("receiver = :user_id OR sender = :user_id", user_id: current_user.id)
+  Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
+  end
 end

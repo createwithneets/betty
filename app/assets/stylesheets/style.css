@@ -15,10 +15,15 @@ body a{
 }
 
 div.success, div.error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 5px 20px;
   background: #c16290;
   color: #FFF;
   font-size: 13px;
+  z-index: 9999;
 }
 
 

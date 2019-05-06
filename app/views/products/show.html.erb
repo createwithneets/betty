@@ -10,7 +10,7 @@
           | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
        | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
 
-      <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+      <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
       | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
     <% if @user.points.nil? %>
     <br><br>You currently have 0 Points. Time to get beditating!
@@ -24,10 +24,10 @@
 <section class="shopshowpage">
 <section class="productinfoshowpage">
 <div class="productinfo1"><%=image_tag @product.images.medium.url %></div>
-<div class="productinfo1"><h2><%= @product.title %></h2><p><%= simple_format @product.description %></p>
+<div class="productinfo2"><h2><%= @product.title %></h2><p><%= simple_format @product.description %></p>
 <%= simple_form_for [@product, @order_item] do |f| %>
 <%= f.input :quantity %>
-<%= f.button :submit, "Add to Cart" %></div>
+<div class="add-to-cart"><%= f.button :submit, "Add to Cart" %></div></div>
 <% end %>
 
 </section>
@@ -41,7 +41,7 @@
       | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
    | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
 
-  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
   | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
 <br><br>You currently have 0 Points. Time to get beditating!

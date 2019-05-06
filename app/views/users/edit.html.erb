@@ -10,7 +10,7 @@
       | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
    | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
 
-  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
   | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
 <br><br>You currently have 0 Points. Time to get beditating!
@@ -65,28 +65,27 @@
   <%= f.input :MHSquote_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
   <%= f.input :MHSquote_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
   <%= f.input :MHSquote_3,  label: '3.', :input_html => { :class => 'MHSinput' } %></div>
+  <div class="userprofilesection"><h3>What books or reads would you recommend?</h3>
+<%= f.input :MHSbook_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
+<%= f.input :MHSbook_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
+<%= f.input :MHSbook_3,  label: '3.', :input_html => { :class => 'MHSinput' } %>
+<%= f.input :MHSbook_4,  label: '4.', :input_html => { :class => 'MHSinput' } %>
+<%= f.input :MHSbook_5,  label: '5.', :input_html => { :class => 'MHSinput' } %></div>
 
-    <div class="userprofilesection"><h3>What books or reads would you recommend?</h3>
-  <%= f.input :MHSbook_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
-  <%= f.input :MHSbook_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
-  <%= f.input :MHSbook_3,  label: '3.', :input_html => { :class => 'MHSinput' } %>
-  <%= f.input :MHSbook_4,  label: '4.', :input_html => { :class => 'MHSinput' } %>
-  <%= f.input :MHSbook_5,  label: '5.', :input_html => { :class => 'MHSinput' } %></div>
+  <div class="userprofilesection"><h3>Any videos, resources, other links you would recommend?</h3>
+<%= f.input :MHSgeneral_1,  label: '1', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :video_links1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+<%= f.input :MHSgeneral_3,  label: '2', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links2,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+<%= f.input :MHSgeneral_4,  label: '3', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links3,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+<%= f.input :MHSgeneral_5,  label: '4', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links4,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+</div>
 
-    <div class="userprofilesection"><h3>Any videos, resources, other links you would recommend?</h3>
-  <%= f.input :MHSgeneral_1,  label: '1', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :video_links1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-  <%= f.input :MHSgeneral_3,  label: '2', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links2,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-  <%= f.input :MHSgeneral_4,  label: '3', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links3,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-  <%= f.input :MHSgeneral_5,  label: '4', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links4,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-  </div>
-
-    <div class="userprofilesection"><h3>What are some of your favourite IG accounts?</h3>
-  <%= f.input :MHSIG_1,  label: '1', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-  <%= f.input :MHSIG_2,  label: '2', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link2,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-  <%= f.input :MHSIG_3,  label: '3', placeholder: "Username", :input_html => { :class => 'smallerinput' } %><%= f.input :IG_link3,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-  <%= f.input :MHSIG_4,  label: '4', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link4,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-  <%= f.input :MHSIG_5,  label: '5', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link5,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %>
-  </div>
+  <div class="userprofilesection"><h3>What are some of your favourite IG accounts?</h3>
+<%= f.input :MHSIG_1,  label: '1', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+<%= f.input :MHSIG_2,  label: '2', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link2,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+<%= f.input :MHSIG_3,  label: '3', placeholder: "Username", :input_html => { :class => 'smallerinput' } %><%= f.input :IG_link3,  label: '🔗',  placeholder: 'Full link please!',  :input_html => { :class => 'secondaryinput' } %><br>
+<%= f.input :MHSIG_4,  label: '4', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link4,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+<%= f.input :MHSIG_5,  label: '5', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link5,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %>
+</div>
 
     <div class="userprofilesection"><h3>Sure, you can't buy self-care, but what are some products that help?</h3>
   <%= f.input :MHSproduct_1,  label: '1', :input_html => { :class => 'MHSinput' } %>
@@ -111,7 +110,7 @@
       | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
    | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
 
-  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
   | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
   <% if @user.points.nil? %>
   <br>You currently have 0 Points. Time to get beditating!
@@ -127,7 +126,7 @@
   <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
   <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
   </div>
-  <% end %>
 
   <h3><%= link_to 'Back to Bettyland Home', bettyland_path %></h3>
+    <% end %>
 </body>

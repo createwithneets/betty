@@ -83,7 +83,7 @@ div.convosearch input[type=submit]{
 div.messagebody{
 position: absolute;
 left: 50vw;
-margin-top: 25vh;
+margin-top: 35vh;
 transform: translateY(-50%);
   }
 

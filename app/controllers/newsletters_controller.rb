@@ -9,7 +9,7 @@ class NewslettersController < ApplicationController
 
   def show
     @newsletter= Newsletter.find(params[:id])
-    @newsletters = Newsletter.paginate(page: params[:page])
+    @newsletters = Newsletter.paginate(page: params[:page]).order("created_at DESC")
     @user= current_user
   end
 

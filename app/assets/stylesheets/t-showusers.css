@@ -341,9 +341,3 @@ border-bottom: 1px solid #FFF;
 .MHSborder{
   border: 1px dashed #000;
 }
-
-.MHS_sections .videos src{
-position: relative;
-top: 50%;
-transform: translateY(-50%);
-}

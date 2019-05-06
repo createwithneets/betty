@@ -32,6 +32,10 @@ div.searcharea{
   margin-top: 5vh;
 }
 
+.titleBettys{
+  max-width: 35%;
+}
+
 .titleBettys h1{
   color: #000 !important;
   font-size: 60px !important;
@@ -288,8 +292,14 @@ div.maincontentbettyland {
 .allusers{
 display: flex;
 flex-wrap: wrap;
-justify-content: space-evenly
+justify-content: space-around;
 }
+
+.individualuser{
+  width: 15%;
+margin-left: 5vw;
+}
+
 
 .individualuser a{
   text-decoration: none;
@@ -390,6 +400,13 @@ div.peeking{
   z-index: 50;
 }
 
+.friendshappy{
+    padding-bottom: 15vh;
+    position: relative;
+    max-width: 30vw;
+    z-index: 50;
+}
+
 .emojihand{
 position: relative;
   z-index: 50;
@@ -458,6 +475,11 @@ position: relative;
   font-size: 16px;
   transition: all 0.3s ease;
   cursor: pointer;
+  margin-bottom: 15vh;
+}
+
+.beditategetgoods{
+  line-height: 1;
 }
 
 .discussionbutton:hover {

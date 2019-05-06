@@ -14,7 +14,7 @@ class OrderItemsController < ApplicationController
 
 flash[:success] = "Item is added to your cart!"
 
-redirect_to product_path(@product)
+redirect_to cart_path(@current_cart)
 end
 
 

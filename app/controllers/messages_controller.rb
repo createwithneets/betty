@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
     def create
 
       @user = @current_user
-      
+
       @message = @conversation.messages.new(message_params)
       @message.user = current_user
 
@@ -32,4 +32,6 @@ class MessagesController < ApplicationController
       def message_params
         params.require(:message).permit(:body, :user_id)
       end
+
+
 end

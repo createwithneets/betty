@@ -7,6 +7,7 @@ class ConversationsController < ApplicationController
     @user = @current_user
   end
 
+
   def create
     @user = @current_user
     if Conversation.between(params[:sender_id], params[:receiver_id]).present?

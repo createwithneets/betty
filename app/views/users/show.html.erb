@@ -10,7 +10,7 @@
       | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
    | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
 
-  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+  <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
   | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
 <br><br>You currently have 0 Points. Time to get beditating!
@@ -85,8 +85,6 @@
       <% if @user.MHSIG_5.present? %>5. &nbsp;<%= link_to @user.MHSIG_5, @user.IG_link5 %><% end %>
     </p></div>
 
-    <div class="MHS_sections">
-    <div class="videos"></div></div>
 
 
       <div class="MHS_sections"><h3>Must have items:</h3>
@@ -116,7 +114,7 @@
     | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
  | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
 
-<br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_user_path(@user) %> | <%=link_to "Shop Betty", products_path %>
+<br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
 | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
 <% if @user.points.nil? %>
 <br>You currently have 0 Points. Time to get beditating!
