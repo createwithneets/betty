@@ -1,6 +1,6 @@
 class Newsletter < ApplicationRecord
 
-self.per_page = 10
+self.per_page = 9
 
 
 

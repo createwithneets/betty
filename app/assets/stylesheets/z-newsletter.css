@@ -161,7 +161,7 @@ transform: translateX(-50%)}
 }
 
 .newsletterdate{
-  margin-bottom: 8vh;
+  margin-bottom: 2vh;
 }
 
 
@@ -358,7 +358,7 @@ border: 2px dotted #000;
 
 
 .viewallnewsletters{
-  margin-top: 25vh;
+  margin-top: 18vh;
   position: fixed;
   max-width: 20vw;
   left: 5vw;
