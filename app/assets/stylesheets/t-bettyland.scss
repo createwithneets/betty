@@ -12,6 +12,10 @@ font-size: 16px;
 width: 20vw;
 }
 
+.meditation-content{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
 .loginbutton a{
   color: #FFF;
@@ -338,9 +342,11 @@ div.peeking{
 }
 
 .bettylandwelcome{
-    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_4.jpg');
+    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Betty_Site_Background_no_popup.gif');
   background-size: cover;
+  background-repeat: repeat;
   height: 80vh;
+  background-position: 0% 45%;
 }
 
 .bettylanddiscussion{
@@ -389,6 +395,7 @@ div.peeking{
 .words h1{
   font-size: 48px;
 }
+
 
 .words p{
   font-size: 16px;
@@ -494,10 +501,72 @@ position: relative;
     cursor: pointer;
 }
 
+.popupimage{
+  position: relative;
+  top: 10vh;
+  left: 8vw;
+  max-width: 50vw;
+  height: auto;
+}
+
+.welcome-words {
+max-width: 35vw;
+position: absolute;
+top: 40vh;
+left: 48vw;
+transform: translateX(-50%);
+  h7{
+  font-size: 25px;
+  font-family: 'Cortez';
+}
+}
+
+.discussionbutton2 a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+.discussionbutton2{
+  background-color: #c16290;
+  border: none;
+  color: #FFFFFF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 15vh;
+}
+
+.discussionbutton2:hover {
+  background-color: #8697aa;
+  border: none;
+  color: #000000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    cursor: pointer;
+}
+
+
 .bettynews{
   display: flex;
   justify-content: space-evenly;
   margin-top: 20vh;
+  position: relative;
+}
+
+.eyeball{
+  position: absolute;
+  top: -30vh;
+  left: -25vw;
+  max-width: 30vw;
+  transform: rotate(-20deg);
 }
 
 .content h1{
@@ -555,6 +624,50 @@ position: relative;
     50%  {fill: #FFF;}
     75%  {fill: #d7b6bf;}
     100% {fill: #eeddcc;}
+}
+
+.slides:nth-child(odd){
+  transform: translateX(-30%) translateY(30%) rotate(-30deg);
+}
+
+.slides:nth-child(even){
+  transform: translateY(-10%) translateX(40%) rotate(30deg);
+  transition: all 0.3s ease;
+  &:hover{
+    transform: rotate(-30deg);
+}
+}
+
+.slides:last-child{
+  transform: rotate(-10deg) translateX(-50%) translateY(-70%);
+}
+
+.slides{
+  position: relative;
+  .slides-igusername{
+    display: none;
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    background-color: #eeddcc;
+    padding: 1vh 1vw;
+  }
+  &:hover{
+    .slides-igusername{
+      display: block;
+    }
+  }
+}
+
+.meet-bettys{
+  position: relative;
+}
+
+.waving-hand{
+  position: absolute;
+  right: -20vw;
+  top: 25vh;
+  max-width: 30vw;
 }
 
 

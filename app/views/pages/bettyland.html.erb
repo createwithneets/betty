@@ -20,17 +20,13 @@
 
 <section class="bettylandwelcome">
   <section class="content">
-<section class="bettylandwelcomecontent">
-  <div class="words"><h1>Welcome home!</h1><p>Because that's what this is- a space on the internet to call home.<br><br>This is a
+    <div class="popupimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Betty_Site_Background_popup.png"></div>
+  <div class="welcome-words"><h7>Welcome!</h7><p>This is a
   digital clubhouse for Bettys. You'll find room for conversation and dialogue, an opportunity to browse the profiles of other Bettys,
   watch a library of meditations, read archived newsletters, and more.
   <br><br>Scroll or click through to explore, connect, and enjoy!</p><p class="note">Note: If you have any ideas or encounter any glitches,
-be sure to let us know at hello@inbedwithbetty.com  </div>
-  <div class="emojihand">
-    <div class="missywave"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/MTVcribs.gif"></div>
-    <div class="welcomesquare1"></div>
-      <div class="welcomesquare2"></div></div>
-  </section>
+be sure to let us know at hello@inbedwithbetty.com
+<div class="discussionbutton2"><%= link_to edit_account_path do %>Set Up Your Profile<% end %></div> </div>
   </section>
   </section>
 
@@ -61,12 +57,14 @@ be sure to let us know at hello@inbedwithbetty.com  </div>
                 </div>
         <% end %>
         <% end %>
+
+        <div class="eyeball"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Betty_Eye.gif"></div>
         </section>
         </section>
 
   <section class="bettylandmeditations">
     <div class="hidden">
-  <section class="bettylandwelcomecontent">
+  <section class="bettylandwelcomecontent meditation-content">
     <div class="words"><h1>Meditations</h1><p>Missed a meditation or looking for one to do on the weekend? Look no further. Browse our library for what you need and know that we upload a new one each week.<br><br>
   <div class="discussionbutton"><%=link_to "See Meditations", meditations_path %></div>   </div>
   <div class="meditationclouds"><div class="meditationimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/meditatinoclouds.png"></div>
@@ -120,10 +118,18 @@ be sure to let us know at hello@inbedwithbetty.com  </div>
   <section class="bettylandbettys">
     <div class="hidden">
   <section class="bettylandwelcomecontent">
-    <div class="discussionimage"><%= link_to users_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bettyfaces.png"><% end %></div>
-    <div class="words"><h1>Meet The Betty Class of 2019</h1><p>Know that you aren't alone. <br><br>Browse the Betty yearbook, send them a message, and get to know your fellow beditators.
+    <div class="discussionimage">
+      <% @users. each do |user| %>
+        <div class="slides">  <%= link_to  user_path(user.ig_username) do %><%= image_tag user.photo.thumb.url%>
+          <div class="slides-igusername"><%= user.ig_username %></div>
+          <% end %></div>
+        <% end %></div>
+
+    <div class="words meet-bettys"><h1>Meet Other Bettys</h1><p>Know that you aren't alone. <br><br>Browse the Betty yearbook, send them a message, and get to know your fellow beditators.
       Who knows- you might just meet your next internet (or IRL) BFF.<br><br>
- <div class="discussionbutton"><%=link_to "See all Bettys", users_path %></div>  </div>
+ <div class="discussionbutton"><%=link_to "See all Bettys", users_path %></div>
+<div class="waving-hand"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Betty_Hand.gif"></div>
+</div>
   </div>
     </section>
 
