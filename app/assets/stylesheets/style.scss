@@ -410,16 +410,26 @@ text-align: center;
   background-color: #bf6590;
 }
 .bg-white{
-  background-color: #FFFFFF;
+  background-color: #eeddcc;
 }
 
 /*  we add a transition to the transform property */
-.front {
-  transition: transform 0.5s ease;
+.js-front-1,
+.js-front-2,
+.js-front-3,
+.js-front-4,
+.js-front-5,
+.js-front-6 {
+  transition: transform 1.0s ease;
 }
 
 /* we toggle this class using javascript */
-.front.fade {
+.js-front-1.fade,
+.js-front-2.fade,
+.js-front-3.fade,
+.js-front-4.fade,
+.js-front-5.fade,
+.js-front-6.fade {
   opacity: 0;
 }
 
@@ -457,7 +467,6 @@ max-width: 80vw;
     color: #000;
     border: 1px solid #000;
   }
-}
 }
 
 //Are you a Betty//
