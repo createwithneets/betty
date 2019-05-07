@@ -26,7 +26,8 @@ class UsersController < ApplicationController
       flash[:success]= "Thanks for Signing Up!"
       redirect_to welcome_path
     else
-      redirect_to error_path
+      puts @user.errors.to_yaml
+      # redirect_to error_path
     end
   end
 

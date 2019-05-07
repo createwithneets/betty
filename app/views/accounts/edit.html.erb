@@ -19,7 +19,7 @@
   </section></header>
 
 
-
+<%= simple_form_for @user do |f| %>
 
   <div class="maincontentbettyland"><br><br>
   <div class="edit-account-page">
@@ -28,7 +28,7 @@
 
 
 <div class="long-user-info">
-      <%= simple_form_for @user do |f| %>
+      
       <a name="section-1">
           <section class="photo-uploader">
           <div class="image-upload">
@@ -124,29 +124,7 @@
     <div id="card"></div>
 
     <%= f.button:submit, "Update CC" %>
-    <% end %>
-
-    <script>
-      var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_key] %>")
-      var elements = stripe.elements()
-
-      var card = elements.create('card', {hidePostalCode: true})
-      card.mount('#card')
-
-      $("form#edit_user_<%= @user.id %>").on("submit", function (ev) {
-        ev.preventDefault()
-
-        stripe.createToken(card).then(function (result) {
-          if (result.error) {
-            $("#card-errors").html(result.error.message)
-          } else {
-            $("form#edit_user_<%= @user.id %>").append("<input type='hidden' name='user[stripe_token]' value='" + result.token.id + "'>")
-            $("form#edit_user_<%= @user.id %>").get(0).submit()
-          }
-        })
-
-      })
-    </script>
+    
   </div></a>
 </div>
 </div>
@@ -183,7 +161,35 @@
 </div>
 
 
+<% end %>
 
+    <script>
+      var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_key] %>")
+      var elements = stripe.elements()
+
+      var hasUpdatedCard = false
+
+      var card = elements.create('card', {hidePostalCode: true})
+      card.mount('#card')
+      card.on("change", function () {
+        hasUpdatedCard = true
+      })
+
+      $("form.edit_user").on("submit", function (ev) {
+        if (hasUpdatedCard) {
+          ev.preventDefault()
+
+          stripe.createToken(card).then(function (result) {
+            if (result.error) {
+              $("#card-errors").html(result.error.message)
+            } else {
+              $("form.edit_user").append("<input type='hidden' name='user[stripe_token]' value='" + result.token.id + "'>")
+              $("form.edit_user").get(0).submit()
+            }
+          })
+        }
+      })
+    </script>
 
 
 <footer id="footernav">

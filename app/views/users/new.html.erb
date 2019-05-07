@@ -72,7 +72,10 @@
   $("form#new_user").on("submit", function (ev) {
     ev.preventDefault()
 
+    console.log(stripe, card)
+
     stripe.createToken(card).then(function (result) {
+      console.log(result)
       if (result.error) {
         $("#card-errors").html(result.error.message)
       } else {
@@ -80,7 +83,6 @@
         $("form#new_user").get(0).submit()
       }
     })
-
   })
 </script>
 

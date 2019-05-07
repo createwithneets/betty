@@ -6,8 +6,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <script src="https://js.stripe.com/v3/"></script>
-
+    <script src="https://js.stripe.com/v3/"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -27,6 +27,5 @@
     <%= yield %>
   </body>
 
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </html>

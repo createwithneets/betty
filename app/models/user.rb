@@ -22,8 +22,7 @@ def save_and_subscribe
       customer = Stripe::Customer.create(source: self.stripe_token, description: self.email, coupon: self.coupon)
 
       #create a new subscription based off of customer ID and plan they signed up For
-      subscription = Stripe::Subscription.
-      create(customer: customer.id, items: [{plan: self.subscription_plan}])
+      subscription = Stripe::Subscription.create(customer: customer.id, items: [{plan: self.subscription_plan}])
 
       #save the customer ID to database
       self.stripe_customer = customer.id
@@ -39,7 +38,7 @@ def save_and_subscribe
       self.update_attributes!(stripe_subscription: @subscription_id)
 
       #save everything
-      self.save
+      self.save!
     else
 
       false
