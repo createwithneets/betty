@@ -1,118 +1,79 @@
-.editaccountpage{
-  max-width: 75vw;
+
+
+.long-user-info{
+position: absolute;
+padding-top: 15vh;
+margin-left: 40vw;
+background: transparent;
+width: 55vw;
+height: 80vh;
+overflow: auto;
+}
+
+.basic-user-info{
+  position: fixed;
+  top: 50px;
+  left: 0;
+  max-width: 35%;
+  margin-left: 10vw;
+  padding-top: 5vh;
+  padding-right: 10vw;
+  z-index: 50;
+  padding-bottom: 15vh;
+}
+
+.about-details h2{
+  color: #000;
+}
+
+.jump-links{
+    list-style-type: none;
+    margin-top: -3vh;
+    margin-left: -3vw;
+    width: 108%;
+    a{
+      text-decoration: none;
+    }
+    li{
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1%;
+      width: 108%;
+      text-align: center;
+      border-bottom: 1px solid #000;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+    &:first-child{
+      border-top: 1px solid #000
+    }
+    &:hover{
+      background: #eeddcc;
+    }
+  }
+}
+
+
+.photo-uploader{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  justify-content: space-evenly;
+  margin-top: -10vh;
 }
-
-.images{
-  display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  text-align: left;
-}
-
-.images2{
-  display: flex;
-  justify-content: space-evenly;
-  align-content: flex-end;
-  flex-wrap: wrap;
-  margin-top: -40vh;
-  margin-bottom: 5vh;
-}
-
-
-.memenumber1, .memenumber2, .memenumber3, .memenumber4, .memenumber5, .memenumber6, .memenumber7, .memenumber8 {
-  display: none;
-}
-
-.imagesmemes1:hover .imagesmeme1 {
-  display: none;
-}
-
-.imagesmemes1:hover .memenumber1 {
-  display: block;
-}
-
-.imagesmemes2:hover .imagesmeme2 {
-  display: none;
-}
-
-.imagesmemes2:hover .memenumber2 {
-  display: block;
-}
-
-.imagesmemes3:hover .imagesmeme3 {
-  display: none;
-}
-
-.imagesmemes3:hover .memenumber3 {
-  display: block;
-}
-
-.imagesmemes4:hover .imagesmeme4 {
-  display: none;
-}
-
-.imagesmemes4:hover .memenumber4 {
-  display: block;
-}
-
-.imagesmemes5:hover .imagesmeme5 {
-  display: none;
-}
-
-.imagesmemes5:hover .memenumber5 {
-  display: block;
-}
-
-.imagesmemes6:hover .imagesmeme6 {
-  display: none;
-}
-
-.imagesmemes6:hover .memenumber6 {
-  display: block;
-}
-
-.imagesmemes7:hover .imagesmeme7 {
-  display: none;
-}
-
-.imagesmemes7:hover .memenumber7 {
-  display: block;
-}
-
-.imagesmemes8:hover .imagesmeme8 {
-  display: none;
-}
-
-.imagesmemes8:hover .memenumber8 {
-  display: block;
-}
-
-
-
-
-
-.maininfo{
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
-
 
 .loginform h3{
 color: #000;
 }
 
 .loginform .photoinput{
-  width: 70%;
+  width: 100%;
   font-family: 'Inconsolata', sans-serif;
 }
 
 .loginform .MHSinput{
 background-color: #8697aa;
-width: 80%;
+width: 100%;
 font-family: 'Inconsolata', sans-serif;
 }
 
@@ -124,21 +85,21 @@ font-family: 'Inconsolata', sans-serif;
 }
 
 .loginform .smallerinput{
-  width: 15%;
+  width: 100%;
   background-color: #8697aa;
   font-family: 'Inconsolata', sans-serif;
 }
 
 
 .loginform .mediuminput{
-  width: 60%;
+  width: 100%;
   background-color: #8697aa;
   font-family: 'Inconsolata', sans-serif;
 }
 
 .loginform .secondaryinput{
   background-color: #eeddcc;
-  width: 70%;
+  width: 100%;
   font-family: 'Inconsolata', sans-serif;
 }
 
@@ -154,7 +115,8 @@ font-family: 'Inconsolata', sans-serif;
 
 
 .loginform .paragraph{
-  width: 85%;
+  width: 100%;
+  height: 100%;
   outline: none;
   background-color: #c49aa6;
   color: #FFF;
@@ -176,17 +138,14 @@ font-family: 'Inconsolata', sans-serif;
 }
 
 .userprofilesection{
-  padding-bottom: 3vh;
-  border-bottom: 2px solid #000;
+  padding-bottom: 20vh;
 }
 
 
 .editaccounttitle{
-  text-align: center;
-  border-bottom: 2px solid #000;
   padding-bottom: 1vh;
-  margin-bottom: 3vh;
-  max-width: 80vw;
+  margin-bottom: 1vh;
+  padding-top: 5vh;
   margin-left: auto;
   margin-right: auto;
 }

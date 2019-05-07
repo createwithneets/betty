@@ -42,7 +42,7 @@
   Your Unique Referral Code is: <%= @user.referral_code %> </div><% end %>
 
 <div class="editprofile"> <% if @user == @current_user %>
-<%= link_to "(Edit your Profile)", edit_user_path(@user) %>
+<%= link_to "(Edit your Profile)", edit_account_path %>
 <% else %>
 <%= link_to "Send a message", conversations_path(sender_id: @current_user.id, receiver_id: User.find_by(ig_username: params[:id]).id), method: :post %>
 <% end %></div>

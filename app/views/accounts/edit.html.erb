@@ -21,126 +21,170 @@
 
 
 
-    <div class="maincontentbettyland"><br><br>
-    <div class="editaccounttitle"><h1> Edit Account</h1><p>We know, there's a lot going on here.<br>This is your private, and public home here in Bettyland so grab some tea and take your time in filling out your profile.<br>And if you change your mind? You can always come back to redecorate.</p></div>
-    <section class="editaccountpage">
-    <div class="maininfo loginform">
-    <%= simple_form_for @user do |f| %>
-    <section class="images">
-      <div class="imagesphoto">
-    <%= image_tag @user.photo.medium.url %><br><p>Upload a Bio Photo</p><br><%= f.input :photo, label: '📷', :input_html => { :class => 'photoinput' } %></div>
-    <div class="imagesphoto">
-      <%= image_tag @user.photogif.medium.url %><br><p>Upload a Boomerang of You</p><br><%= f.input :photogif, label: '📹', :input_html => { :class => 'photoinput' } %></div>
-    </section>
-    <div class="basicinfo">
-    <%= f.input :ig_username %>
-    <%= f.input :password, label: 'Change your Password' %>
-    <%= f.input :password_confirmation %>
-    <%= f.input :personalIG_link, label: 'Full Link to your IG profile' %>
-    <%= f.input :spotify_profile, label: 'Are you on Spotify? Link your profile here.' %>
+  <div class="maincontentbettyland"><br><br>
+  <div class="edit-account-page">
 
+<section class="edit-user-details">
+
+
+<div class="long-user-info">
+      <%= simple_form_for @user do |f| %>
+      <a name="section-1">
+          <section class="photo-uploader">
+          <div class="image-upload">
+            <h3>Upload a Bio Photo</h3>
+            <div class="edit-user-image">
+            <%= image_tag @user.photo.medium.url %>
+            </div>
+              <%= f.input :photo, label: '📷', :input_html => { :class => 'photoinput' } %>
+            </div>
+          <div class="image-upload">
+            <h3> Upload a Boomerang of You</h3>
+            <div class="edit-user-image gif">
+            <%= image_tag @user.photogif.medium.url %>
+            </div>
+            <%= f.input :photogif, label: '📹', :input_html => { :class => 'photoinput' } %>
+            </div>
+          </section>
+          </a>
+
+    <a name="section-2"><div class="edit-basic-info loginform">
+      <%= f.input :ig_username %>
+      <%= f.input :password, label: 'Change your Password' %>
+      <%= f.input :password_confirmation %>
+      <%= f.input :personalIG_link, label: 'Full Link to your IG profile' %>
+      <%= f.input :spotify_profile, label: 'Are you on Spotify? Link your profile here.' %>
+    </div></a>
+
+  <a name="section-3"><div class="about-details loginform">
     <h2> Tell us about you!</h2>
-    <p>What do you do? What are you into? Share anything you like here, but like, no pressure. Feel free to write as much or as little as you would like.</p>
+    <p>What do you do? What are you into? Share anything you like here, but like, no pressure. Feel free to write as much or as little as you would like. (Note: To write more- just drag the bottom right corner of the box!)</p>
     <%= f.input :about, label: '📝', :input_html => { :class => 'paragraph' } %>
-    </div>
+  </div></a>
 
-    <div class="comfortcorner userprofilesection">
-    <h3>(JUST FOR YOU) Leave some gentle reminders for yourself here.</h3>
+    <a name="section-4"><div class="comfortcorner userprofilesection loginform">
+    <h3>Leave some gentle reminders for yourself here and we'll sprinkle them as surprise and delights throughout Bettyland.</h3>
     <%= f.input :MHSroutine_1,  label: '1.' %>
     <%= f.input :MHSroutine_2,  label: '2.' %>
     <%= f.input :MHSroutine_3,  label: '3.' %>
-    </div>
+  </div></a>
 
 
-    </div>
-
-    <div class="maininfo loginform">
+    <a name="section-5"><div class="maininfo loginform">
     <h2>Mental Health Shelf</h2>
-    <p>This is where you can share what helps you take care of yourself with the Betty community.
-    <br>Your Mental Health Shelfie is a snapshot of you- somewhere to remind you of the tools you already have, and a way for others to connect with you.
-    Fill in as much or as little as you like. <br><br>Who knows,
-    you may just find your next bestie, or at the very least, be inspiring, and inspired.</p>
+    <p>This is where you can share what helps you take care of yourself with the Betty community. Your Mental Health Shelfie is a snapshot of you- somewhere to remind you of the tools you already have, and a way for others to connect with you. Fill in as much or as little as you like. <br><br>Who knows,
+    you may just find your next bestie, or at the very least, be inspiring, and inspired.</p></a>
 
-    <div class="userprofilesection"><h3>Got any favourite quotes?</h3>
-    <%= f.input :MHSquote_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
-    <%= f.input :MHSquote_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
-    <%= f.input :MHSquote_3,  label: '3.', :input_html => { :class => 'MHSinput' } %></div>
-    <div class="userprofilesection"><h3>What books or reads would you recommend?</h3>
-    <%= f.input :MHSbook_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
-    <%= f.input :MHSbook_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
-    <%= f.input :MHSbook_3,  label: '3.', :input_html => { :class => 'MHSinput' } %>
-    <%= f.input :MHSbook_4,  label: '4.', :input_html => { :class => 'MHSinput' } %>
-    <%= f.input :MHSbook_5,  label: '5.', :input_html => { :class => 'MHSinput' } %></div>
 
-    <div class="userprofilesection"><h3>Any videos, resources, other links you would recommend?</h3>
-    <%= f.input :MHSgeneral_1,  label: '1', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :video_links1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-    <%= f.input :MHSgeneral_3,  label: '2', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links2,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-    <%= f.input :MHSgeneral_4,  label: '3', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links3,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-    <%= f.input :MHSgeneral_5,  label: '4', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links4,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-    </div>
+      <a name="section-6"><div class="userprofilesection"><h3>Got any favourite quotes?</h3>
+      <%= f.input :MHSquote_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
+      <%= f.input :MHSquote_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
+      <%= f.input :MHSquote_3,  label: '3.', :input_html => { :class => 'MHSinput' } %></div></a>
 
-    <div class="userprofilesection"><h3>What are some of your favourite IG accounts?</h3>
-    <%= f.input :MHSIG_1,  label: '1', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-    <%= f.input :MHSIG_2,  label: '2', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link2,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-    <%= f.input :MHSIG_3,  label: '3', placeholder: "Username", :input_html => { :class => 'smallerinput' } %><%= f.input :IG_link3,  label: '🔗',  placeholder: 'Full link please!',  :input_html => { :class => 'secondaryinput' } %><br>
-    <%= f.input :MHSIG_4,  label: '4', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link4,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
-    <%= f.input :MHSIG_5,  label: '5', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link5,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %>
-    </div>
+      <a name="section-7"><div class="userprofilesection"><h3>What books or reads would you recommend?</h3>
+      <%= f.input :MHSbook_1,  label: '1.', :input_html => { :class => 'MHSinput' } %>
+      <%= f.input :MHSbook_2,  label: '2.', :input_html => { :class => 'MHSinput' } %>
+      <%= f.input :MHSbook_3,  label: '3.', :input_html => { :class => 'MHSinput' } %>
+      <%= f.input :MHSbook_4,  label: '4.', :input_html => { :class => 'MHSinput' } %>
+      <%= f.input :MHSbook_5,  label: '5.', :input_html => { :class => 'MHSinput' } %></div></a>
 
-      <div class="userprofilesection"><h3>Sure, you can't buy self-care, but what are some products that help?</h3>
+    <a name="section-8">  <div class="userprofilesection"><h3>Any videos, resources, other links you would recommend?</h3>
+      <%= f.input :MHSgeneral_1,  label: '1', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :video_links1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+      <%= f.input :MHSgeneral_3,  label: '2', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links2,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+      <%= f.input :MHSgeneral_4,  label: '3', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links3,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+      <%= f.input :MHSgeneral_5,  label: '4', placeholder: "Title", :input_html => { :class => 'mediuminput' } %><%= f.input :vide_links4,  label: '🔗.',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+    </div></a>
+
+
+    <a name="section-9">  <div class="userprofilesection"><h3>What are some of your favourite IG accounts?</h3>
+      <%= f.input :MHSIG_1,  label: '1', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link1,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+      <%= f.input :MHSIG_2,  label: '2', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link2,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+      <%= f.input :MHSIG_3,  label: '3', placeholder: "Username", :input_html => { :class => 'smallerinput' } %><%= f.input :IG_link3,  label: '🔗',  placeholder: 'Full link please!',  :input_html => { :class => 'secondaryinput' } %><br>
+      <%= f.input :MHSIG_4,  label: '4', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link4,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %><br>
+      <%= f.input :MHSIG_5,  label: '5', placeholder: "Username", :input_html => { :class => 'smallerinput' } %> <%= f.input :IG_link5,  label: '🔗',  placeholder: 'Full link please!', :input_html => { :class => 'secondaryinput' } %>
+    </div></a>
+
+      <a name="section-10"><div class="userprofilesection"><h3>Sure, you can't buy self-care, but what are some products that help?</h3>
     <%= f.input :MHSproduct_1,  label: '1', :input_html => { :class => 'MHSinput' } %>
     <%= f.input :MHSroduct_2,  label: '2', :input_html => { :class => 'MHSinput' } %>
     <%= f.input :MHSproduct_3,  label: '3', :input_html => { :class => 'MHSinput' } %>
     <%= f.input :MHSproduct_4,  label: '4', :input_html => { :class => 'MHSinput' } %>
     <%= f.input :MHSproduct_5,  label: '5', :input_html => { :class => 'MHSinput' } %>
-    </div>
+  </div></a>
 
-      <%= f.button :submit, "Update User Details" %>
+
+  <a name="section-11"><div class="login"><h1> Update your CC Details</h1></div>
+  <div class="loginform">
+
+    <% @page="update_card" %>
+    <h3>Update your CC Details</h3>
+
+    <%= simple_form_for @user, url: account_path do |f| %>
+
+    <div id="card"></div>
+
+    <%= f.button:submit, "Update CC" %>
     <% end %>
 
+    <script>
+      var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_key] %>")
+      var elements = stripe.elements()
 
+      var card = elements.create('card', {hidePostalCode: true})
+      card.mount('#card')
 
+      $("form#edit_user_<%= @user.id %>").on("submit", function (ev) {
+        ev.preventDefault()
 
+        stripe.createToken(card).then(function (result) {
+          if (result.error) {
+            $("#card-errors").html(result.error.message)
+          } else {
+            $("form#edit_user_<%= @user.id %>").append("<input type='hidden' name='user[stripe_token]' value='" + result.token.id + "'>")
+            $("form#edit_user_<%= @user.id %>").get(0).submit()
+          }
+        })
 
-<div class="login"><h1> Update your CC Details</h1></div>
-<div class="loginform">
-
-  <% @page="update_card" %>
-  <h3>Update your CC Details</h3>
-
-  <%= simple_form_for @user, url: account_path do |f| %>
-
-  <div id="card"></div>
-
-  <%= f.button:submit, "Update CC" %>
-  <% end %>
-
-  <script>
-    var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_key] %>")
-    var elements = stripe.elements()
-
-    var card = elements.create('card', {hidePostalCode: true})
-    card.mount('#card')
-
-    $("form#edit_user_<%= @user.id %>").on("submit", function (ev) {
-      ev.preventDefault()
-
-      stripe.createToken(card).then(function (result) {
-        if (result.error) {
-          $("#card-errors").html(result.error.message)
-        } else {
-          $("form#edit_user_<%= @user.id %>").append("<input type='hidden' name='user[stripe_token]' value='" + result.token.id + "'>")
-          $("form#edit_user_<%= @user.id %>").get(0).submit()
-        }
       })
-
-    })
-  </script>
-
-<p>
-<%= link_to "Back to Your Profile", user_path(@user.ig_username) %>
+    </script>
+  </div></a>
+</div>
 </div>
 </section>
+  <section class="basic-user-info loginform">
+    <div class="editaccounttitle"><h1> Edit Account</h1>
+    </div>
+
+    <ul class="jump-links">
+        <li><a href="#section-1">Profile Photos</a></li>
+        <li><a href="#section-2">Basic Info</a></li>
+        <li><a href="#section-3">About Details</a></li>
+        <li><a href="#section-4">Note to Self</a></li>
+        <li><a href="#section-5">Mental Health Shelf</a></li>
+        <li><a href="#section-6">Quotes</a></li>
+        <li><a href="#section-7">Reads</a></li>
+        <li><a href="#section-8">Resources</a></li>
+        <li><a href="#section-9">IG Accounts</a></li>
+        <li><a href="#section-10">Products</a></li>
+        <li><a href="#section-11">CC Details</a></li>
+      </ul>
+      <div class="submit-button loginform">
+        <%= f.button :submit, "Update User Details" %>
+      <% end %>
+      </div>
+
+      <p>
+      <%= link_to "Back to Your Profile", user_path(@user.ig_username) %>
+    </p>
+
+  </section>
+
+</div>
+</div>
+
+
+
+
 
 <footer id="footernav">
   <section class="navigationfooter">
@@ -164,7 +208,7 @@
   <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/bigtrouble.gif">
   <h1>No peeking!</h1><p>Bettyland is just for Bettys.<br>Have an account? <%= link_to "login here", new_session_path %><br><br>No account? No problem. You can sign up <%= link_to "here", root_path%>
   </div>
-  <% end %>
 
   <h3><%= link_to 'Back to Bettyland Home', bettyland_path %></h3>
+    <% end %>
 </section>
