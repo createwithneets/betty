@@ -13,15 +13,15 @@ helper_method :current_cart
 
   def update
     @user= @current_user
-    @customer_id = @user.stripe_customer
     
     if @user.update(form_params)
-      #update stripe Details
-      customer = Stripe::Customer.retrieve(@customer_id)
-      customer.source = @user.stripe_token
-      customer.save
+      if form_parmas[:stripe_token].present?
+        Stripe::Customer.update(@user.stripe_customer, {
+          source: form_parmas[:stripe_token]
+        })
+      end
 
-      flash[:success] = "Payment details updated"
+      flash[:success] = "Your account has been updated"
       redirect_to users_path
     else
       flash[:warning] = 'Error detected. Please double-triple check everything below!'

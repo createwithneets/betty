@@ -172,8 +172,6 @@
 
       $("form.edit_user").on("submit", function (ev) {
         if (hasUpdatedCard) {
-          ev.preventDefault()
-
           stripe.createToken(card).then(function (result) {
             if (result.error) {
               $("#card-errors").html(result.error.message)
