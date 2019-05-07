@@ -134,7 +134,7 @@
 .productinfo1{
   max-width: 50%;
 }
-.productinfo1 input,
+.productinfo2 input,
 .cartpage input,
 .neworderform input{
   background-color: #c49aa6;
@@ -147,7 +147,7 @@
   font-family: 'Inconsolata', sans-serif;
 }
 
-.productinfo1 input:focus,
+.productinfo2 input:focus,
 .cartpage input:focus,
 .neworderform input:focus{
 background-color: #c16290;
@@ -159,13 +159,13 @@ line-height: 1.3em;
 font-family: 'Inconsolata', sans-serif;
 }
 
-.productinfo1 input::placeholder{
+.productinfo2 input::placeholder{
   color: #FFF;
 }
 
 
 
-.productinfo1 input[type=submit],
+.productinfo2 input[type=submit],
 .cartpage input[type=submit],
 .neworderform input[type=submit] {
     background: #8697aa;
@@ -179,7 +179,7 @@ font-family: 'Inconsolata', sans-serif;
 transition: all 0.4s ease;
   }
 
-  .productinfo1 input[type=submit]:hover,
+  .productinfo2 input[type=submit]:hover,
   .cartpage input[type=submit]:hover,
   .neworderform input[type=submit]:hover{
   background-color: #eeddcc;

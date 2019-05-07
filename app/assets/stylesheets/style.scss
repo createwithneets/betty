@@ -150,9 +150,6 @@ footer a:hover{
   color:#FFF;
 }
 
-.faqboxes .overlay a:hover{
-  color:#000;
-}
 
 .whobettycopy a:hover,
 .contact a:hover{
@@ -280,71 +277,11 @@ footer a:hover{
 
 
 
-.faq{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
-
-.faqboxes{
-    position: relative;
-}
-
-.faq img{
-  max-width: 180px;
-  margin-bottom: 2vh;
-  transition: opacity 0.5s;
-}
-
-
- .faqboxes:hover .overlay{
-  opacity: 0.95;
-}
-
-
-.faqboxes .overlay{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 95%;
-  background-color: #c16290;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  overflow: auto;
-}
-
-.faqboxes .overlay p{
-  color: #FFF;
-  position: absolute;
-  height: 90%;
-  width: 90%;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  font-size: 12px;
-  margin-left: auto;
-  margin-right: auto;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.faqboxes .overlay a{
-  font-weight: 700;
-  color: #FFF;
-}
-
 .aboutinfo p{
   padding-bottom: 2vh;
 }
 
-.howitworks li{
-  margin-bottom: 0px;
-}
+
 
 
 h4{
@@ -384,7 +321,7 @@ line-height: 1.1;
 .contact{
   min-height: 50vh;
   padding-top: 150px;
-  padding-bottom: 150px;
+  margin-bottom: 25vh;
 }
 
 .quizbutton{
@@ -441,6 +378,117 @@ text-align: center;
 .announcement a:hover{
   border-bottom: 1px solid #FFF;
   margin-bottom: 2px;
+}
+
+
+/**FAQ area**/
+
+.register {
+	/* using css grid to stack the child boxes on top of each other*/
+  display: grid;
+  place-items: center;
+	/* chop off the edges of the box when our front element slides out */
+  overflow: hidden;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+}
+
+/* so our boxes stack on top of each other */
+.front,
+.back {
+  grid-area: 1/1;
+  height: 250px;
+}
+
+.bg-yel{
+  background-color: #ffd16f;
+}
+
+.bg-raspberry{
+  background-color: #bf6590;
+}
+.bg-white{
+  background-color: #FFFFFF;
+}
+
+/*  we add a transition to the transform property */
+.front {
+  transition: transform 0.5s ease;
+}
+
+/* we toggle this class using javascript */
+.front.fade {
+  opacity: 0;
+}
+
+.register-button{
+  cursor: pointer;
+}
+
+.back{
+    overflow: auto;
+}
+
+.faqtitle{
+  h4{
+    margin-bottom: 0vh !important;
+  }
+}
+
+
+//shop//
+
+.render-shop{
+  .shopindexcontent{
+padding-right: 20vw;
+max-width: 80vw;
+  }
+
+  .product{
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+  }
+}
+
+//Are you a Betty//
+
+.betty-values{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.betty-values-solid,
+.betty-values-dashed{
+  max-width: 30%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+
+  h6{
+  font-family: 'Cortez';
+  font-size: 32px;
+  margin-bottom: 0vh;
+  margin-top: 2vh;
+  }
+}
+
+.betty-values-solid{
+  border: 1px dotted #000;
+  background: #edddce;
+}
+
+.betty-values-dashed{
+  border: 1px dotted #000;
+  background: #c599a6;
+  max-width: 33%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  max-width: 36%;
 }
 
 
@@ -561,13 +609,6 @@ body{
 .announcement {
   max-width: 100vw;
 }
-  .faqboxes img{
-max-width: 150px;
-  }
-
-  .faqboxes .overlay p{
-    font-size: 10px;
-  }
 
   .clouds{
     max-width: 250px;
@@ -710,24 +751,6 @@ z-index: 0;
   }
 
 
-  .FAQ{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-
-  .faq img{
-    max-width: 80px;
-  }
-
-  .faqboxes .overlay{
-    overflow: visible;
-  }
-    .faqboxes .overlay p{
-    font-size: 4px;
-  }
-
-
   .FAQ-title {
   margin-bottom: 14px;
 }
@@ -812,11 +835,12 @@ z-index: 0;
     display: block;
   }
 
-
-.howitworks li{
-  margin-bottom: 0px;
-}
-
+  .image-left,
+  .image-right{
+  width: 33%;
+  }
+// About Betty Icons
+//see zzz-mobile
 
 h4{
 line-height: 1.3;

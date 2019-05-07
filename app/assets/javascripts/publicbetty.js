@@ -19,15 +19,19 @@ function runOnScroll() {
       } else if (scrollSize <= 1400) {
       document.body.style.backgroundColor = "#c49aa6";
       } else if (scrollSize <= 1800) {
-      document.body.style.backgroundColor = "#8697aa";
-      } else if (scrollSize <= 2800) {
       document.body.style.backgroundColor = "#eeddcc";
-      } else if (scrollSize <= 3800) {
+    } else if (scrollSize <= 3200) {
       document.body.style.backgroundColor = "#8697aa";
-      } else if (scrollSize <= 4400) {
+    } else if (scrollSize <= 4200) {
+      document.body.style.backgroundColor = "#eeddcc";
+    } else if (scrollSize <= 5200) {
       document.body.style.backgroundColor = "#c49aa6";
-      } else  {
+    } else if (scrollSize <= 6000) {
+      document.body.style.backgroundColor = "#8697aa";
+    } else if (scrollSize <= 6300) {
       document.body.style.backgroundColor = "#eeddcc";
+      } else  {
+      document.body.style.backgroundColor = "#c49aa6";
       }
 
  };

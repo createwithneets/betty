@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def new
     @user= User.new
+    @products= Product.limit(2)
   end
 
 
