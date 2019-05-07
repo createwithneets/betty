@@ -414,22 +414,12 @@ text-align: center;
 }
 
 /*  we add a transition to the transform property */
-.js-front-1,
-.js-front-2,
-.js-front-3,
-.js-front-4,
-.js-front-5,
-.js-front-6 {
+.front {
   transition: transform 1.0s ease;
 }
 
 /* we toggle this class using javascript */
-.js-front-1.fade,
-.js-front-2.fade,
-.js-front-3.fade,
-.js-front-4.fade,
-.js-front-5.fade,
-.js-front-6.fade {
+.front.fade {
   opacity: 0;
 }
 
