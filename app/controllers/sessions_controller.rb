@@ -12,7 +12,6 @@ def create
 @user = User.find_by(ig_username: @ig_username).try(:authenticate, @password)
 if @user.present?
 session[:user_id] = @user.id
-flash[:success] = "You are now logged in!"
 redirect_to bettyland_path
 else
 flash[:success] = "Wrong username and password!"
