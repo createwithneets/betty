@@ -15,9 +15,9 @@ helper_method :current_cart
     @user= @current_user
     
     if @user.update(form_params)
-      if form_parmas[:stripe_token].present?
+      if form_params[:stripe_token].present?
         Stripe::Customer.update(@user.stripe_customer, {
-          source: form_parmas[:stripe_token]
+          source: form_params[:stripe_token]
         })
       end
 
