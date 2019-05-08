@@ -409,13 +409,13 @@ text-align: center;
 .bg-raspberry{
   background-color: #bf6590;
 }
-.bg-white{
+.bg-offwhite{
   background-color: #eeddcc;
 }
 
 /*  we add a transition to the transform property */
 .front {
-  transition: transform 1.0s ease;
+  transition: transform 5.0s ease;
 }
 
 /* we toggle this class using javascript */
@@ -455,7 +455,7 @@ max-width: 80vw;
 
   a{
     color: #000;
-    border: 1px solid #000;
+    border-bottom: 1px solid #000;
   }
 }
 
