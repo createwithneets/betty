@@ -36,21 +36,21 @@ class UsersController < ApplicationController
   end
 
 
-def edit
-  @user= @current_user
-end
+# def edit
+#   @user= @current_user
+# end
 
 
-def update
-  @user= User.find(params[:id])
-  if @user.update(form_params)
-    flash[:success] = "User Details Updated"
-    redirect_to users_path
-  else
-    flash[:success] = "There's been an error. Please double check!"
-    render 'edit'
-end
-end
+# def update
+#   @user= User.find(params[:id])
+#   if @user.update(form_params)
+#     flash[:success] = "User Details Updated"
+#     redirect_to users_path
+#   else
+#     flash[:success] = "There's been an error. Please double check!"
+#     render 'edit'
+# end
+# end
 
 
 def rewards
