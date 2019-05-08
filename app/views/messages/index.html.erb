@@ -8,7 +8,9 @@
 
     <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
       | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
-   | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+   | <%= link_to "Your Rewards", rewards_path %> | <%= link_to conversations_path do %> Inbox
+  (<%= @unread_messages %>)
+  <% end %>
 
   <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
   | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
@@ -51,7 +53,9 @@
   <section class="navigationfooter">
   <p><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
     | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
- | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+ | <%= link_to "Your Rewards", rewards_path %> | <%= link_to conversations_path do %> Inbox
+(<%= @unread_messages %>)
+<% end %>
 
 <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
 | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>

@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     @users = User.all
     @users = User.search(params[:search]).paginate(page: params[:page], per_page: 30)
     @user = @current_user
+    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+    @unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
     end
 
     #find ALL the users in this index
@@ -55,6 +57,8 @@ class UsersController < ApplicationController
 
 def rewards
 @user= @current_user
+@conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+@unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
 end
 
 

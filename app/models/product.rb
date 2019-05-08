@@ -15,4 +15,13 @@ class Product < ApplicationRecord
         price/100
       end
 
+      scope :between, -> (sender_id,receiver_id) do
+        where("(conversations.sender_id = ? AND conversations.receiver_id = ?) OR (conversations.receiver_id = ? AND conversations.sender_id = ?)", sender_id, receiver_id, sender_id, receiver_id)
+    end
+
+    def recipient(current_user)
+    self.sender_id == current_user.id ? self.receiver : self.sender
+    end
+
+
 end

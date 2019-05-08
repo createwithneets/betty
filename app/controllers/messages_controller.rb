@@ -8,6 +8,9 @@ class MessagesController < ApplicationController
     def index
 
       @user = @current_user
+      @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+      @users = User.where.not(id: current_user.id)
+      @unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
 
       @messages = @conversation.messages
 
@@ -19,6 +22,9 @@ class MessagesController < ApplicationController
     def create
 
       @user = @current_user
+      @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+      @users = User.where.not(id: current_user.id)
+      @unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
 
       @message = @conversation.messages.new(message_params)
       @message.user = current_user
