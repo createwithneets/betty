@@ -602,7 +602,23 @@ p{
       left: 25vw;
       max-width: 60vw;
     }
+
+    div.welcomecontainer{
+      max-width: 80vw;
+      margin-left: auto;
+      margin-top: 10vh;
+      margin-right: auto;
+
+      .loginbutton{
+        width: 80vw;
+    transform: translateX(-5%);
+    cursor: pointer;
+      }
+    }
+
 }
+
+
 
 
 @media(max-width: 800px){
@@ -941,6 +957,15 @@ max-width: 350px;
 
 @media (max-width: 450px){
 
+.welcomecontainer{
+  .loginbutton{
+        transform: translateX(-10%);
+  }
+
+  li {
+    margin-bottom: 4vh;
+  }
+}
   body{
     font-size: 16px;
     line-height: 1.3;
