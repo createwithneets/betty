@@ -11,4 +11,4 @@ window.onscroll = function() {
     document.getElementById("footernav").style.bottom = "-95%";
   }
   prevScrollpos = currentScrollPos;
-}
+};
