@@ -1,3 +1,11 @@
+.mobilenav,
+.mobilesidenav,
+.edit-account-mobile,
+.mobilecontent,
+.popupmobile,
+.popupminimobile{
+  display: none;
+}
 div.login{
   max-width: 600px;
   margin-left: auto;

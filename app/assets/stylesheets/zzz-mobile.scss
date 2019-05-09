@@ -29,6 +29,8 @@
   }
 }
 
+
+
 @media(max-width: 450px){
   .navigation{
   display: block;
@@ -204,3 +206,1072 @@ margin-top: -15vh;
   top: 5vh;
 }
   }
+
+
+  @media (max-width: 1900px) and (min-width: 1600px){
+      .basic-user-info{
+        top: 2px;
+        padding-top: 0vh;
+      }
+
+      .long-user-info{
+        padding-top: 3vh;
+      }
+
+      .maincontentbettyland h1, h2, h3{
+        padding-top: 0vh;
+      }
+
+      .meditationtags {
+    font-style: oblique;
+    margin-top: -1vh;
+      }
+      .meditationstarttime{
+        margin-top: -1vh;
+      }
+
+      .newsletterdate{
+        padding-bottom: 5vh;
+      }
+
+    .messagebody{
+    padding-bottom: 15vh;
+    }
+
+    .alarm img{
+    bottom: 20vh;
+    }
+
+    .viewallnewsletters{
+      .individualnewsletter{
+        padding-bottom: 0vh;
+        padding-top: 0vh;
+      }
+    }
+}
+
+@media (max-width: 2200px) and (min-width: 1900px){
+.newslettertitle{
+  margin-top: -10vh;
+}
+.individualnewsletter{
+  padding-bottom: 5vh;
+}
+
+.meditationtitle{
+  margin-top: -8vh;
+}
+
+.username h3{
+  padding-top: 0;
+}
+
+.viewallnewsletters{
+  .individualnewsletter{
+    padding-bottom: 0vh;
+    padding-top: 0vh;
+  }
+}
+}
+
+@media (max-width: 1580px) and (min-width: 1290px){
+.showuserborder{
+  h1{
+    margin-left: -2vw;
+  }
+}
+  .basic-user-info{
+    top: 80px;
+    h1{
+      display: none;
+    }
+  }
+
+  .individualnewsletter{
+    .newslettertitle{
+      margin-top: 0vh;
+    }
+    padding-bottom: 5vh;
+  }
+
+  .viewallnewsletters{
+    .individualnewsletter{
+      padding-bottom: 0vh;
+      padding-top: 0vh;
+    }
+  }
+
+  .bettyme img{
+    max-width: 200px;
+    margin-top: 25vh;
+  }
+
+}
+
+@media (max-width: 1280px) and (min-width: 1190px){
+  .individualnewsletter{
+    .newslettertitle{
+      margin-top: -8vh;
+    }
+    padding-bottom: 5vh;
+  }
+
+
+    .viewallnewsletters{
+      .individualnewsletter{
+        padding-bottom: 0vh;
+        padding-top: 0vh;
+      }
+    }
+
+    .bettyme img{
+      max-width: 200px;
+      margin-top: 25vh;
+    }
+
+    .showuserborder{
+      h1{
+        margin-left: -2vw;
+      }
+    }
+      .basic-user-info{
+        top: 80px;
+        h1{
+          display: none;
+        }
+      }
+
+}
+
+
+@media (max-width: 1190px) and (min-width: 800px){
+.riverdale{
+  top: 8vh;
+}
+
+.bettyvideo{
+  top: 25vh;
+}
+
+.bettywindows img{
+  max-width: 320px;
+  top: 25vh;
+}
+
+.alert img{
+  top: 20vh;
+}
+
+.bettyIG img{
+  left: 30vw;
+}
+
+.about, .signup, .partners, .quiz{
+  h1{
+    font-size: 50px;
+  }
+}
+
+h4{
+  font-size: 36px;
+}
+
+p{
+  font-size: 16px;
+}
+
+.howitworks{
+  min-height: 0;
+}
+
+.back p{
+    margin-top: -2vh;
+    font-size: 14px;
+}
+
+//bettyland main page //
+
+.bettylandwelcome{
+    background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_10.jpg');
+  background-size: cover;
+  height: 40vh;
+}
+
+.popupimage{
+  max-width: 100vw;
+  top: 25vh;
+  left: 3vw;
+}
+
+.welcome-words{
+  max-width: 65vw;
+top: 50vh;
+left: 52vw;
+p{
+  font-size: 16px;
+}
+}
+
+.bettylanddiscussion{
+  .bettylandwelcomecontent{
+    display: block;
+  }
+}
+
+  .discussionimage{
+    text-align: center;
+    position: relative;
+    top: 55vh;
+    left: 15vw;
+    transform: translateY(-50%);
+  }
+
+  .words{
+    max-width: 80vw;
+    position: relative;
+    top: 30vh;
+    transform: translateY(-50%);
+    margin-left: auto;
+    margin-right: auto;
+
+    p{
+      font-size: 16px !important;
+    }
+  }
+
+
+    .bettynews{
+      display: block;
+      position: relative;
+      left: 40vw;
+      transform: translateX(-50%);
+      width: 40%;
+      margin-top: 8vh;
+    }
+
+  .eyeball{
+    top: -20vh;
+  left: -50vw;
+  }
+
+
+  .bettylandwelcomecontent{
+    display: block;
+  }
+
+
+  .meditationimage{
+    max-width: 100%;
+    left: 50vw;
+    transform: translateX(-35%);
+  }
+
+  .meditationclouds{
+    max-width: 100%;
+    margin-bottom: 0vh;
+  }
+
+  .bettylandbettys .discussionimage{
+    top: 25vh;
+
+    .slides:nth-child(even){
+      left: -40vw;
+    }
+
+    .slides:last-child{
+      left: 30vw;
+    }
+  }
+
+  .meet-bettys{
+    margin-top: 5vh;
+  }
+
+  .waving-hand {
+    right: -20vw;
+    top: 10vh;
+    max-width: 50vw;
+
+}
+
+.emojihand{
+  text-align: center;
+
+  .welcomesquare2{
+    left: 50vw;
+  }
+
+  .welcomesquare3{
+    left: 30vw;
+  }
+}
+
+
+.viewallnewsletters{
+  .individualnewsletter{
+    padding-bottom: 0vh;
+    padding-top: 0vh;
+  }
+}
+}
+
+
+@media(max-width: 1024px){
+
+
+  #navbar,
+  #footernav{
+    display: none;
+  }
+
+  .mobilenav{
+    display: block;
+    background-color: #8697aa;
+    width: 100%;
+    height: 10vh;
+    margin-top: -5vh;
+    position: absolute;
+    z-index: 100;
+
+    .logo img{
+      max-width: 20vw;
+      margin-top: 0vh;
+      float: left;
+      margin-left: 5vw;
+    }
+
+    .logo{
+      margin-left: 10vw;
+    }
+
+    .mobilemenu{
+      float: right;
+      margin-right: 10vw;
+
+      h1{
+        font-size: 50px;
+        color: #FFF;
+      }
+    }
+
+  }
+    .mobilesidenav{
+      display: initial;
+
+      .sidenav{
+      background-color: #8697aa;
+      }
+
+      .closebtn{
+        left: 0;
+      }
+
+      .mobile-nav-links{
+        list-style: none;
+        margin-top: 0vh;
+
+        h3 a{
+          font-size: 50px;
+          padding-top: 2vh;
+          padding-left: 4vw;
+          padding-right: 4vw;
+          padding-bottom: 2vh;
+        }
+
+        h3{
+          font-size: 50px;
+          color: #FFF;
+        }
+      }
+    }
+    .viewallnewsletters{
+      .individualnewsletter{
+        padding-bottom: 0vh;
+        padding-top: 0vh;
+      }
+    }
+
+    .edit-account-page{
+      display: none;
+    }
+
+    .edit-account-mobile{
+      display: block;
+      position: absolute;
+      top: 25vh;
+      left: 25vw;
+      max-width: 60vw;
+    }
+}
+
+
+@media(max-width: 800px){
+body{
+  font-size: 20px;
+}
+  .bettylandwelcome{
+      background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_10.jpg');
+    background-size: cover;
+    height: 40vh;
+  }
+
+  .popupimage{
+display: none;
+  }
+
+  .popupmobile{
+    display: inherit;
+  }
+
+  .welcome-words{
+    top: 30vh;
+left: 50vw;
+max-width: 70vw;
+  }
+
+
+  .mobilenav{
+    display: block;
+    background-color: #8697aa;
+    width: 100%;
+    height: 10vh;
+    margin-top: -5vh;
+    position: absolute;
+    z-index: 100;
+
+
+    .mobilemenu{
+      float: right;
+      margin-right: 10vw;
+
+      h1{
+        font-size: 42px;
+        color: #FFF;
+      }
+    }
+  }
+      .closebtn{
+        left: 0;
+      }
+
+      .mobile-nav-links{
+        margin-top: 15vh;
+        margin-left: auto;
+        margin-right: auto;
+
+        h3 a{
+          font-size: 20px;
+          padding-top: 2vh;
+          padding-left: 4vw;
+          padding-right: 4vw;
+          padding-bottom: 2vh;
+        }
+
+        h3{
+          font-size: 20px;
+          color: #FFF;
+        }
+      }
+
+
+
+    .viewallnewsletters{
+      .individualnewsletter{
+        padding-bottom: 0vh;
+        padding-top: 0vh;
+      }
+    }
+
+    .edit-account-page{
+      display: none;
+    }
+
+    .edit-account-mobile{
+      display: block;
+      position: absolute;
+      top: 25vh;
+      left: 25vw;
+      max-width: 60vw;
+    }
+
+.bettylandwelcomecontent{
+  display: block;
+}
+.discussionimage{
+  text-align: center;
+}
+.words{
+  max-width: 60vw;
+    margin-top: 8vh;
+    margin-left: auto;
+    margin-right: auto;
+    p{
+      font-size: 20px;
+    }
+}
+
+  .bettynews{
+  display: block;
+  left: 50vw;
+  transform: translateX(-60%);
+
+  .newslettertitle{
+    width: 50vw;
+    padding-bottom: 3vh;
+    margin-top: 10vh;
+}
+
+  }
+.eyeball{
+  left: -35vw;
+}
+
+
+.individualnewsletter{
+.newsletterrectangle,
+.newsletterrectangle2{
+  width: 200px;
+  height: 200px;
+}
+
+margin-top: -5vh;
+padding-bottom: 5vh;
+}
+
+.bettynews{
+  margin-top: 8vh;
+}
+
+.bettylandmeditations{
+  .words{
+    margin-top: 18vh;
+}
+  .meditationclouds{
+    left: 50vw;
+margin-top: -20vh;
+max-width: 100%;
+transform: translateX(-40%)
+}
+}
+
+.bettylandrewards{
+  h1{
+    padding-top: 5vh;
+  }
+
+  .emojihand{
+    left: 50vw;
+bottom: 20vh;
+  }
+}
+
+.bettylandbettys .discussionimage{
+  top: 25vh;
+
+  .slides:first-child{
+    top: 5vh;
+    left: 15vw;
+  }
+  .slides:nth-child(even){
+    left: -20vw;
+  }
+
+  .slides:last-child{
+    left: 50vw;
+  }
+
+}
+div.searcharea{
+  left: 50vw;
+display: block;
+position: relative;
+transform: translateX(-20%);
+}
+div.userssearchform{
+  width: 100%;
+}
+
+.allmeditations{
+  display: block;
+    position: relative;
+    left: 50vw;
+    transform: translateX(-40%);
+}
+
+.allnewsletters{
+  display: block;
+left: 50vw;
+position: relative;
+transform: translateX(-40%);
+
+.newslettertitle{
+  margin-top: 10vh;
+    width: 50vw;
+}
+}
+.newsletterimage{
+  width: 200px;
+}
+
+.viewallnewsletters{
+  display: none;
+}
+
+.shownewsletter{
+  max-width: 80vw;
+left: 10vw;
+}
+
+  .rewardspagecontent{
+    padding-top: 0vh;
+  }
+
+  .rewards{
+    display: block;
+    position: relative;
+    left: 50vw;
+    transform: translateX(-50%);
+  }
+
+.reward,
+.rewardhoverable{
+  max-width: 40vw;
+}
+
+.startaconvo{
+  background-color: #FFF;
+}
+
+.currentconvo{
+  position: absolute;
+top: 60vh;
+}
+
+.shopindextitle{
+  margin-top: 0vh;
+}
+
+.productinfoshowpage{
+  display: block;
+width: 90vw;
+margin-top: 15vh;
+position: relative;
+left: 50vw;
+transform: translateX(-50%);
+}
+
+.usershowprofile{
+  display: block;
+  margin-top: 0vh;
+}
+
+.showuserbasics{
+  max-width: 100%;
+}
+
+.showuserborder{
+  text-align: center;
+}
+
+div.showuserabout{
+  margin-top: 0vh;
+}
+
+.bettywindows img{
+  left: 30vw;
+top: 30vh;
+}
+
+.howitworks{
+  display: block;
+position: relative;
+left: 50vw;
+transform: translateX(-70%);
+}
+
+.how-it-works{
+  max-width: 80%;
+
+  img{
+    max-width: 30%;
+  }
+}
+
+.betty-breakdown,
+.who-betty,
+.pop-quiz,
+{
+  padding-top: 100vh;
+}
+
+.shop-betty,
+.contact{
+  padding-top: 50vh;
+}
+
+.FAQ{
+  display: none;
+}
+
+.betty-values{
+  display: block;
+position: relative;
+left: 50vw;
+transform: translateX(-80%);
+}
+.betty-values-solid, .betty-values-dashed {
+    max-width: 100%;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+  }
+
+.whobettyinside{
+  display: block;
+}
+
+.bettyme img{
+  padding-top: 0px;
+max-width: 350px;
+}
+
+.bettylandmeditations{
+  margin-top: 0vh;
+}
+}
+
+@media (max-width: 450px){
+
+  body{
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  div.loginform {
+    max-width: 80vw;
+  }
+
+  div.login {
+    margin-top: 10vh;
+    max-width: 90vw;
+  }
+
+.new-user-page{
+  overflow-x: hidden;
+}
+.about, .partners, .signup, .quiz{
+  h1{
+    font-size: 26px;
+  }
+  z-index: 50;
+}
+.about,
+.signup {
+  top: 6vh;
+}
+
+.riverdale img{
+  top: 15vh;
+}
+.bettywindows img{
+  max-width: 200px;
+}
+
+.bettyIG img{
+  left: 25vw;
+}
+
+.bettyvideo{
+  top: 25vh;
+}
+
+.container{
+  font-size: 16px;
+}
+
+.how-it-works{
+  width: 100%;
+  max-width: 100%;
+}
+
+.howitworks{
+  transform: translateX(-80%);
+}
+
+.betty-breakdown,
+.who-betty,
+.pop-quiz,
+{
+  padding-top: 200vh;
+}
+
+.bettyme img{
+  max-width: 200px
+}
+
+.shop-betty{
+  .render-shop{
+        transform: translateX(-10%);
+  }
+
+  .rectangle{
+    top: 0vh;
+  }
+}
+
+.mobilenav .mobilemenu h1 {
+    font-size: 22px;
+  }
+
+  .popupminimobile{
+    display: inherit;
+  }
+
+  .popupmobile{
+    display: none;
+  }
+
+  .note{
+    display: none;
+  }
+
+  .welcome-words{
+    top: 25vh;
+  }
+
+  .words h1 {
+    font-size: 25px;
+    line-height: 1;
+  }
+
+  .words{
+    left: 50vw;
+transform: translateX(5%);
+max-width: 80vw;
+  }
+
+  .bettylandmeditations .words {
+    margin-top: 8vh;
+}
+
+
+.bettylandmeditations .meditationclouds {
+    margin-top: -10vh;
+    transform: translateX(-35%);
+}
+
+.bettylandbettys .words{
+  left: 0vw;
+}
+
+.waving-hand {
+    right: -8vw;
+    top: -15vh;
+    max-width: 50vw;
+}
+
+.bettylandrewards{
+  margin-top: 35vh;
+
+  .welcomesquare2,
+  .welcomesquare3{
+    width: 150px;
+    height: 150px;
+  }
+
+  .emojihand{
+    left: 60vw;
+  }
+}
+
+.mobilesidenav .mobile-nav-links h3 a,
+ .mobilesidenav .mobile-nav-links h3{
+    font-size: 20px;
+    line-height: 1.5;
+    margin-left: -10vw;
+    margin-top: 10vh;
+  }
+
+  .individualuser {
+      width: 40%;
+      margin-left: 0;
+}
+
+.MHShelfie{
+  display: block;
+}
+.MHS_sections{
+  width: 100%;
+}
+
+.newsletteroverlay,
+.newsletteroverlayvariation{
+  width: 100%;
+}
+
+.individualmeditation{
+  max-width: 100%;
+  transform: translateX(-20%);
+}
+
+.titleBettys {
+    max-width: 60%;
+    transform: translateX(-20%);
+}
+
+.reward, .rewardhoverable {
+    max-width: 60vw;
+    transform: translateX(-20%);
+}
+
+.productinfo2,
+.productinfo1{
+    max-width: 70%;
+    transform: translateX(-10%);
+}
+
+.cartpage{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.checkoutbutton a {
+  font-size: 24px;
+}
+
+.inboxmain{
+  display: block;
+
+  div.convosearch input[type=submit] {
+    width: 150%;
+  }
+}
+
+div.messagebody {
+    position: absolute;
+    left: 20vw;
+    top: 25vh;
+    padding-top: 50vh;
+    height: 60vh;
+    overflow: scroll;
+    width: 80vw;
+}
+
+div.messageform{
+  position: fixed;
+  top: 70vh;
+  left: 20vw;
+  width: 60vw;
+
+  h3{
+    display: none;
+  }
+}
+
+div.messageform textarea {
+    width: 60vw;
+}
+
+div.login {
+  margin-top: 10vh;
+  max-width: 90vw;
+}
+}
+
+
+@media (max-width: 380px){
+  .instructions{
+    display: none;
+  }
+
+  .how-it-works {
+    max-width: 100%;
+  }
+
+  .shop-betty{
+    .rectangle2,
+    .rectangle{
+      height: 300px;
+      width: 280px;
+    }
+
+    .product h3{
+      margin-top: 0vh;
+    }
+  }
+
+  .betty-breakdown,
+  .who-betty,
+  .pop-quiz,
+  {
+    padding-top: 100vh;
+  }
+
+  .shop-betty,
+  .contact{
+    padding-top: 50vh;
+  }
+}
+
+@media (max-width: 330px){
+  .popupminimobile{
+    display: none;
+  }
+
+  .words p {
+    font-size: 16px;
+}
+
+.bettylandbettys{
+  .words{
+    margin-top: 0vh;
+  }
+}
+
+.bettylandrewards {
+    margin-top: 50vh;
+}
+
+.welcomesquare2,
+.welcomesquare3{
+  display: none;
+}
+
+.individualuser {
+    width: 50%;
+}
+
+.userssearchform{
+  display: none;
+}
+
+.currentconvo {
+    top: 80vh;
+  }
+
+  div.messagebody {
+    position: absolute;
+    left: 20vw;
+    top: 50vh;
+    padding-top: 50vh;
+    height: 70vh;
+  }
+
+  .betty-breakdown,
+  .who-betty,
+  .pop-quiz,{
+    padding-top: 200vh;
+  }
+
+  .contact{
+    padding-top: 50vh;
+  }
+
+  .shop-betty{
+    display: none;
+  }
+
+  div.login {
+    margin-top: 10vh;
+    max-width: 90vw;
+  }
+}

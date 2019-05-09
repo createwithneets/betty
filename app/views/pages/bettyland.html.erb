@@ -1,5 +1,46 @@
 <body class="bettylandbgimage">
 <% if is_logged_in? %>
+
+<header class="mobilenav">
+
+  <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white.png" class="logolink"></div><% end %>
+<div class="mobilemenu">
+  <span onclick="openNav()"><h1>Menu</h1></span>
+  </div>
+
+</header>
+
+<section class="mobilesidenav">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h1>
+      X </h1></a>
+  <div class="signupform">
+<ul class="mobile-nav-links"><h3>
+  <li><%= link_to "All Bettys", users_path %></li>
+  <li> <%=link_to "Meditations", meditations_path %></li>
+  <li><%=link_to "Newsletters", newsletters_path %></li>
+  <li><%=link_to "Discussion", forum_path %></li>
+  <li><%= link_to "Your Rewards", rewards_path %></li>
+  <li> <%= link_to conversations_path do %> Inbox
+  (<%= @unread_messages %>)
+  <% end %></li>
+  <li><%= link_to "Your Profile", user_path(@user.ig_username) %></li>
+   <li><%= link_to "Edit Account", edit_account_path %></li>
+   <li><%=link_to "Shop Betty", products_path %></li>
+  <li><%= link_to "Cart", cart_path %></li>
+  <li><%= link_to "Logout", session_path, method: :delete %></li>
+  <% if @user.points.nil? %>
+  <br><br>Your points: 0 Points
+  <% else %>
+  <br><br>Your points: <%= @user.points %>
+  <% end %>
+  </h3>
+</ul>
+    </div>
+  </div>
+</section>
+
+
 <header id="navbar">
   <section class="navigation">
         <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
@@ -21,17 +62,26 @@
 </div>
 </section></header>
 
+
 <section class="bettylandwelcome">
+  <section class="welcome-content">
   <section class="content">
     <div class="popupimage"><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Betty_Site_Background_popup.png"></div>
+    <div class="popupmobile">
+      <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Betty_PopUp_Mobile.png">
+      </div>
+      <div class="popupminimobile">
+        <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Betty_PopUp_Mobile2.png">
+        </div>
   <div class="welcome-words"><h7>Welcome!</h7><p>This is a
   digital clubhouse for Bettys. You'll find room for conversation and dialogue, an opportunity to browse the profiles of other Bettys,
-  watch a library of meditations, read archived newsletters, and more.
-  <br><br>Scroll or click through to explore, connect, and enjoy!</p><p class="note">Note: If you have any ideas or encounter any glitches,
+  watch a library of meditations, read archived newsletters, and more.</p>
+  <p class="instructions">Scroll or click through to explore, connect, and enjoy!</p><p class="note">Note: If you have any ideas or encounter any glitches,
 be sure to let us know at hello@inbedwithbetty.com
 <div class="discussionbutton2"><%= link_to edit_account_path do %>Set Up Your Profile<% end %></div> </div>
   </section>
   </section>
+
 
   <section class="bettylanddiscussion">
       <div class="hidden">

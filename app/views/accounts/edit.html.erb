@@ -1,12 +1,55 @@
 <section class="edituserbg">
   <% if is_logged_in? %>
+
+  <header class="mobilenav">
+
+    <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white.png" class="logolink"></div><% end %>
+  <div class="mobilemenu">
+    <span onclick="openNav()"><h1>Menu</h1></span>
+    </div>
+
+  </header>
+
+  <section class="mobilesidenav">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h1>
+        X </h1></a>
+    <div class="signupform">
+  <ul class="mobile-nav-links"><h3>
+    <li><%= link_to "All Bettys", users_path %></li>
+    <li> <%=link_to "Meditations", meditations_path %></li>
+    <li><%=link_to "Newsletters", newsletters_path %></li>
+    <li><%=link_to "Discussion", forum_path %></li>
+    <li><%= link_to "Your Rewards", rewards_path %></li>
+    <li> <%= link_to conversations_path do %> Inbox
+    (<%= @unread_messages %>)
+    <% end %></li>
+    <li><%= link_to "Your Profile", user_path(@user.ig_username) %></li>
+     <li><%= link_to "Edit Account", edit_account_path %></li>
+     <li><%=link_to "Shop Betty", products_path %></li>
+    <li><%= link_to "Cart", cart_path %></li>
+    <li><%= link_to "Logout", session_path, method: :delete %></li>
+    <% if @user.points.nil? %>
+    <br><br>Your points: 0 Points
+    <% else %>
+    <br><br>Your points: <%= @user.points %>
+    <% end %>
+    </h3>
+  </ul>
+      </div>
+    </div>
+  </section>
+
+
   <header id="navbar">
     <section class="navigation">
           <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white_period.png" class="logolink"></div><% end %>
 
       <div class="links"><p class="navlinks"><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
         | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
-     | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+     | <%= link_to "Your Rewards", rewards_path %> | <%= link_to conversations_path do %> Inbox
+    (<%= @unread_messages %>)
+    <% end %>
 
     <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
     | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
@@ -16,7 +59,10 @@
   <br><br>Your currently have <%= @user.points %> points. This means you have meditated for <%= 10 * @user.points %> minutes or <%= 10 * @user.points/ 60 %> hours!
   <% end %>
   </div>
-  </section></header>
+  </section>
+
+</header>
+
 
 
 <%= simple_form_for @user, url: account_path do |f| %>
@@ -28,25 +74,26 @@
 
 
 <div class="long-user-info">
-      
-      <a name="section-1">
-          <section class="photo-uploader">
-          <div class="image-upload">
-            <h3>Upload a Bio Photo</h3>
-            <div class="edit-user-image">
-            <%= image_tag @user.photo.medium.url %>
-            </div>
-              <%= f.input :photo, label: '📷', :input_html => { :class => 'photoinput' } %>
-            </div>
-          <div class="image-upload">
-            <h3> Upload a Boomerang of You</h3>
-            <div class="edit-user-image gif">
-            <%= image_tag @user.photogif.medium.url %>
-            </div>
-            <%= f.input :photogif, label: '📹', :input_html => { :class => 'photoinput' } %>
-            </div>
-          </section>
-          </a>
+
+
+  <a name="section-1">
+      <section class="photo-uploader">
+      <div class="image-upload">
+        <h3>Upload a Bio Photo</h3>
+        <div class="edit-user-image">
+        <%= image_tag @user.photo.medium.url %>
+        </div>
+          <%= f.input :photo, label: '📷', :input_html => { :class => 'photoinput' } %>
+        </div>
+      <div class="image-upload">
+        <h3> Upload a Boomerang of You</h3>
+        <div class="edit-user-image gif">
+        <%= image_tag @user.photogif.medium.url %>
+        </div>
+        <%= f.input :photogif, label: '📹', :input_html => { :class => 'photoinput' } %>
+        </div>
+      </section>
+      </a>
 
     <a name="section-2"><div class="edit-basic-info loginform">
       <%= f.input :ig_username %>
@@ -119,7 +166,7 @@
     <h3>Update your CC Details</h3>
 
     <div id="card"></div>
-    
+
   </div></a>
 </div>
 </div>
@@ -129,10 +176,10 @@
     </div>
 
     <ul class="jump-links">
-        <li><a href="#section-1">Profile Photos</a></li>
-        <li><a href="#section-2">Basic Info</a></li>
-        <li><a href="#section-3">About Details</a></li>
-        <li><a href="#section-4">Note to Self</a></li>
+        <li><a href="#section-1" class="anchor-link">Profile Photos</a></li>
+        <li><a href="#section-2" class="anchor-link">Basic Info</a></li>
+        <li><a href="#section-3" class="anchor-link">About Details</a></li>
+        <li><a href="#section-4" class="anchor-link">Note to Self</a></li>
         <li><a href="#section-5">Mental Health Shelf</a></li>
         <li><a href="#section-6">Quotes</a></li>
         <li><a href="#section-7">Reads</a></li>
@@ -189,7 +236,9 @@
   <section class="navigationfooter">
   <p><%= link_to "All Bettys", users_path %> | <%=link_to "Meditations", meditations_path %>
     | <%=link_to "Newsletters", newsletters_path %> | <%=link_to "Discussion", forum_path %>
- | <%= link_to "Your Rewards", rewards_path %> | <%= link_to "Inbox", conversations_path %>
+ | <%= link_to "Your Rewards", rewards_path %> | <%= link_to conversations_path do %> Inbox
+(<%= @unread_messages %>)
+<% end %>
 
 <br><%= link_to "Your Profile", user_path(@user.ig_username) %> | <%= link_to "Edit Account", edit_account_path %> | <%=link_to "Shop Betty", products_path %>
 | <%= link_to "Cart", cart_path %> | <%= link_to "Logout", session_path, method: :delete %>
@@ -204,3 +253,10 @@
 
 
 </section>
+
+
+<section class="edit-account-mobile">
+    <img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/flipphone.gif">
+    <h1>Please login via a desktop or laptop!</h1>
+    <p>Your account page is complex and best viewed on a computer. Thanks for your understanding!</p>
+    </section>

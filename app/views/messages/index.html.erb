@@ -1,6 +1,44 @@
 <body class="conversationsbg">
 <% if is_logged_in? %>
 
+<header class="mobilenav">
+
+  <div class="logo"><%= link_to bettyland_path do %><img src="https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/betty_logo_white.png" class="logolink"></div><% end %>
+<div class="mobilemenu">
+  <span onclick="openNav()"><h1>Menu</h1></span>
+  </div>
+
+</header>
+
+<section class="mobilesidenav">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h1>
+      X </h1></a>
+  <div class="signupform">
+<ul class="mobile-nav-links"><h3>
+  <li><%= link_to "All Bettys", users_path %></li>
+  <li> <%=link_to "Meditations", meditations_path %></li>
+  <li><%=link_to "Newsletters", newsletters_path %></li>
+  <li><%=link_to "Discussion", forum_path %></li>
+  <li><%= link_to "Your Rewards", rewards_path %></li>
+  <li> <%= link_to conversations_path do %> Inbox
+  (<%= @unread_messages %>)
+  <% end %></li>
+  <li><%= link_to "Your Profile", user_path(@user.ig_username) %></li>
+   <li><%= link_to "Edit Account", edit_account_path %></li>
+   <li><%=link_to "Shop Betty", products_path %></li>
+  <li><%= link_to "Cart", cart_path %></li>
+  <li><%= link_to "Logout", session_path, method: :delete %></li>
+  <% if @user.points.nil? %>
+  <br><br>Your points: 0 Points
+  <% else %>
+  <br><br>Your points: <%= @user.points %>
+  <% end %>
+  </h3>
+</ul>
+    </div>
+  </div>
+</section>
 
 <header id="navbar">
   <section class="navigation">

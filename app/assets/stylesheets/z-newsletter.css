@@ -102,6 +102,7 @@ transform: translateX(-50%)}
   position: relative;
   max-width: 25vw;
   padding-left: 5vw;
+  padding-top: 2vh;
   padding-right: 5vw;
 }
 
@@ -158,10 +159,12 @@ transform: translateX(-50%)}
 
 .newsletterdate p{
   color: #000;
+  margin-top: -2vh;
 }
 
 .newsletterdate{
   margin-bottom: 2vh;
+    padding-bottom: 2vh;
 }
 
 
