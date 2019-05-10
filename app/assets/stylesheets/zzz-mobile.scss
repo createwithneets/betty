@@ -142,7 +142,7 @@ h3, h2, h4{
 
 div.messagebody{
       padding-top: 0vh;
-      margin-top: 15vh;
+      margin-top: 20vh;
     }
 
     div.shownewsletter{
@@ -986,8 +986,13 @@ max-width: 350px;
 .about, .partners, .signup, .quiz{
   h1{
     font-size: 26px;
+
   }
-  z-index: 50;
+    z-index: 2;
+}
+
+.partnerships{
+  z-index: 9000;
 }
 .about,
 .signup {
@@ -1174,8 +1179,6 @@ max-width: 80vw;
 div.messagebody {
     position: absolute;
     left: 20vw;
-    top: 25vh;
-    padding-top: 50vh;
     height: 60vh;
     overflow: scroll;
     width: 80vw;
@@ -1183,7 +1186,7 @@ div.messagebody {
 
 div.messageform{
   position: fixed;
-  top: 70vh;
+  top: 60vh;
   left: 20vw;
   width: 60vw;
 
@@ -1199,6 +1202,16 @@ div.messageform textarea {
 div.login {
   margin-top: 10vh;
   max-width: 90vw;
+}
+
+.cartpage {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80vw;
+}
+
+.remove{
+  display: none;
 }
 }
 
@@ -1276,9 +1289,7 @@ div.login {
   div.messagebody {
     position: absolute;
     left: 20vw;
-    top: 50vh;
-    padding-top: 50vh;
-    height: 70vh;
+    height: 55vh;
   }
 
   .betty-breakdown,
@@ -1299,4 +1310,5 @@ div.login {
     margin-top: 10vh;
     max-width: 90vw;
   }
+
 }

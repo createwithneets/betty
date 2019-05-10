@@ -3,8 +3,7 @@ class OrdersController < ApplicationController
   #this is the page that we see
     def new
       @user= current_user
-      @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
-      @unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
+  
       @order= Order.new
       @order.add_from_cart(@current_cart)
     end
