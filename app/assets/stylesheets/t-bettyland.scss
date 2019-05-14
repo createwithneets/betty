@@ -115,6 +115,7 @@ div.userssearchform input[type=submit]{
 
 .allusers{
   margin-top: 5vh;
+
 }
 
 .individualuser .usergif {
@@ -297,11 +298,17 @@ div.maincontentbettyland {
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
+max-width: 80vw;
+margin-right: auto;
+margin-left: auto;
+padding-bottom: 25vh;
 }
 
 .individualuser{
   width: 15%;
 margin-left: 5vw;
+margin-right: 5vw;
+padding-bottom: 20vh;
 }
 
 

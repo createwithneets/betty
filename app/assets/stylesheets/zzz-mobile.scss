@@ -341,10 +341,22 @@ margin-top: -15vh;
         }
       }
 
+    .allusers{
+      padding-bottom: 35vh;
+    }
+    .individualuser{
+      padding-botom: 25vh;
+
+    }
+
 }
 
 
 @media (max-width: 1190px) and (min-width: 800px){
+
+.individualuser{
+  padding-bottom: 10vh;
+}
 .riverdale{
   top: 8vh;
 }
@@ -629,6 +641,10 @@ body{
       background-image: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Images/Bettybg_10.jpg');
     background-size: cover;
     height: 40vh;
+  }
+
+  .individualuser{
+  padding-bottom: 15vh;
   }
 
   .popupimage{
@@ -957,6 +973,11 @@ max-width: 350px;
 
 @media (max-width: 450px){
 
+  .individualuser{
+    width: 60%;
+    padding-bottom: 20vh;
+  }
+
 .welcomecontainer{
   .loginbutton{
         transform: translateX(-10%);
@@ -1251,6 +1272,11 @@ div.login {
 }
 
 @media (max-width: 330px){
+
+  .individualuser{
+    padding-bottom: 30vh;
+  }
+  
   .popupminimobile{
     display: none;
   }
