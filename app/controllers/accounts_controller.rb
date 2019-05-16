@@ -7,13 +7,16 @@ helper_method :current_cart
   def edit
     #this is from the application_controller rb and how its' done before every action
     @user= @current_user
-
+    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+    @unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
   end
 
 
 
   def update
     @user = @current_user
+    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+    @unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
 
     if @user.update(form_params)
       if form_params["stripe_token"].present?
@@ -46,7 +49,8 @@ helper_method :current_cart
       end
 
       @user= @current_user
-
+      @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+      @unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
 
     end
 
