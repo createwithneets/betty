@@ -60,6 +60,8 @@ def destroy
   @current_user.destroy_and_unsubscribe
   reset_session
   redirect_to root_path
+  @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+  @unread_messages = Message.where(conversation: @conversations).where.not(user: current_user).where(read: false).count
 end
 
 
