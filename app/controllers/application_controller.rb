@@ -10,22 +10,20 @@ class ApplicationController < ActionController::Base
     "/forum"
   end
 
-
-
-
-def current_user
-  if session[:user_id].present?
-    @current_user= User.find(session[:user_id])
-  else
-    @current_user= nil
-
+  def current_user
+    if session[:user_id].present?
+      @current_user= User.find(session[:user_id])
+    else
+      @current_user= nil
+    end
+  rescue ActiveRecord::RecordNotFound
+    @current_user = nil  
   end
-end
 
 
-def is_logged_in?
-session[:user_id].present?
-end
+  def is_logged_in?
+    session[:user_id].present?
+  end
 
 
 def current_cart
@@ -43,6 +41,10 @@ def current_cart
     end
 
   end
+rescue ActiveRecord::RecordNotFound
+  @current_cart= Cart.create
+  #create means new and save together
+  session[:cart_id]= @current_cart.id  
 end
 
 
