@@ -84,6 +84,7 @@ def current_cart
     @user.destroy_and_unsubscribe
     reset_session
     redirect_to root_path
+    
   end
 
 
