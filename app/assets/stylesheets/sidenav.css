@@ -143,9 +143,19 @@ div.signupform input[class=dropdown]{
   max-width: 60vw;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
   top: 50vh;
   left: 50vw;
   transform: translateY(-50%) translateX(-50%);
+}
+
+.partnershipcopyimage,
+.partnershipcopytitle{
+  max-width: 50vw;
+}
+
+.partnershipcopyimage{
+  padding-left: 2vw;
 }
 
 .partnerships a{
@@ -168,6 +178,11 @@ div.signupform input[class=dropdown]{
   font-size: 50px;
 }
 
+@media(max-width: 800px){
+  .partnershipscopy{
+    display: block;
+  }
+}
 @media (max-width: 500px) {
   .partnerships {
   position: fixed;
