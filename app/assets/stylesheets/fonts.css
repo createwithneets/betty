@@ -1,22 +1,22 @@
 @font-face {
   font-family: 'Cortez';
-  src: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Cortez-Regular.eot'); /* IE9 Compat Modes */
-  src: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Cortez-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/cortez-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/cortez-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/cortez-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/CortezEFOP.svg#svgCortez') format('svg'); /* Legacy iOS */
+  src: url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Cortez-Regular.eot'); /* IE9 Compat Modes */
+  src: url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Cortez-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/cortez-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/cortez-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/cortez-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/CortezEFOP.svg#svgCortez') format('svg'); /* Legacy iOS */
 }
 
 
 @font-face {
   font-family: 'Inconsolata';
-  src: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Inconsolata.eot'); /* IE9 Compat Modes */
-  src: url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Inconsolata.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Inconsolata.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Inconsolata.woff') format('woff'), /* Pretty Modern Browsers */
-       url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Inconsolata.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('https://s3-us-west-2.amazonaws.com/inbedwithbetty/Inconsolata.svg#svgInconsolata') format('svg'); /* Legacy iOS */
+  src: url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Inconsolata.eot'); /* IE9 Compat Modes */
+  src: url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Inconsolata.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Inconsolata.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Inconsolata.woff') format('woff'), /* Pretty Modern Browsers */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Inconsolata.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Inconsolata.svg#svgInconsolata') format('svg'); /* Legacy iOS */
 }
 
 
