@@ -160,7 +160,7 @@ Thredded.autocomplete_min_length = 2
 #
 # By default, a user will be subscribed to a topic they've created. Uncomment this to not subscribe them:
 #
-# Thredded.auto_follow_when_creating_topic = false
+#Thredded.auto_follow_when_creating_topic = false
 #
 # By default, a user will be subscribed to (follow) a topic they post in. Uncomment this to not subscribe them:
 #
