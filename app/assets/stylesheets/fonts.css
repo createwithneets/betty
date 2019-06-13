@@ -2,7 +2,7 @@
   font-family: 'Cortez';
   src: url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Cortez-Regular.eot'); /* IE9 Compat Modes */
   src: url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/Cortez-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/cortez-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/CortezEFOP.woff2') format('woff2'), /* Super Modern Browsers */
        url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/CortezEFOP.woff') format('woff'), /* Pretty Modern Browsers */
        url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/cortez-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('https://inbedwithbetty.s3-us-west-2.amazonaws.com/CortezEFOP.svg#svgCortez') format('svg'); /* Legacy iOS */
