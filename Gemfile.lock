@@ -109,6 +109,8 @@ GEM
       countries (~> 3.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.4)
+    css_parser (1.7.0)
+      addressable
     db_text_search (0.3.0)
       activerecord (>= 4.1.15, < 6.0)
     devise (4.5.0)
@@ -278,6 +280,12 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     rinku (2.0.5)
+    roadie (3.5.0)
+      css_parser (~> 1.4)
+      nokogiri (~> 1.8)
+    roadie-rails (2.1.0)
+      railties (>= 5.1, < 6.1)
+      roadie (~> 3.1)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
     sanitize (5.0.0)
@@ -403,6 +411,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.2)
+  roadie-rails (~> 2.1)
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form

@@ -93,7 +93,12 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-
+  config.roadie.url_options = config.action_mailer.default_url_options = {
+    host: 'inbedwithbetty.com',
+    protocol: 'https'
+  }
+  # Roadie requires this to be nil
+  config.action_mailer.asset_host = nil
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

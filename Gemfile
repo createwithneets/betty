@@ -59,6 +59,8 @@ gem 'thredded', '~> 0.16.10'
 
 gem 'gemoji'
 
+gem 'roadie-rails', '~> 2.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -82,7 +82,8 @@ Thredded.email_from = 'hello@inbedwithbetty.com'
 Thredded.email_outgoing_prefix = '[Betty Discussion] '
 #
 # The parent mailer for all Thredded mailers
-Thredded.parent_mailer = 'ActionMailer::Base'
+#Thredded.parent_mailer = 'ActionMailer::Base'
+Thredded.parent_mailer = 'ApplicationMailer'
 
 # ==> Model configuration
 # The range of valid messageboard name lengths. Default:
