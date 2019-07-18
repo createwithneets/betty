@@ -44,7 +44,7 @@ gem "mini_magick", ">= 4.9.4"
 gem 'fog-aws'
 gem 'stripe'
 
-gem 'devise'
+gem "devise", ">= 4.6.0"
 gem 'activeadmin'
 
 gem 'simple_form'
