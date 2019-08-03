@@ -229,6 +229,17 @@ you something nice in the mail. </div>
 <% end %>
 
 
+<div class="rewardhoverable hidden">
+<% if @user.points >= 70 %>
+<div class="rewardsrectangle"></div>
+<div class="rewardsrectangle2"></div>
+<div class="rewardsimage"><img src="https://inbedwithbetty.s3-us-west-2.amazonaws.com/Images/Rewards+Shop/rewards_modo2.jpg"></div>
+<div class="rewardshover"><img src="https://inbedwithbetty.s3-us-west-2.amazonaws.com/Images/Rewards+Shop/rewards_modo.jpg"></div>
+<br><strong> 70 points (Vancouver/ Lower Mainland Only)</strong><br><strong>$50 Driving Credit</strong> from <a href="http://www.modo.coop/">modo Car Co-Op</a>. First Time Users Only.
+<br><br>Email hello@inbedwithbetty.com for the code. </div>
+<% end %>
+
+
 <div class="reward hidden">
 <% if @user.points >= 80 %>
 <div class="rewardsrectangle"></div>
